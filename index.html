@@ -83,6 +83,33 @@ svg .a{transform-box:fill-box;transform-origin:center}
 .colx span{flex:1;text-align:center;font-size:26px;color:#CFC6B8}
 .bars.xwide .brow{grid-template-columns:380px 1fr}
 @keyframes growy{from{opacity:1;transform:scaleY(0)}to{opacity:1;transform:scaleY(1)}}
+.seg{justify-content:center;gap:28px;padding-left:180px}
+.seg .stime{font-family:var(--head);font-size:56px;font-weight:600;color:#D9B866}
+.seg h1{font-size:150px;line-height:1}
+.seg .ssub{font-size:40px;color:#9DB2A7}
+.seg .sline{position:absolute;left:128px;top:300px;bottom:300px;width:3px;background:#B08A38;transform-origin:center top}
+.seg .supnext{font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#9DB2A7}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 36px;flex:1;align-content:center}
+.pil{background:#12332A;border:1px solid #1E4639;border-radius:6px;padding:56px 40px;display:flex;gap:28px;align-items:center}
+.pil svg{flex:none;width:84px;height:84px;stroke:#D9B866;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.pil h3{font-size:40px;color:#F6F1E7}
+.pil p{font-size:23px;color:#9DB2A7;line-height:1.35;margin-top:6px}
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;flex:1;align-content:center}
+.tlc{display:flex;flex-direction:column;gap:14px;border-top:2px solid #E2D9C8;padding-top:34px;position:relative}
+.tlc .dot{position:absolute;left:-2px;top:-15px;width:28px;height:28px;border-radius:50%;background:#B8913A;border:6px solid #F6F1E7}
+.tlc .yr{font-family:var(--head);font-size:72px;font-weight:600;color:#B8913A;line-height:1}
+.tlc h3{font-size:34px}
+.tlc p{font-size:23px;line-height:1.4}
+.qrbox{display:flex;align-items:center;gap:28px}
+.qrph{flex:none;width:170px;height:170px;border:2px dashed #2A5A49;border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:18px;color:#9DB2A7;padding:12px}
+.qrbox p{font-size:24px;color:#E9E2D6}
+.qrbox p small{display:block;font-size:19px;color:#9DB2A7;margin-top:6px}
+.qrsvg{border-radius:10px;display:block}
+.journey{background:radial-gradient(ellipse at 70% 40%,#16305C 0%,#0A1530 55%,#050A18 100%)!important;color:#DCE6F5}
+.journey .eyebrow{color:#8FB3E8}
+.journey h1{color:#F4F7FC}
+.vidph{border:2px dashed #3B5C93;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#8FB3E8;font-size:26px;aspect-ratio:16/9;width:880px}
+
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;flex:1}
 .qcard{background:#12332A;border:1px solid #1E4639;border-radius:6px;padding:34px 36px;display:flex;flex-direction:column;gap:18px}
 .qcard .qm{font-family:var(--head);font-size:84px;line-height:.5;color:#B08A38;height:34px}
@@ -142,22 +169,39 @@ svg .a{transform-box:fill-box;transform-origin:center}
 
 <!-- 2 WELCOME -->
 <section class="slide between" data-title="Welcome">
-  <div class="head"><p class="eyebrow a">Welcome</p><h2 class="a" style="--d:1">[Welcome headline]</h2></div>
+  <div class="head"><p class="eyebrow a">Welcome</p><h2 class="a" style="--d:1">Tonight, we celebrate us</h2></div>
   <div class="row" style="gap:64px;align-items:center">
-    <p class="lg a todo" style="--d:2;flex:1.3">[A short welcome message — why tonight matters and who it's for.]</p>
-    <div class="photo a" style="--d:3;height:520px">[Photo]</div>
+    <div style="flex:1.3;display:flex;flex-direction:column;gap:28px">
+      <p class="lg a" style="--d:2">Welcome to the inaugural Somali Bantu Excellence Gala, a community-led celebration of our successes and wins.</p>
+      <p class="lg a" style="--d:3">More than two decades after the first Somali Bantu families arrived in the United States, we come together to honor our graduates, builders, leaders and the families who carried them here, and to invest in the generation coming next.</p>
+    </div>
+    <div class="photo a" style="--d:4;height:520px">[Photo]</div>
+  </div>
+</section>
+
+<!-- 2b PILLARS -->
+<section class="slide dark" data-title="Six pillars">
+  <div class="head"><p class="eyebrow a">What we celebrate tonight</p><h2 class="a" style="--d:1">Six pillars of excellence</h2></div>
+  <div class="pillars">
+    <div class="pil a" style="--d:2"><svg viewBox="0 0 64 64"><path d="M20 10h24v14a12 12 0 0 1-24 0z"/><path d="M20 14H11v4a9 9 0 0 0 9 9M44 14h9v4a9 9 0 0 1-9 9"/><path d="M32 36v10M22 54h20M25 46h14v8H25z"/></svg><div><h3>Sports</h3><p>Excellence on and off the field</p></div></div>
+    <div class="pil a" style="--d:3"><svg viewBox="0 0 64 64"><rect x="23" y="8" width="18" height="30" rx="9"/><path d="M15 30a17 17 0 0 0 34 0M32 47v9M23 56h18"/></svg><div><h3>Media</h3><p>Telling our stories. Shaping our future.</p></div></div>
+    <div class="pil a" style="--d:4"><svg viewBox="0 0 64 64"><path d="M4 24 32 12l28 12-28 12z"/><path d="M16 30v12c0 5 7 9 16 9s16-4 16-9V30M56 26v16"/></svg><div><h3>Education</h3><p>Knowledge. Empowerment. Legacy.</p></div></div>
+    <div class="pil a" style="--d:5"><svg viewBox="0 0 64 64"><path d="M10 54h46"/><rect x="14" y="38" width="8" height="16"/><rect x="28" y="28" width="8" height="26"/><rect x="42" y="18" width="8" height="36"/><path d="M12 26 26 16l10 6 16-12M44 10h8v8"/></svg><div><h3>Entrepreneurship</h3><p>Building businesses. Creating generational wealth.</p></div></div>
+    <div class="pil a" style="--d:6"><svg viewBox="0 0 64 64"><path d="M32 54S8 40 8 23a12 12 0 0 1 24-4 12 12 0 0 1 24 4c0 17-24 31-24 31z"/><path d="M14 32h10l4-8 6 14 4-6h12"/></svg><div><h3>Health</h3><p>Stronger bodies. Stronger communities.</p></div></div>
+    <div class="pil a" style="--d:7"><svg viewBox="0 0 64 64"><circle cx="32" cy="18" r="8"/><circle cx="14" cy="26" r="6"/><circle cx="50" cy="26" r="6"/><path d="M18 54v-8a14 14 0 0 1 28 0v8M4 52v-4a10 10 0 0 1 12-10M60 52v-4a10 10 0 0 0-12-10"/></svg><div><h3>Community Leadership</h3><p>Leading with purpose. Serving with honor.</p></div></div>
   </div>
 </section>
 
 <!-- 3 ABOUT -->
 <section class="slide" data-title="About">
-  <div class="head"><p class="eyebrow a">Our community</p><h2 class="a" style="--d:1">[About the Somali Bantu community]</h2></div>
-  <div class="grid3" style="flex:1">
-    <div class="card a" style="--d:2"><p class="num">[#]</p><h3>[Stat or fact]</h3><p class="todo">[One-line detail]</p></div>
-    <div class="card a" style="--d:3"><p class="num">[#]</p><h3>[Stat or fact]</h3><p class="todo">[One-line detail]</p></div>
-    <div class="card a" style="--d:4"><p class="num">[#]</p><h3>[Stat or fact]</h3><p class="todo">[One-line detail]</p></div>
+  <div class="head"><p class="eyebrow a">Our journey</p><h2 class="a" style="--d:1">From the Jubba Valley to Louisville</h2></div>
+  <div class="tl">
+    <div class="tlc a" style="--d:2"><span class="yr">1800s</span><span class="dot"></span><h3>Roots in East Africa</h3><p>Our ancestors were brought from Mozambique, Tanzania and Malawi to Somalia’s Jubba Valley.</p></div>
+    <div class="tlc a" style="--d:4"><span class="yr">1991</span><span class="dot"></span><h3>Leaving Somalia</h3><p>Civil war forced families into refugee camps in Kenya, where many spent more than a decade.</p></div>
+    <div class="tlc a" style="--d:6"><span class="yr">2003</span><span class="dot"></span><h3>A new home</h3><p>The first families arrived in the U.S., part of a 12,000-person resettlement, the largest group of African refugees the U.S. had ever accepted.</p></div>
+    <div class="tlc a" style="--d:8"><span class="yr">2026</span><span class="dot"></span><h3>Excellence</h3><p>Graduates, nurses, business owners and leaders in 26 states, celebrating together in Louisville.</p></div>
   </div>
-  <p class="band a" style="--d:6">[One sentence on the mission of the gala.]</p>
+  <p class="src a" style="--d:10;font-size:20px;color:#7A716A">Sources: UNHCR; Social Science Research Council; 2026 Somali Bantu Education Survey.</p>
 </section>
 
 <!-- 4a PROGRAM -->
@@ -185,6 +229,106 @@ svg .a{transform-box:fill-box;transform-origin:center}
     <div class="item a" style="--d:7"><span class="time">&nbsp;</span><h3>Community Service</h3><p class="sub">Called up by Bashir</p></div>
     <div class="item a" style="--d:8;border-bottom:none"><span class="time">10:45 PM</span><h3>Closing</h3><p class="sub">The Abdis &amp; the full committee</p></div>
   </div>
+</section>
+
+<!-- SEG FAITH -->
+<section class="slide dark seg" data-title="Faith & Business">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">7:00 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Faith &amp; Business</h1>
+  <p class="ssub a" style="--d:4">Called up by Amina</p>
+</section>
+
+<!-- SEG DINNER -->
+<section class="slide dark seg" data-title="Dinner is served">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Enjoy</p>
+  <p class="stime a" style="--d:1">8:00 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Dinner is served</h1>
+  <p class="ssub a" style="--d:4">Performance by the Abdis · please stay seated</p>
+</section>
+
+<!-- SEG COMMSERV1 -->
+<section class="slide dark seg" data-title="Community Service">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">8:10 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Community Service</h1>
+  <p class="ssub a" style="--d:4">Introduced by Yusuf (IB)</p>
+</section>
+
+<!-- SEG MEDIA -->
+<section class="slide dark seg" data-title="Creative Media">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Creative Media</h1>
+  <p class="ssub a" style="--d:4">Zaytun &amp; Megenay</p>
+</section>
+
+<!-- SEG VISION -->
+<section class="slide dark seg" data-title="Our Vision">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">8:25 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Our Vision</h1>
+  <p class="ssub a" style="--d:4">Mat Sidi, Omar &amp; Musa</p>
+</section>
+
+<!-- SEG BANTU CONNECT -->
+<section class="slide dark" data-title="Bantu Connect">
+  <div class="row" style="flex:1;align-items:center;gap:120px">
+    <div style="display:flex;flex-direction:column;gap:26px;flex:1">
+      <p class="supnext a" style="font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#9DB2A7">Up next · Mohamed</p>
+      <h1 class="a" style="--d:1;font-size:130px;line-height:1">Bantu Connect</h1>
+      <p class="lg a" style="--d:2;color:#9DB2A7;max-width:900px">An online home for the Somali Bantu community and its stories.</p>
+      <p class="a" style="--d:3;font-family:var(--head);font-size:56px;color:#D9B866">bantuconnect.net</p>
+    </div>
+    <div class="a" style="--d:4;--k:zoom;display:flex;flex-direction:column;align-items:center;gap:18px">
+      <svg class="qrsvg" role="img" aria-label="QR code for https://www.bantuconnect.net" style="width:360px;height:360px" xmlns="http://www.w3.org/2000/svg" class="segno"><g transform="scale(10)"><path fill="#f6f1e7" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#0a1e17" d="M2 2.5h7m1 0h2m1 0h1m1 0h3m3 0h1m2 0h7m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m3 0h3m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m7 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m2 0h1m1 0h1m1 0h4m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h1m2 0h2m1 0h2m2 0h1m-20 1h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m-29 1h3m1 0h1m3 0h1m2 0h1m2 0h1m5 0h3m2 0h1m2 0h1m-26 1h7m4 0h2m1 0h1m2 0h1m2 0h3m1 0h2m-29 1h5m2 0h1m3 0h3m1 0h3m2 0h3m4 0h1m-26 1h2m2 0h1m3 0h1m3 0h2m1 0h1m1 0h1m2 0h2m-24 1h1m2 0h3m4 0h1m3 0h1m1 0h2m2 0h4m3 0h2m-29 1h1m1 0h2m1 0h2m2 0h2m2 0h2m1 0h1m1 0h1m3 0h2m2 0h3m-29 1h4m4 0h1m3 0h2m2 0h2m2 0h1m1 0h2m-24 1h1m3 0h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m1 0h2m-28 1h2m1 0h2m2 0h2m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m3 0h3m-29 1h1m1 0h1m1 0h1m1 0h1m3 0h2m2 0h5m1 0h2m3 0h1m1 0h2m-28 1h1m2 0h2m1 0h1m3 0h1m1 0h1m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m1 0h5m2 0h1m4 0h2m1 0h1m1 0h6m2 0h1m-20 1h1m7 0h1m3 0h1m3 0h1m3 0h1m-29 1h7m1 0h7m1 0h2m1 0h2m1 0h1m1 0h1m1 0h3m-29 1h1m5 0h1m2 0h2m2 0h1m2 0h1m3 0h1m3 0h1m2 0h1m-28 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m4 0h6m1 0h2m-29 1h1m1 0h3m1 0h1m5 0h1m2 0h1m1 0h1m2 0h2m2 0h1m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m3 0h2m3 0h2m3 0h1m-29 1h1m5 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h4m2 0h1m3 0h1m-28 1h7m4 0h2m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2"/></g></svg>
+      <p style="font-size:24px;color:#E9E2D6">Scan to visit</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEG PERF9 -->
+<section class="slide dark seg" data-title="Performance">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">9:00 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Performance</h1>
+  <p class="ssub a" style="--d:4"></p>
+</section>
+
+<!-- SEG REUNION -->
+<section class="slide dark seg" data-title="Family Reunion">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">9:15 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Family Reunion</h1>
+  <p class="ssub a" style="--d:4">Wild ’n Out · Maryan Shale</p>
+</section>
+
+<!-- SEG JOURNEY -->
+<section class="slide journey" data-title="Journey of Our People">
+  <div class="row" style="flex:1;align-items:center;gap:90px">
+    <div style="display:flex;flex-direction:column;gap:24px;flex:1">
+      <p class="eyebrow a">9:30 PM · Narrated live</p>
+      <h1 class="a" style="--d:1;font-size:120px;line-height:1.02">Journey of<br>Our People</h1>
+      <p class="lg a" style="--d:3;color:#B7C9E6">Taking you on a journey.</p>
+    </div>
+    <div class="vidph a" style="--d:4;--k:fade">[Video plays here]</div>
+  </div>
+</section>
+
+<!-- SEG SCHOLAR -->
+<section class="slide dark seg" data-title="Scholarship Committee">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">10:00 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Scholarship Committee</h1>
+  <p class="ssub a" style="--d:4">Called up by Habiba</p>
 </section>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><g id="usland"><g fill="#12332A"><path d="M648,492.4L648,492.4L648,492.4ZM641.6,384L689.2,379.7L702.5,427L709.6,439.9L705.9,450.1L710.8,468.8L660.7,474L663.7,490.1L646.5,489.5L642.2,455L643.7,386.2Z"/><path d="M145.1,407L148.8,406.9L148,391.7L153.9,380.5L162.8,373.6L156.8,356.2L159.9,331.1L172.6,331.5L176,313.3L264.6,328L246.8,456.3L208.2,450.5L142.3,411.7Z"/><path d="M277.1,237.2L361.4,246.5L395.3,249L393.9,271.9L389.7,340.7L372.5,339.4L315.3,334.3L264.6,328Z"/><path d="M814.6,594.5L814.6,594.5L814.6,594.5ZM812.7,596L812.7,596L812.7,596ZM807.4,599L807.4,599L807.4,599ZM793.7,604.2L793.7,604.2L793.7,604.2ZM789.6,605.4L789.6,605.4L789.6,605.4ZM786.4,605.5L786.4,605.5L786.4,605.5ZM777.4,558.3L777.4,558.3L777.4,558.3ZM770.3,606.2L770.3,606.2L770.3,606.2ZM720.4,495.2L720.4,495.2L720.4,495.2ZM710.8,468.8L714.2,475L765.8,471.5L768.7,466L780.1,466.1L787,486.3L806.1,513.6L806.6,521.9L820,544.3L823.8,574.5L819.7,586.1L806.9,589.7L800.6,577.8L791.9,575.4L785.5,563.3L766.5,542.9L771.2,533.2L761.9,533.4L763.6,517.1L758.9,505.1L746.1,498.3L740.3,490.6L727.4,487.4L713.7,500.8L695.8,488.4L680.7,485.8L663.7,490.1L660.7,474Z"/><path d="M689.2,379.7L712.7,376.8L734.9,373.7L731.7,381.5L741.1,385.4L748.3,396.2L771.3,414.4L774,422.7L786.1,434.6L782.6,442.3L780.1,466.1L768.7,466L765.8,471.5L714.2,475L710.8,468.8L705.9,450.1L709.6,439.9L702.5,427Z"/><path d="M640.3,229.8L651.9,227.6L685.8,225.4L692.5,284.3L693.5,291.6L682.6,295L674.1,312.8L668.6,308.8L655.3,318.7L646.7,315L639.4,319.7L646.5,298.5Z"/><path d="M393.9,271.9L464.8,274.9L509.9,275.2L516.5,277.7L513.5,285.8L522.3,295.2L522.8,343.8L432.6,342.7L389.7,340.7Z"/><path d="M939.8,114.8L939.8,114.8L939.8,114.8ZM938,116.1L938,116.1L938,116.1ZM936.3,112.2L936.3,112.2L936.3,112.2ZM932.2,116L932.2,116L932.2,116ZM933.5,124.7L933.5,124.7L933.5,124.7ZM931.4,119.2L931.4,119.2L931.4,119.2ZM930.1,116.3L930.1,116.3L930.1,116.3ZM910.2,150.1L904.5,145.2L890.9,102.4L900,86.1L899.1,67.5L905.9,47.6L912.5,52.3L922.6,45.8L929.7,49.7L938.7,79.9L957.1,94.8L950.2,105.6L935.7,117.6L931,110.1L930.2,122.9L918.1,130.9Z"/><path d="M927.7,186.8L927.7,186.8L927.7,186.8ZM918.3,188.3L918.3,188.3L918.3,188.3ZM871,167.6L884.1,164.8L902.9,160.7L909.5,154.8L909.5,165.8L921.7,177.7L931,176.8L912.8,186.4L910.5,182.8L909.8,182.1L898.8,178L871.2,184Z"/><path d="M479.5,70.7L510.8,70.8L515.6,64.1L520.2,77.3L540.3,78.2L563.4,87.3L576.7,85.8L596.2,90.7L582,97.5L558.9,119.4L560.2,121.1L555.9,122.3L556.4,135.6L547.5,147.3L551.3,149.9L549.3,165.9L572.3,182.2L576.3,193.3L490.6,195.2L490.8,154.3L484.4,147.3L489.1,139.9L485.5,123.3L484.9,102.5L480.5,89.4Z"/><path d="M849.2,245.8L849.7,244.4L850.8,241.4L860.6,230.8L849.9,220.8L855,204L870.1,209L869.2,216.4L868.9,217.2L866.6,221.4L871.4,222.4L873.2,237.3L865.4,257.2L849.4,246.3Z"/><path d="M864.3,329.1L864.3,329.1L864.3,329.1ZM863.3,349.7L863.3,349.7L863.3,349.7ZM755.5,334L812.1,325.5L858.8,315.9L859.3,323L847.4,332.7L863.3,329.4L865.7,334.5L850.5,355.8L859.2,353.5L855.6,361.2L843.8,364.5L834.5,376.7L833.4,384.1L822.8,386.1L798.1,368.4L777.6,371.5L772,364.7L749.4,367L734.9,373.7L712.7,376.8L712.6,371.4L737.8,350.2L750.7,345.5Z"/><path d="M376.9,65.7L444.9,69.8L479.5,70.7L480.5,89.4L484.9,102.5L485.5,123.3L489.1,139.9L412.5,137.3L371.1,134.3Z"/><path d="M372.5,339.4L389.7,340.7L432.6,342.7L522.8,343.8L523,355.3L526.8,380.5L526.4,420.7L512.4,413.5L491.6,419.8L481.1,413.8L476.1,418.5L454,408.5L451.7,410.6L423.9,398.3L425.8,353.9L371.6,350.8Z"/><path d="M756.1,209L767.5,200.3L768.6,206.4L840.9,192.1L855,204L849.9,220.8L860.6,230.8L850.8,241.4L844.9,244.6L782.3,256.9L764.5,259.9L761.1,239.2Z"/><path d="M369.1,155.7L371.1,134.3L412.5,137.3L489.1,139.9L484.4,147.3L490.8,154.3L490.6,195.2L487.5,211.9L490.6,218.3L476.4,209.5L465.7,211.6L456.8,206.2L403.8,203.9L365.3,201Z"/><path d="M371.6,350.8L425.8,353.9L423.9,398.3L451.7,410.6L454,408.5L476.1,418.5L481.1,413.8L491.6,419.8L512.4,413.5L526.4,420.7L534.8,422.5L535,434.7L535.5,457.9L545.4,476.2L540.6,510.4L522.4,517.4L510.3,529.5L477.4,546.5L469.4,564.3L467.9,575.9L474.4,595.1L451.8,592.1L434.3,583.6L427.9,569.9L427.6,559.5L412,540.8L405.1,521.7L390.3,505.7L366.4,505.5L356.8,521.6L337.2,510.9L330,503.6L323,479.9L315.8,475.4L296.3,452.1L295.1,447L362.9,453.3L370.9,350.7Z"/><path d="M369.1,155.7L365.3,201L361.4,246.5L277.1,237.2L243.5,232.2L247.2,209.6L256,153.9L257.8,142L298.3,148Z"/><path d="M871.2,184L898.8,178L901.7,193.5L884.7,198.4L874.1,208.3Z"/><path d="M502,261.9L544.8,261.3L570.9,259.6L576.5,264.7L578.1,279.5L589.7,289.9L591.3,297.3L601,298.4L597.6,313.2L614.1,326.4L621.2,339.9L616.9,351.3L615.6,351.5L614.7,351.5L611.9,363.1L600.2,364L603.6,352.2L523,355.3L522.8,343.8L522.3,295.2L513.5,285.8L516.5,277.7L509.9,275.2Z"/><path d="M733.2,294.8L737.9,293.5L741.4,279.5L757.8,263.4L761.1,239.2L764.5,259.9L782.3,256.9L784.1,268.5L794.3,257.4L804.5,253.4L813.9,260.3L802.6,259.1L802.9,266L790.3,285.9L783.8,282.9L776.6,309.3L761.3,318.1L750,318.6L747.1,313.2L733.8,301.7Z"/><path d="M576.5,264.7L583.7,247.9L581.6,240.8L593.2,236.1L595.5,223.8L587,215.4L634.2,212.4L640.3,229.8L646.5,298.5L639.4,319.7L631.5,337.1L621.2,339.9L614.1,326.4L597.6,313.2L601,298.4L591.3,297.3L589.7,289.9L578.1,279.5Z"/><path d="M264.6,328L315.3,334.3L372.5,339.4L371.6,350.8L370.9,350.7L362.9,453.3L295.1,447L296.3,452.1L264.2,448.2L262.9,458.4L246.8,456.3Z"/><path d="M523,355.3L603.6,352.2L600.2,364L611.9,363.1L602.8,386.7L598.4,393L591.8,415.1L587.6,420.4L589.4,433.1L535,434.7L534.8,422.5L526.4,420.7L526.8,380.5Z"/><path d="M77.2,374.3L77.2,374.3L77.2,374.3ZM74.7,384.2L74.7,384.2L74.7,384.2ZM65.2,358.4L65.2,358.4L65.2,358.4ZM58.3,374.3L58.3,374.3L58.3,374.3ZM56.6,355L56.6,355L56.6,355ZM50.3,355.2L50.3,355.2L50.3,355.2ZM46.8,353.4L46.8,353.4L46.8,353.4ZM32.6,160L100.5,179.2L83.3,245.5L156.8,356.2L162.8,373.6L153.9,380.5L148,391.7L148.8,406.9L145.1,407L99.5,401.7L96.5,382.3L81.7,362.5L69.7,356.7L65,349.3L48.8,344.3L49.8,328.1L34.8,296.1L39.7,285.9L31.4,274.3L35.8,257.2L29.4,254.6L20.1,229L24,209.2L18.5,197.2L31.3,172.9Z"/><path d="M849.2,245.8L849.4,246.3L849.2,245.8ZM844.9,244.6L850.8,241.4L849.7,244.4L854.8,258L863.7,270.3L852.6,272.5Z"/><path d="M825.9,267L827.9,269.9L825.9,267Z"/><path d="M490.6,195.2L576.3,193.3L579.9,210.5L587,215.4L595.5,223.8L593.2,236.1L581.6,240.8L583.7,247.9L576.5,264.7L570.9,259.6L544.8,261.3L502,261.9L496.9,234L490.6,218.3L487.5,211.9Z"/><path d="M621.2,339.9L631.5,337.1L639.4,319.7L646.7,315L655.3,318.7L668.6,308.8L674.1,312.8L682.6,295L693.5,291.6L692.5,284.3L703.9,289.8L720.6,292.4L727,287.9L733.2,294.8L733.8,301.7L747.1,313.2L729,334.2L719.8,338.7L644.8,346.1L641.4,349.5L616.9,351.3ZM615.6,351.5L614.7,351.5L615.6,351.5Z"/><path d="M849.9,285L848.9,285.2L849.9,285ZM847.3,281.5L847.3,281.5L847.3,281.5ZM782.3,256.9L844.9,244.6L852.6,272.5L863.7,270.3L862.5,280.5L855.5,283.8L851.6,285.3L846.4,271.3L839,266.3L841.6,251.7L836.8,254L836.2,268.8L843.8,284.2L827.1,273.8L827.9,269.9L825.9,267L813.9,260.3L804.5,253.4L794.3,257.4L784.1,268.5Z"/><path d="M677.1,130.8L677.1,130.8L677.1,130.8ZM663.5,133.2L663.5,133.2L663.5,133.2ZM662.4,138.6L662.4,138.6L662.4,138.6ZM660.9,135.6L660.9,135.6L660.9,135.6ZM658.8,142.5L658.8,142.5L658.8,142.5ZM656.6,149.6L656.6,149.6L656.6,149.6ZM655.4,152.7L655.4,152.7L655.4,152.7ZM645.5,139.9L645.5,139.9L645.5,139.9ZM651.9,227.6L658.6,215.5L658.9,198L652.4,184.3L654.9,159.7L663.6,147.8L674.2,141.9L675.4,132.7L696.7,139.9L701.3,147L702.4,162.5L694.1,177.1L699,180.2L709.9,167.7L715.2,172.4L721.5,191.2L708.3,221.7L685.8,225.4ZM601.4,92.4L601.4,92.4L601.4,92.4ZM585.3,123.1L600.5,115.8L618.6,100.5L624.4,99.7L615.4,111.8L628.3,114.3L633.1,120.8L643.6,121.4L651.8,115.2L670,111L669.8,117.6L683.4,114.8L684.4,121.5L694,127.6L674.2,131L662.9,127.3L637.9,139.6L632.4,153L622.7,135L590.3,128Z"/><path d="M644.5,493.1L644.5,493.1L644.5,493.1ZM639.3,492.9L639.3,492.9L639.3,492.9ZM635.2,493.9L635.2,493.9L635.2,493.9ZM631.8,493.6L631.8,493.6L631.8,493.6ZM589.4,433.1L587.6,420.4L591.8,415.1L598.4,393L602.8,386.7L641.6,384L643.7,386.2L642.2,455L646.5,489.5L636.2,489.7L624.8,495.4L617.6,484.9L619.1,477.1L582.6,479.2L584.4,467L595.4,448.2Z"/><path d="M198.1,39L265.4,51.9L340.4,62.1L376.9,65.7L371.1,134.3L369.1,155.7L298.3,148L257.8,142L256,153.9L236.7,148.5L224.8,149.1L219.4,138.5L214.6,118.2L205.2,119.7L213.4,96.3L208.9,95.6L195.3,74.3L193.3,61.5Z"/><path d="M886.1,110.5L890.9,102.4L904.5,145.2L910.2,150.1L909.5,154.8L902.9,160.7L884.1,164.8L880.6,145.8L881.8,127.9L887.9,122.1Z"/><path d="M899.3,195.7L899.3,195.7L899.3,195.7ZM896.7,198L896.7,198L896.7,198ZM868.9,217.2L866.6,221.4L868.9,217.2ZM815.5,153.8L815.5,153.8L815.5,153.8ZM814.2,153.7L814.2,153.7L814.2,153.7ZM767.5,200.3L780.3,186.1L774.8,176L783.8,171.7L809,169.2L819.3,161.1L815,146.4L832.3,124.4L857.6,117.8L863.6,148.6L871,167.6L871.2,184L874.1,208.3L899.5,201.8L885.7,213L871.7,219.3L869.2,216.4L870.1,209L855,204L840.9,192.1L768.6,206.4Z"/><path d="M720.6,223L720.6,223L720.6,223ZM718.7,222.3L718.7,222.3L718.7,222.3ZM685.8,225.4L708.3,221.7L725.6,227.4L737.5,223.2L756.1,209L761.1,239.2L757.8,263.4L741.4,279.5L737.9,293.5L733.2,294.8L727,287.9L720.6,292.4L703.9,289.8L692.5,284.3Z"/><path d="M71,70.2L80.1,80L79,86.8L86.2,91.5L102.8,94.7L138.7,94.8L170.5,102.4L175.7,112.3L157.4,136.6L161.7,143.3L157.9,150.5L148.9,190.7L100.5,179.2L32.6,160L32.8,139.9L45.4,120.7L65,70.6Z"/><path d="M611.9,363.1L614.7,351.5L615.6,351.5L616.9,351.3L641.4,349.5L644.8,346.1L719.8,338.7L755.5,334L750.7,345.5L737.8,350.2L712.6,371.4L712.7,376.8L689.2,379.7L641.6,384L602.8,386.7Z"/><path d="M197.7,201.1L247.2,209.6L243.5,232.2L277.1,237.2L264.6,328L176,313.3Z"/><path d="M855.5,283.8L862.5,280.5L856.6,301.3L852.6,300.7ZM849.9,285L848.9,285.2L849.9,285ZM747.1,313.2L750,318.6L761.3,318.1L776.6,309.3L783.8,282.9L790.3,285.9L802.9,266L802.6,259.1L813.9,260.3L825.9,267L827.9,269.9L827.1,273.8L824.5,278.6L845.9,287.3L849.2,305.5L858.8,315.9L812.1,325.5L755.5,334L719.8,338.7L729,334.2Z"/><path d="M93.2,50.9L93.2,50.9L93.2,50.9ZM98.7,24.6L98.7,24.6L98.7,24.6ZM98.9,20.3L98.9,20.3L98.9,20.3ZM97.7,23.5L97.7,23.5L97.7,23.5ZM95,31L95,31L95,31ZM95.5,17.9L95.5,17.9L95.5,17.9ZM93.6,19.6L93.6,19.6L93.6,19.6ZM95.2,13L95.2,13L95.2,13ZM91,21.2L91,21.2L91,21.2ZM91.1,19.1L91.1,19.1L91.1,19.1ZM183.6,35.9L170.8,92.4L170.5,102.4L138.7,94.8L102.8,94.7L86.2,91.5L79,86.8L80.1,80L71,70.2L64.1,65.2L66.9,51L66.5,23.5L96.6,39L96.1,51.9L101.7,37.6L100,14.4L140.1,25.4Z"/><path d="M641.9,146.3L641.9,146.3L641.9,146.3ZM635.6,150.4L635.6,150.4L635.6,150.4ZM584,113.3L584,113.3L584,113.3ZM583.2,116.2L583.2,116.2L583.2,116.2ZM581.2,115.2L581.2,115.2L581.2,115.2ZM579.6,117.2L579.6,117.2L579.6,117.2ZM579.8,114.4L579.8,114.4L579.8,114.4ZM579.1,113L579.1,113L579.1,113ZM579.2,118.5L579.2,118.5L579.2,118.5ZM576,114.1L576,114.1L576,114.1ZM560.2,121.1L576.2,115.1L585.3,123.1L590.3,128L622.7,135L632.4,153L628.1,166.1L641.6,147.6L635.5,165.1L630.8,195.3L634.2,212.4L587,215.4L579.9,210.5L576.3,193.3L572.3,182.2L549.3,165.9L551.3,149.9L547.5,147.3L556.4,135.6L555.9,122.3Z"/><path d="M365.3,201L403.8,203.9L456.8,206.2L465.7,211.6L476.4,209.5L490.6,218.3L496.9,234L502,261.9L509.9,275.2L464.8,274.9L393.9,271.9L395.3,249L361.4,246.5Z"/><path d="M734.9,373.7L749.4,367L772,364.7L777.6,371.5L798.1,368.4L822.8,386.1L816.3,392.2L813.6,403.6L800.6,419L792.1,423.7L786.1,434.6L774,422.7L771.3,414.4L748.3,396.2L741.1,385.4L731.7,381.5Z"/><path d="M170.5,102.4L170.8,92.4L183.6,35.9L198.1,39L193.3,61.5L195.3,74.3L208.9,95.6L213.4,96.3L205.2,119.7L214.6,118.2L219.4,138.5L224.8,149.1L236.7,148.5L256,153.9L247.2,209.6L197.7,201.1L148.9,190.7L157.9,150.5L161.7,143.3L157.4,136.6L175.7,112.3Z"/><path d="M100.5,179.2L148.9,190.7L197.7,201.1L176,313.3L172.6,331.5L159.9,331.1L156.8,356.2L83.3,245.5Z"/><path d="M857.6,117.8L886.1,110.5L887.9,122.1L881.8,127.9L880.6,145.8L884.1,164.8L871,167.6L863.6,148.6Z"/><path d="M637.5,497.4L637.5,497.4L637.5,497.4ZM628.5,497.9L628.5,497.9L628.5,497.9ZM623.7,510.2L623.7,510.2L623.7,510.2ZM609.5,520.8L609.5,520.8L609.5,520.8ZM606,521.3L606,521.3L606,521.3ZM602.2,522.4L602.2,522.4L602.2,522.4ZM576.5,511.5L576.5,511.5L576.5,511.5ZM535,434.7L589.4,433.1L595.4,448.2L584.4,467L582.6,479.2L619.1,477.1L617.6,484.9L624.8,495.4L619.2,498.9L632.4,513.8L634.2,521.8L619.8,515.3L612.6,521.1L608.1,515.4L601,522.8L590.3,517.5L578.8,505.8L570.6,513.1L553.6,508.2L540.6,510.4L545.4,476.2L535.5,457.9Z"/><path d="M910.5,182.8L912.8,186.4L910.5,182.8ZM908.4,188.4L908.4,188.4L908.4,188.4ZM906.7,196L906.7,196L906.7,196ZM901.7,193.5L898.8,178L909.8,182.1Z"/></g><path fill="none" stroke="#2A5A49" stroke-width="1" stroke-linejoin="round" d="M646.5,489.5L642.2,455L643.7,386.2L641.6,384L689.2,379.7L702.5,427L709.6,439.9L705.9,450.1L710.8,468.8L660.7,474L663.7,490.1M145.1,407L148.8,406.9L148,391.7L153.9,380.5L162.8,373.6L156.8,356.2L159.9,331.1L172.6,331.5L176,313.3L264.6,328L246.8,456.3M710.8,468.8L714.2,475L765.8,471.5L768.7,466L780.1,466.1M689.2,379.7L712.7,376.8L734.9,373.7L731.7,381.5L741.1,385.4L748.3,396.2L771.3,414.4L774,422.7L786.1,434.6M651.9,227.6L685.8,225.4L692.5,284.3L693.5,291.6L682.6,295L674.1,312.8L668.6,308.8L655.3,318.7L646.7,315L639.4,319.7L646.5,298.5L640.3,229.8M393.9,271.9L464.8,274.9L509.9,275.2L516.5,277.7L513.5,285.8L522.3,295.2L522.8,343.8L432.6,342.7L389.7,340.7M910.2,150.1L904.5,145.2L890.9,102.4M909.8,182.1L898.8,178L871.2,184L871,167.6L884.1,164.8L902.9,160.7L909.5,154.8M912.8,186.4L910.5,182.8M560.2,121.1L555.9,122.3L556.4,135.6L547.5,147.3L551.3,149.9L549.3,165.9L572.3,182.2L576.3,193.3L490.6,195.2L490.8,154.3L484.4,147.3L489.1,139.9L485.5,123.3L484.9,102.5L480.5,89.4L479.5,70.7M849.7,244.4L850.8,241.4L860.6,230.8L849.9,220.8L855,204L870.1,209L869.2,216.4M868.9,217.2L866.6,221.4M849.4,246.3L849.2,245.8M712.7,376.8L712.6,371.4L737.8,350.2L750.7,345.5L755.5,334L812.1,325.5L858.8,315.9M822.8,386.1L798.1,368.4L777.6,371.5L772,364.7L749.4,367L734.9,373.7M489.1,139.9L412.5,137.3L371.1,134.3L376.9,65.7M522.8,343.8L523,355.3L526.8,380.5L526.4,420.7L512.4,413.5L491.6,419.8L481.1,413.8L476.1,418.5L454,408.5L451.7,410.6L423.9,398.3L425.8,353.9L371.6,350.8L372.5,339.4M767.5,200.3L768.6,206.4L840.9,192.1L855,204M850.8,241.4L844.9,244.6L782.3,256.9L764.5,259.9L761.1,239.2L756.1,209M490.6,195.2L487.5,211.9L490.6,218.3L476.4,209.5L465.7,211.6L456.8,206.2L403.8,203.9L365.3,201L369.1,155.7L371.1,134.3M526.4,420.7L534.8,422.5L535,434.7L535.5,457.9L545.4,476.2L540.6,510.4M296.3,452.1L295.1,447L362.9,453.3L370.9,350.7L371.6,350.8M365.3,201L361.4,246.5M277.1,237.2L361.4,246.5L395.3,249L393.9,271.9L389.7,340.7L372.5,339.4L315.3,334.3L264.6,328L277.1,237.2L243.5,232.2L247.2,209.6L256,153.9L257.8,142L298.3,148L369.1,155.7M898.8,178L901.7,193.5M874.1,208.3L871.2,184M509.9,275.2L502,261.9L544.8,261.3L570.9,259.6L576.5,264.7L578.1,279.5L589.7,289.9L591.3,297.3L601,298.4L597.6,313.2L614.1,326.4L621.2,339.9L616.9,351.3L615.6,351.5L614.7,351.5L611.9,363.1L600.2,364L603.6,352.2L523,355.3M782.3,256.9L784.1,268.5L794.3,257.4L804.5,253.4L813.9,260.3L802.6,259.1L802.9,266L790.3,285.9L783.8,282.9L776.6,309.3L761.3,318.1L750,318.6L747.1,313.2L733.8,301.7L733.2,294.8L737.9,293.5L741.4,279.5L757.8,263.4L761.1,239.2M576.5,264.7L583.7,247.9L581.6,240.8L593.2,236.1L595.5,223.8L587,215.4L634.2,212.4M639.4,319.7L631.5,337.1L621.2,339.9M611.9,363.1L602.8,386.7L598.4,393L591.8,415.1L587.6,420.4L589.4,433.1L535,434.7M32.6,160L100.5,179.2L83.3,245.5L156.8,356.2M863.7,270.3L852.6,272.5L844.9,244.6M576.3,193.3L579.9,210.5L587,215.4M502,261.9L496.9,234L490.6,218.3M692.5,284.3L703.9,289.8L720.6,292.4L727,287.9L733.2,294.8M747.1,313.2L729,334.2L719.8,338.7L644.8,346.1L641.4,349.5L616.9,351.3M615.6,351.5L614.7,351.5M849.9,285L848.9,285.2M862.5,280.5L855.5,283.8M827.1,273.8L827.9,269.9M825.9,267L827.9,269.9L825.9,267L813.9,260.3M708.3,221.7L685.8,225.4M632.4,153L622.7,135L590.3,128L585.3,123.1M602.8,386.7L641.6,384M624.8,495.4L617.6,484.9L619.1,477.1L582.6,479.2L584.4,467L595.4,448.2L589.4,433.1M256,153.9L236.7,148.5L224.8,149.1L219.4,138.5L214.6,118.2L205.2,119.7L213.4,96.3L208.9,95.6L195.3,74.3L193.3,61.5L198.1,39M884.1,164.8L880.6,145.8L881.8,127.9L887.9,122.1L886.1,110.5M857.6,117.8L863.6,148.6L871,167.6M71,70.2L80.1,80L79,86.8L86.2,91.5L102.8,94.7L138.7,94.8L170.5,102.4L175.7,112.3L157.4,136.6L161.7,143.3L157.9,150.5L148.9,190.7L100.5,179.2M719.8,338.7L755.5,334M176,313.3L197.7,201.1L247.2,209.6M183.6,35.9L170.8,92.4L170.5,102.4M197.7,201.1L148.9,190.7"/></g></defs></svg>
@@ -392,6 +536,7 @@ svg .a{transform-box:fill-box;transform-origin:center}
     <div style="flex:0 0 440px;display:flex;flex-direction:column">
       <div class="stat a" style="--d:2"><p class="num" data-count="44">44</p><p>asked for scholarships or financial help, more than anything else</p></div>
       <div class="stat a" style="--d:3;border-bottom:1px solid #1E4639"><p class="num" data-count="88" data-suffix="%">88%</p><p>of those not in school want to go back (yes or maybe)</p></div>
+      <div class="qrbox a" style="--d:6;margin-top:22px"><div class="qrph" style="width:130px;height:130px;font-size:16px">[Donation QR code]</div><p>Scan to support the scholarship fund<small>Donation link needed from the committee</small></p></div>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;gap:26px">
       <h3 class="a" style="--d:3;font-size:34px">What would help them reach their next goal</h3>
@@ -419,6 +564,34 @@ svg .a{transform-box:fill-box;transform-origin:center}
     <div class="pcard a" style="--d:4"><div class="photo" style="aspect-ratio:1">[Photo]</div><h3 style="font-size:40px">[Recipient name]</h3><p style="font-size:24px">[School · Field of study]</p><p style="font-size:24px;color:#D9B866">[Scholarship name · amount]</p></div>
     <div class="pcard a" style="--d:5"><div class="photo" style="aspect-ratio:1">[Photo]</div><h3 style="font-size:40px">[Recipient name]</h3><p style="font-size:24px">[School · Field of study]</p><p style="font-size:24px;color:#D9B866">[Scholarship name · amount]</p></div>
   </div>
+  <div class="qrbox a" style="--d:8;justify-content:center"><div class="qrph" style="width:130px;height:130px">[Donation QR]</div><p>Help us award more scholarships next year<small>Donation link needed from the committee</small></p></div>
+</section>
+
+<!-- SEG HEALTH -->
+<section class="slide dark seg" data-title="Health Committee">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">10:20 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Health Committee</h1>
+  <p class="ssub a" style="--d:4">Followed by Bashir’s speech</p>
+</section>
+
+<!-- SEG COMMSERV2 -->
+<section class="slide dark seg" data-title="Community Service">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Community Service</h1>
+  <p class="ssub a" style="--d:4">Called up by Bashir</p>
+</section>
+
+<!-- SEG CLOSING -->
+<section class="slide dark seg" data-title="Closing">
+  <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
+  <p class="supnext a" style="--d:0">Up next</p>
+  <p class="stime a" style="--d:1">10:45 PM</p>
+  <h1 class="a" style="--d:2;--k:zoom;--t:1s">Closing</h1>
+  <p class="ssub a" style="--d:4">The Abdis &amp; the full committee</p>
 </section>
 
 <!-- 5 HONOREES -->
@@ -471,7 +644,7 @@ svg .a{transform-box:fill-box;transform-origin:center}
   <p class="eyebrow a">Mustaqbal Inc.</p>
   <div class="rule a" style="--k:growx;--d:1"></div>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Thank you</h1>
-  <p class="lg a" style="--d:4;color:#CFE0D7">[Website · social handle · donation link]</p>
+  <div class="qrbox a" style="--d:4;margin-top:20px"><div class="qrph">[Donation QR code]</div><p style="text-align:left">Support the scholarship fund<small>[Website · social handles]</small></p></div>
 </section>
 
 </div>
