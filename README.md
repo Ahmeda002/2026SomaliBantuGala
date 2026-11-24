@@ -2,7 +2,7 @@
 
 Web-based presentation for the 2026 Somali Bantu Met Gala.
 
-**Live presentation:** https://ahmeda002.github.io/somali-bantu-met-gala-2026/
+**Live presentation:** https://ahmeda002.github.io/2026SomaliBantuGala/
 
 ## Controls
 
