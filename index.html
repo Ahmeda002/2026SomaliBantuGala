@@ -45,7 +45,10 @@ p{font-size:26px;line-height:1.45}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .dark .photo{background:#1A1614;border-color:#3A322B;color:#8C8276}
 .time{font-family:var(--head);font-size:44px;font-weight:600;color:var(--gold);min-width:220px}
-.item{display:flex;gap:40px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.item{display:flex;gap:40px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--line)}
+.item h3{font-size:38px}
+.item .sub{font-size:24px;color:var(--muted);margin-left:auto;text-align:right}
+.dark .item{border-color:#2E2722}.dark .item .sub{color:#9C9284}
 .abs{position:absolute}
 .todo{color:var(--muted);font-style:italic}
 #hud{position:fixed;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:5}
@@ -110,16 +113,30 @@ p{font-size:26px;line-height:1.45}
   <p class="band a" style="--d:6">[One sentence on the mission of the gala.]</p>
 </section>
 
-<!-- 4 PROGRAM -->
-<section class="slide" data-title="Program">
-  <div class="head"><p class="eyebrow a">Tonight's program</p><h2 class="a" style="--d:1">The evening</h2></div>
+<!-- 4a PROGRAM -->
+<section class="slide" data-title="Program a">
+  <div class="head"><p class="eyebrow a">Tonight’s program · Part one</p><h2 class="a" style="--d:1">Opening &amp; dinner</h2></div>
   <div style="display:flex;flex-direction:column">
-    <div class="item a" style="--d:2"><span class="time">[0:00 PM]</span><h3>[Arrival &amp; red carpet]</h3></div>
-    <div class="item a" style="--d:3"><span class="time">[0:00 PM]</span><h3>[Welcome remarks]</h3></div>
-    <div class="item a" style="--d:4"><span class="time">[0:00 PM]</span><h3>[Dinner]</h3></div>
-    <div class="item a" style="--d:5"><span class="time">[0:00 PM]</span><h3>[Performances]</h3></div>
-    <div class="item a" style="--d:6"><span class="time">[0:00 PM]</span><h3>[Awards &amp; honorees]</h3></div>
-    <div class="item a" style="--d:7;border-bottom:none"><span class="time">[0:00 PM]</span><h3>[Closing]</h3></div>
+    <div class="item a" style="--d:2"><span class="time">7:00 PM</span><h3>Faith &amp; Business</h3><p class="sub">Called up by Amina</p></div>
+    <div class="item a" style="--d:3"><span class="time">8:00 PM</span><h3>Dinner &amp; performance</h3><p class="sub">The Abdis · please stay seated</p></div>
+    <div class="item a" style="--d:4"><span class="time">8:10 PM</span><h3>Community service</h3><p class="sub">Introduced by Yusuf (IB)</p></div>
+    <div class="item a" style="--d:5"><span class="time">&nbsp;</span><h3>Creative media</h3><p class="sub">Zaytun &amp; Megenay</p></div>
+    <div class="item a" style="--d:6"><span class="time">8:25 PM</span><h3>Our vision</h3><p class="sub">Mat Sidi, Omar &amp; Musa</p></div>
+    <div class="item a" style="--d:7;border-bottom:none"><span class="time">&nbsp;</span><h3>Bantu Connect</h3><p class="sub">Mohamed</p></div>
+  </div>
+</section>
+
+<!-- 4b PROGRAM -->
+<section class="slide" data-title="Program b">
+  <div class="head"><p class="eyebrow a">Tonight’s program · Part two</p><h2 class="a" style="--d:1">Celebrating our community</h2></div>
+  <div style="display:flex;flex-direction:column">
+    <div class="item a" style="--d:2"><span class="time">9:00 PM</span><h3>Performance</h3><p class="sub"></p></div>
+    <div class="item a" style="--d:3"><span class="time">9:15 PM</span><h3>Family Reunion: Wild ’n Out</h3><p class="sub">Maryan Shale</p></div>
+    <div class="item a" style="--d:4"><span class="time">9:30 PM</span><h3>Journey of Our People</h3><p class="sub">Narration &amp; video</p></div>
+    <div class="item a" style="--d:5"><span class="time">10:00 PM</span><h3>Scholarship Committee</h3><p class="sub">Called up by Habiba</p></div>
+    <div class="item a" style="--d:6"><span class="time">10:20 PM</span><h3>Health Committee</h3><p class="sub">Followed by Bashir’s speech</p></div>
+    <div class="item a" style="--d:7"><span class="time">&nbsp;</span><h3>Community Service</h3><p class="sub">Called up by Bashir</p></div>
+    <div class="item a" style="--d:8;border-bottom:none"><span class="time">10:45 PM</span><h3>Closing</h3><p class="sub">The Abdis &amp; the full committee</p></div>
   </div>
 </section>
 
