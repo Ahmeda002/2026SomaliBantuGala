@@ -60,6 +60,10 @@ p{font-size:26px;line-height:1.45}
 .brow .val{font-size:26px;color:#E9E2D6;font-weight:600;white-space:nowrap}
 .brow .val small{font-size:20px;color:#9C9284;font-weight:400}
 .foot{font-size:20px;color:#8C8276}
+.brow .bar.mute{background:#6B625A}
+.bars.wide .brow{grid-template-columns:270px 1fr}
+.legend{display:flex;gap:32px;font-size:22px;color:#CFC6B8;padding-left:294px}
+.legend i{display:inline-block;width:18px;height:18px;border-radius:3px;margin-right:10px;vertical-align:-2px}
 .abs{position:absolute}
 .todo{color:var(--muted);font-style:italic}
 #hud{position:fixed;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:5}
@@ -176,6 +180,30 @@ p{font-size:26px;line-height:1.45}
     </div>
   </div>
   <p class="foot a" style="--d:14">Source: 2026 community education survey, 135 respondents. Graduates include high school, trade, associate, bachelor’s and master’s, plus current college students.</p>
+</section>
+
+<!-- 4d COLLEGE -->
+<section class="slide dark" data-title="College graduates">
+  <div class="head"><p class="eyebrow a">Scholarship &amp; Academic Committee</p><h2 class="a" style="--d:1">College graduates</h2></div>
+  <div class="row" style="gap:96px;flex:1;align-items:center">
+    <div style="flex:0 0 440px;display:flex;flex-direction:column">
+      <div class="stat a" style="--d:2"><p class="num" data-count="40" data-suffix="+">40+</p><p>college graduates: associate, bachelor’s or master’s</p></div>
+      <div class="stat a" style="--d:3;border-bottom:1px solid #2E2722"><p class="num" data-count="5">5</p><p>more in college right now</p></div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:26px">
+      <h3 class="a" style="--d:3;font-size:34px">Highest education completed</h3>
+      <div class="bars wide">
+        <div class="brow" title="Master's: 8"><span class="st">Master’s</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:4;width:18.8%"></div><span class="val a" style="--k:fade;--d:6">8</span></div></div>
+        <div class="brow" title="Bachelor's: 16"><span class="st">Bachelor’s</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:5;width:37.6%"></div><span class="val a" style="--k:fade;--d:7">16</span></div></div>
+        <div class="brow" title="Associate: 16"><span class="st">Associate</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:6;width:37.6%"></div><span class="val a" style="--k:fade;--d:8">16</span></div></div>
+        <div class="brow" title="In college now: 5"><span class="st">In college now</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:7;width:11.8%"></div><span class="val a" style="--k:fade;--d:9">5</span></div></div>
+        <div class="brow" title="Trade / certificate: 4"><span class="st">Trade / certificate</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:8;width:9.4%"></div><span class="val a" style="--k:fade;--d:10">4</span></div></div>
+        <div class="brow" title="High school diploma: 34"><span class="st">High school diploma</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:9;width:80.0%"></div><span class="val a" style="--k:fade;--d:11">34</span></div></div>
+      </div>
+      <div class="legend a" style="--d:12"><span><i style="background:#B08A38"></i>College degree</span><span><i style="background:#6B625A"></i>Other graduates</span></div>
+    </div>
+  </div>
+  <p class="foot a" style="--d:13">Counts the 83 graduates listed by name in the survey summary. 39 more in Arizona, Ohio, New York and Kentucky weren’t broken down by degree, so the true totals are higher.</p>
 </section>
 
 <!-- 5 HONOREES -->
