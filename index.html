@@ -89,6 +89,8 @@ svg .a{transform-box:fill-box;transform-origin:center}
 #bar{height:100%;width:0;background:var(--gilt);transition:width .4s ease}
 #count{position:fixed;right:18px;bottom:14px;font:600 13px var(--sans);color:rgba(255,255,255,.55);z-index:5;letter-spacing:1px}
 #help{position:fixed;left:18px;bottom:14px;font:13px var(--sans);color:rgba(255,255,255,.45);z-index:5;transition:opacity 1s}
+#theme{position:fixed;right:76px;bottom:9px;z-index:6;font:600 12px var(--sans);letter-spacing:1px;color:rgba(255,255,255,.6);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:4px 12px;cursor:pointer}
+#theme:hover,#theme:focus-visible{color:#fff;border-color:rgba(255,255,255,.5)}
 .pg{position:absolute;right:64px;bottom:44px;font-size:22px;color:#B3A893}
 .dark .pg,.wine .pg{color:rgba(246,241,231,.4)}
 /* animation system */
@@ -401,7 +403,8 @@ svg .a{transform-box:fill-box;transform-origin:center}
 </div>
 <div id="hud"><div id="bar"></div></div>
 <div id="count"></div>
-<div id="help">← → or click to move · F full screen</div>
+<div id="help">← → or click to move · F full screen · T theme</div>
+<button id="theme" type="button" aria-label="Switch color theme">Theme: Green</button>
 
 <script>
 (function(){
@@ -451,6 +454,28 @@ svg .a{transform-box:fill-box;transform-origin:center}
   document.addEventListener('touchend',function(e){if(tx===null)return;var dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40){dx<0?next():prev();}tx=null;});
   setTimeout(function(){help.style.opacity=0},6000);
   var h=parseInt((location.hash||'').slice(1),10);go(isNaN(h)?0:h-1);
+})();
+</script>
+<script>
+/* Theme switch: green (default) or black. Button, T key, or ?theme=black in the link. */
+(function(){
+  var G=["#0A1E17","#04100C","#12332A","#1E4639","#2A5A49","#4F6E63","#9DB2A7","#86A194","#12402F","#CFE0D7"];
+  var B=["#0D0B0A","#050404","#1A1614","#2E2722","#3A322B","#6B625A","#9C9284","#8C8276","#6E1F2A","#E8CFC9"];
+  var btn=document.getElementById('theme'),cur='green';
+  function swap(t,from,to){for(var i=0;i<from.length;i++)t=t.split(from[i]).join(to[i]);return t;}
+  function apply(next){
+    if(next===cur)return;
+    var from=next==='black'?G:B,to=next==='black'?B:G;
+    [].forEach.call(document.querySelectorAll('style'),function(el){el.textContent=swap(el.textContent,from,to);});
+    [].forEach.call(document.querySelectorAll('[style],[fill],[stroke]'),function(el){
+      ['style','fill','stroke'].forEach(function(a){var v=el.getAttribute(a);if(v&&v.indexOf('#')>-1){var n=swap(v,from,to);if(n!==v)el.setAttribute(a,n);}});
+    });
+    cur=next;btn.textContent='Theme: '+(cur==='black'?'Black':'Green');
+    try{var u=new URL(location.href);if(cur==='black')u.searchParams.set('theme','black');else u.searchParams.delete('theme');history.replaceState(null,'',u.toString());}catch(_){}
+  }
+  btn.addEventListener('click',function(e){e.stopPropagation();apply(cur==='green'?'black':'green');btn.blur();});
+  document.addEventListener('keydown',function(e){if(e.key==='t'||e.key==='T'){apply(cur==='green'?'black':'green');}});
+  try{if(new URLSearchParams(location.search).get('theme')==='black')apply('black');}catch(_){}
 })();
 </script>
 </body>
