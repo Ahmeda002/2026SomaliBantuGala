@@ -1,6 +1,6 @@
-# 2026 Somali Bantu Met Gala
+# 2026 Somali Bantu Excellence Gala
 
-Web-based presentation for the 2026 Somali Bantu Met Gala.
+Web-based presentation for the 2026 Somali Bantu Excellence Gala.
 
 **Live presentation:** https://ahmeda002.github.io/2026SomaliBantuGala/
 
