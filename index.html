@@ -49,6 +49,17 @@ p{font-size:26px;line-height:1.45}
 .item h3{font-size:38px}
 .item .sub{font-size:24px;color:var(--muted);margin-left:auto;text-align:right}
 .dark .item{border-color:#2E2722}.dark .item .sub{color:#9C9284}
+.stat{display:flex;flex-direction:column;gap:6px;padding:26px 0;border-top:1px solid #2E2722}
+.stat .num{font-size:110px;color:var(--gilt)}
+.stat p{color:#CFC6B8}
+.bars{display:flex;flex-direction:column;gap:16px}
+.brow{display:grid;grid-template-columns:200px 1fr;align-items:center;gap:24px}
+.brow .st{font-size:26px;color:#E9E2D6;text-align:right}
+.brow .track{display:flex;align-items:center;gap:16px;height:38px}
+.brow .bar{height:100%;background:#B08A38;border-radius:0 4px 4px 0;transform-origin:left center}
+.brow .val{font-size:26px;color:#E9E2D6;font-weight:600;white-space:nowrap}
+.brow .val small{font-size:20px;color:#9C9284;font-weight:400}
+.foot{font-size:20px;color:#8C8276}
 .abs{position:absolute}
 .todo{color:var(--muted);font-style:italic}
 #hud{position:fixed;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08);z-index:5}
@@ -138,6 +149,33 @@ p{font-size:26px;line-height:1.45}
     <div class="item a" style="--d:7"><span class="time">&nbsp;</span><h3>Community Service</h3><p class="sub">Called up by Bashir</p></div>
     <div class="item a" style="--d:8;border-bottom:none"><span class="time">10:45 PM</span><h3>Closing</h3><p class="sub">The Abdis &amp; the full committee</p></div>
   </div>
+</section>
+
+<!-- 4c ACADEMIC -->
+<section class="slide dark" data-title="Academic">
+  <div class="head"><p class="eyebrow a">Scholarship &amp; Academic Committee</p><h2 class="a" style="--d:1">Education across our community</h2></div>
+  <div class="row" style="gap:96px;flex:1;align-items:center">
+    <div style="flex:0 0 440px;display:flex;flex-direction:column">
+      <div class="stat a" style="--d:2"><p class="num" data-count="122">122</p><p>graduates: high school diploma or higher</p></div>
+      <div class="stat a" style="--d:3"><p class="num" data-count="90" data-suffix="%">90%</p><p>of 135 people surveyed</p></div>
+      <div class="stat a" style="--d:4;border-bottom:1px solid #2E2722"><p class="num" data-count="26">26</p><p>states, plus D.C. and Canada</p></div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:26px">
+      <h3 class="a" style="--d:3;font-size:34px">Graduates by state</h3>
+      <div class="bars">
+        <div class="brow" title="Arizona: 20 graduates of 22 respondents"><span class="st">Arizona</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:4;width:80.0%"></div><span class="val a" style="--k:fade;--d:6">20 <small>of 22</small></span></div></div>
+        <div class="brow" title="Ohio: 14 graduates of 16 respondents"><span class="st">Ohio</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:5;width:56.0%"></div><span class="val a" style="--k:fade;--d:7">14 <small>of 16</small></span></div></div>
+        <div class="brow" title="New York: 13 graduates of 15 respondents"><span class="st">New York</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:6;width:52.0%"></div><span class="val a" style="--k:fade;--d:8">13 <small>of 15</small></span></div></div>
+        <div class="brow" title="Kentucky: 12 graduates of 14 respondents"><span class="st">Kentucky</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:7;width:48.0%"></div><span class="val a" style="--k:fade;--d:9">12 <small>of 14</small></span></div></div>
+        <div class="brow" title="Nebraska: 7 graduates of 8 respondents"><span class="st">Nebraska</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:8;width:28.0%"></div><span class="val a" style="--k:fade;--d:10">7 <small>of 8</small></span></div></div>
+        <div class="brow" title="Tennessee: 7 graduates of 7 respondents"><span class="st">Tennessee</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:9;width:28.0%"></div><span class="val a" style="--k:fade;--d:11">7 <small>of 7</small></span></div></div>
+        <div class="brow" title="Texas: 6 graduates of 7 respondents"><span class="st">Texas</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:10;width:24.0%"></div><span class="val a" style="--k:fade;--d:12">6 <small>of 7</small></span></div></div>
+        <div class="brow" title="Utah: 6 graduates of 8 respondents"><span class="st">Utah</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:11;width:24.0%"></div><span class="val a" style="--k:fade;--d:13">6 <small>of 8</small></span></div></div>
+      </div>
+      <p class="a" style="--d:13;color:#CFC6B8;padding-left:224px">+ 37 more graduates across 18 other states, D.C. and Canada</p>
+    </div>
+  </div>
+  <p class="foot a" style="--d:14">Source: 2026 community education survey, 135 respondents. Graduates include high school, trade, associate, bachelor’s and master’s, plus current college students.</p>
 </section>
 
 <!-- 5 HONOREES -->
