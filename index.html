@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, shrink-to-fit=no">
 <title>2026 Somali Bantu Excellence Gala</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
 --sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--head:'Cormorant Garamond',Georgia,'Times New Roman',serif}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#04100C;overflow:hidden;font-family:var(--sans)}
-#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
+#stage{position:fixed;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
 .slide{position:absolute;inset:0;padding:128px;background:var(--ivory);color:var(--ink);display:flex;flex-direction:column;gap:40px;opacity:0;visibility:hidden;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1),visibility 0s .55s;overflow:hidden}
 .slide.active{opacity:1;visibility:visible;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1),visibility 0s}
 .slide.push:not(.active){transform:translateX(120px)}
@@ -270,6 +270,15 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 .rule.a{transform-origin:left center}
 .center .rule.a{transform-origin:center}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
+.slide.far{display:none}
+@media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
+#slidesBtn{display:none;position:fixed;left:12px;bottom:10px;z-index:7;font:600 14px var(--sans);letter-spacing:1px;color:#E9E2D6;background:rgba(10,30,23,.82);border:1px solid #B08A38;border-radius:999px;padding:8px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+@media (hover:none) and (pointer:coarse){#slidesBtn{display:block}#ov .ovg{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}#ov{padding:20px 16px 60px}#ov .ovh{flex-direction:column;gap:6px}#help{display:none}}
+body.vfull-on #slidesBtn{opacity:0;pointer-events:none}
+#vfBtn{display:none;position:fixed;right:16px;top:14px;z-index:8;font:600 14px var(--sans);letter-spacing:1px;color:#E9E2D6;background:rgba(10,30,23,.82);border:1px solid #B08A38;border-radius:999px;padding:8px 16px;cursor:pointer;transition:opacity .3s ease;-webkit-tap-highlight-color:transparent}
+body.vid-on #vfBtn{display:block}
+body.vfull-on.idle #vfBtn{opacity:0}
+#vfBtn:hover,#vfBtn:focus-visible{border-color:#D9B866;color:#fff}
 </style>
 </head>
 <body>
@@ -1113,6 +1122,8 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 <div id="count"></div>
 <div id="help">← → or click to move · F full screen · O all slides · B black screen · H hold screen · number + Enter to jump · M sound · T theme</div>
 <button id="theme" type="button" aria-label="Switch color theme">Theme: Green</button>
+<button id="slidesBtn" type="button" aria-label="Show all slides">&#9776; Slides</button>
+<button id="vfBtn" type="button" aria-label="Toggle full-screen video">Exit full screen</button>
 
 <script>
 (function(){
@@ -1140,7 +1151,7 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
     [].forEach.call(s.querySelectorAll('[data-loop]'),function(g){
       var items=[].filter.call(g.children,function(c){return c.classList.contains('lp')});if(items.length<2)return;
       var dots=g.hasAttribute('data-dots')?s.querySelectorAll('.ddots i'):[];var i=0;
-      function show(k){items.forEach(function(it,j){it.classList.toggle('on',j===k);it.classList.toggle('next',j===(k+1)%items.length);});loadImgs(g);[].forEach.call(dots,function(d,j){d.classList.toggle('on',j===k)});}
+      function show(k){items.forEach(function(it,j){it.classList.toggle('on',j===k);it.classList.toggle('next',j===(k+1)%items.length);if(LITE&&j!==k&&j!==(k+1)%items.length&&j!==(k-1+items.length)%items.length)unloadImgs(it);});loadImgs(g);[].forEach.call(dots,function(d,j){d.classList.toggle('on',j===k)});}
       show(0);loopT.push(setInterval(function(){i=(i+1)%items.length;show(i);},+g.getAttribute('data-loop')||6000));
     });
   }
@@ -1148,6 +1159,10 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
   function warm(i){for(var j=i-1;j<=i+2;j++){if(slides[j])loadImgs(slides[j]);}
     var nx=slides[i+1];if(nx)[].forEach.call(nx.querySelectorAll('video[preload="none"]'),function(v){v.preload='auto';});
     var nx2=slides[i+2];if(nx2)[].forEach.call(nx2.querySelectorAll('video[preload="none"]'),function(v){v.preload='metadata';});}
+  var LITE=!!(window.matchMedia&&matchMedia('(hover:none) and (pointer:coarse)').matches);
+  function unloadImgs(root){[].forEach.call(root.querySelectorAll('img[src]'),function(im){var u=im.getAttribute('src');if(!u||u.indexOf('data:')===0)return;im.setAttribute('data-src',u);im.removeAttribute('src');});}
+  function markFar(){slides.forEach(function(sl,j){var d=Math.abs(j-cur);sl.classList.toggle('far',d>1);
+    if(LITE&&d>3){unloadImgs(sl);[].forEach.call(sl.querySelectorAll('video'),function(v){if(v.readyState>0||v.preload!=='none'){v.preload='none';try{v.load();}catch(_){}}});}});}
   function go(n){
     n=Math.max(0,Math.min(slides.length-1,n));if(n===cur)return;
     if(cur>=0){
@@ -1157,7 +1172,7 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
       old.classList.remove('active');old.classList.add('leaving');
       setTimeout(function(){old.classList.remove('leaving');},600);
     }
-    cur=n;var s=slides[cur];s.classList.remove('revealed');if(s.classList.contains('hint')){s.classList.remove('hint');var wc=s.querySelector('.wcue');if(wc)wc.textContent='Click the winner to reveal';}void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
+    cur=n;markFar();var s=slides[cur];document.body.classList.toggle('vid-on',!!s.querySelector('video[data-autoplay]'));s.classList.remove('revealed');if(s.classList.contains('hint')){s.classList.remove('hint');var wc=s.querySelector('.wcue');if(wc)wc.textContent='Click the winner to reveal';}void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
     [].forEach.call(s.querySelectorAll('video[data-autoplay]'),function(v){try{v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(_){}
       clearTimeout(vfullT);vfullT=setTimeout(function(){if(slides[cur]!==s||v.paused||v.ended)return;s.classList.add('vfull');document.body.classList.add('vfull-on');},1200);
       if(!v._vf){v._vf=1;v.addEventListener('ended',function(){var sl=v.closest('.slide');sl.classList.remove('vfull');document.body.classList.remove('vfull-on');});}});
@@ -1165,6 +1180,14 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
     if(location.hash!=='#'+(cur+1))history.replaceState(null,'','#'+(cur+1));
   }
   var cdT=0;
+  var vfB=document.getElementById('vfBtn'),idleT=0;
+  function vfLabel(){if(vfB)vfB.textContent=document.body.classList.contains('vfull-on')?'✕ Exit full screen':'⛶ Full screen';}
+  function toggleVf(){var s=slides[cur];if(!s||!s.querySelector('video[data-autoplay]'))return;clearTimeout(vfullT);
+    if(s.classList.contains('vfull')){s.classList.remove('vfull');document.body.classList.remove('vfull-on');}else{s.classList.add('vfull');document.body.classList.add('vfull-on');}}
+  if(vfB){vfB.addEventListener('click',function(e){e.stopPropagation();toggleVf();vfB.blur();});
+    try{new MutationObserver(vfLabel).observe(document.body,{attributes:true,attributeFilter:['class']});}catch(_){}vfLabel();}
+  function wake(){if(document.body.classList.contains('idle'))document.body.classList.remove('idle');clearTimeout(idleT);idleT=setTimeout(function(){document.body.classList.add('idle');},2500);}
+  document.addEventListener('mousemove',wake,{passive:true});document.addEventListener('touchstart',wake,{passive:true});wake();
   /* reveal sounds (Web Audio, no files). M toggles. */
   var AC=null,SND=true;try{SND=localStorage.getItem('galaSound')!=='off';}catch(_){}
   function ac(){if(!AC){var C=window.AudioContext||window.webkitAudioContext;if(!C)return null;try{AC=new C();}catch(_){return null;}}if(AC.state==='suspended'){try{AC.resume();}catch(_){}}return AC;}
@@ -1204,12 +1227,14 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
       if(pickers(s).length){if(!s.classList.contains('hint')){s.classList.add('hint');var c=s.querySelector('.wcue');if(c)c.textContent='Click the winner or press 1–'+pickers(s).length+'  ·  → again to skip';return;}}
       else{countdown(s);return;}}
     go(cur+1)}function prev(){go(cur-1)}
-  function inMedia(t){return t&&t.closest&&t.closest('video,a,button')}
+  function inMedia(t){return t&&t.closest&&t.closest('video,a,button,#ov')}
   /* presenter controls */
   var ov=document.getElementById('ov'),ovg=ov.querySelector('.ovg'),blk=document.getElementById('black'),hold=document.getElementById('hold'),jmp=document.getElementById('jump'),jbuf='',jT=0;
   slides.forEach(function(sl,i){var b=document.createElement('button');b.type='button';b.innerHTML='<span>'+(i+1)+'</span>'+(sl.getAttribute('data-title')||'Slide '+(i+1));b.addEventListener('click',function(e){e.stopPropagation();closeOv();go(i);});ovg.appendChild(b);});
   function openOv(){[].forEach.call(ovg.children,function(b,i){b.classList.toggle('cur',i===cur)});ov.classList.add('on');var c=ovg.children[cur];if(c){c.scrollIntoView({block:'center'});c.focus({preventScroll:true});}}
   function closeOv(){ov.classList.remove('on');}
+  var sb=document.getElementById('slidesBtn');if(sb)sb.addEventListener('click',function(e){e.stopPropagation();if(ov.classList.contains('on'))closeOv();else openOv();sb.blur();});
+  if(LITE){var oh=ov.querySelector('.ovh span');if(oh)oh.textContent='Tap a slide to jump there · tap ☰ Slides again to close';}
   ov.addEventListener('click',function(e){e.stopPropagation();if(e.target===ov)closeOv();});
   blk.addEventListener('click',function(e){e.stopPropagation();blk.classList.remove('on');});
   hold.addEventListener('click',function(e){e.stopPropagation();});
@@ -1246,6 +1271,8 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
   document.addEventListener('keydown',function(e){
     if(['ArrowRight','PageDown',' ','Enter'].indexOf(e.key)>-1){e.preventDefault();next();}
     else if(['ArrowLeft','PageUp','Backspace'].indexOf(e.key)>-1){e.preventDefault();prev();}
+    else if(e.key==='v'||e.key==='V'){toggleVf();}
+    else if(e.key==='Escape'&&document.body.classList.contains('vfull-on')){toggleVf();}
     else if(e.key==='Home')go(0);else if(e.key==='End')go(slides.length-1);
     else if(e.key==='f'||e.key==='F'){try{var r=!document.fullscreenElement?(document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()):(document.exitFullscreen&&document.exitFullscreen());if(r&&r.catch)r.catch(function(){});}catch(_){}}
   });
