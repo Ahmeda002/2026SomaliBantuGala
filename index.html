@@ -113,6 +113,59 @@ svg .a{transform-box:fill-box;transform-origin:center}
 .slide.vfull .reel{position:fixed;left:0;top:0;width:1920px;height:1080px;max-width:none;border-radius:0;border:0;box-shadow:none;z-index:20;object-fit:contain;animation:vgrow .7s cubic-bezier(.2,.7,.2,1)}
 @keyframes vgrow{from{transform:scale(.62);opacity:.85}to{transform:none;opacity:1}}
 body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme,.slide.vfull .pg{opacity:0;pointer-events:none}
+/* loops */
+.lpg{position:relative}
+.lpg>.lp{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
+.lpg>.lp.on{opacity:1;pointer-events:auto}
+.wl{flex-direction:row;align-items:center;gap:96px;padding:110px 128px}
+.wl .wtxt{flex:1;display:flex;flex-direction:column;gap:30px;align-self:stretch;justify-content:center}
+.wl h1{font-size:118px;line-height:1.02}
+.wl .wtick{height:64px;font-family:var(--head);font-size:46px;font-style:italic;color:#D9B866}
+.wl .wtick .lp{display:flex;align-items:center}
+.wl .wqr{display:flex;align-items:center;gap:28px;margin-top:26px}
+.wl .wqr p{font-size:26px;color:#E9E2D6;line-height:1.35}.wl .wqr small{display:block;font-size:20px;color:#9DB2A7}
+.wl .wpics{width:560px;height:840px;flex:none;border-radius:10px;overflow:hidden;background:#12332A;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.wl .wpics img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.wl .wpics .lp.on img{animation:kb 9s ease-out both}
+@keyframes kb{from{transform:scale(1.08)}to{transform:scale(1)}}
+.wl .wpics figcaption{position:absolute;left:0;right:0;bottom:0;padding:70px 30px 26px;background:linear-gradient(transparent,rgba(4,16,12,.92));font-size:22px;color:#9DB2A7}
+.wl .wpics figcaption b{display:block;font-family:var(--head);font-weight:600;font-size:34px;color:#E9E2D6}
+.dl .dpanels{flex:1}
+.dl .lp{display:flex;flex-direction:column;justify-content:center;gap:34px}
+.dl h1{font-size:130px;line-height:1}
+.dl .dsub{font-size:40px;color:#9DB2A7}
+.dl .dcats{display:flex;gap:90px}
+.dl .dcat h3{font-size:26px;font-family:var(--sans);font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#D9B866;margin-bottom:22px}
+.dl .dcat li{list-style:none;font-family:var(--head);font-size:54px;line-height:1.35;color:#E9E2D6}
+.dl .dqrs{display:flex;gap:110px;align-items:center}
+.dl .dqr{display:flex;flex-direction:column;align-items:center;gap:20px;font-size:26px;color:#E9E2D6}
+.dl .dqr small{font-size:20px;color:#9DB2A7}
+.dl .dlogos{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;max-width:1500px}
+.dl .dlogos div{height:150px;border:2px dashed #2A5A49;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#86A194;font-size:22px}
+.dl .ddots{position:absolute;left:128px;bottom:90px;display:flex;gap:12px}
+.dl .ddots i{width:10px;height:10px;border-radius:50%;background:#2A5A49;transition:background .6s}
+.dl .ddots i.on{background:#D9B866}
+/* winner reveal */
+.win{justify-content:center;align-items:center;text-align:center;gap:0}
+.win .wpre{display:flex;flex-direction:column;align-items:center;gap:46px;transition:opacity .7s ease,transform .7s ease}
+.win .wpre h2{font-size:96px}
+.win .wnoms{display:flex;flex-wrap:wrap;justify-content:center;gap:22px;max-width:1500px}
+.win .wnoms span{font-family:var(--head);font-size:44px;padding:14px 34px;border:1px solid #2A5A49;border-radius:999px;background:#12332A;color:#E9E2D6}
+.win .wcue{font-size:20px;letter-spacing:4px;text-transform:uppercase;color:#4F6E63;animation:cue 1.6s ease-in-out infinite}
+@keyframes cue{50%{opacity:.35}}
+.win .wpost{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;opacity:0;pointer-events:none}
+.win .wpost .wcat{font-size:26px;font-weight:600;letter-spacing:6px;text-transform:uppercase;color:#9DB2A7}
+.win .wpost .wname{font-family:var(--head);font-weight:600;font-size:170px;line-height:1;color:#D9B866}
+.win .wpost .wyr{font-family:var(--head);font-style:italic;font-size:44px;color:#E9E2D6}
+.win .wglow{position:absolute;left:50%;top:50%;width:1300px;height:1300px;margin:-650px 0 0 -650px;border-radius:50%;background:radial-gradient(circle,rgba(217,184,102,.22),rgba(217,184,102,0) 62%);opacity:0;transform:scale(.4)}
+.win .wspark{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:#D9B866;opacity:0}
+.win.revealed .wpre{opacity:0;transform:scale(.92) translateY(-40px)}
+.win.revealed .wpost{opacity:1;pointer-events:auto;transition:opacity .5s ease .35s}
+.win.revealed .wpost .wname{animation:zoom 1s cubic-bezier(.2,.7,.2,1) .35s both}
+.win.revealed .wpost .wcat,.win.revealed .wpost .wyr{animation:rise .8s cubic-bezier(.2,.7,.2,1) .9s both}
+.win.revealed .wglow{opacity:1;transform:scale(1);transition:opacity 1.2s ease .3s,transform 1.6s cubic-bezier(.2,.7,.2,1) .3s}
+.win.revealed .wspark{animation:spark 1.6s cubic-bezier(.2,.7,.2,1) .4s both}
+@keyframes spark{0%{opacity:0;transform:rotate(var(--r)) translateX(0) scale(.5)}15%{opacity:1}100%{opacity:0;transform:rotate(var(--r)) translateX(var(--x)) scale(1)}}
 .spot7{display:grid;grid-template-columns:repeat(7,1fr);gap:26px;flex:1;align-content:center}
 .scard{display:flex;flex-direction:column;gap:8px}
 .scard img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center 20%;border-radius:6px;background:#12332A;margin-bottom:8px}
@@ -164,6 +217,38 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
   - Animations: class="a" fades an element in; style="--d:3" delays it (higher = later).
   - Anything in [brackets] is a placeholder waiting for real content.
 -->
+
+<!-- 0 WELCOME LOOP -->
+<section class="slide dark wl" data-title="Welcome loop">
+  <div class="wtxt">
+    <p class="eyebrow a">Welcome to the inaugural</p>
+    <h1 class="a" style="--d:1">Somali Bantu<br>Excellence Gala</h1>
+    <div class="rule a" style="--k:growx;--d:2"></div>
+    <div class="wtick lpg a" style="--d:3" data-loop="4500">
+        <p class="lp on">Saturday, November 28, 2026</p>
+        <p class="lp">6112 Preston Hwy, Louisville</p>
+        <p class="lp">The program begins at 7:00 PM</p>
+        <p class="lp">Please find your seat</p>
+        <p class="lp">Hosted by Mustaqbal Inc.</p>
+    </div>
+    <div class="wqr a" style="--d:4">
+      <svg class="qrsvg" role="img" aria-label="QR code for https://www.bantuconnect.net" style="width:170px;height:170px" xmlns="http://www.w3.org/2000/svg" class="segno"><g transform="scale(10)"><path fill="#f6f1e7" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#0a1e17" d="M2 2.5h7m1 0h2m1 0h1m1 0h3m3 0h1m2 0h7m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m3 0h3m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m7 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m2 0h1m1 0h1m1 0h4m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h1m2 0h2m1 0h2m2 0h1m-20 1h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m-29 1h3m1 0h1m3 0h1m2 0h1m2 0h1m5 0h3m2 0h1m2 0h1m-26 1h7m4 0h2m1 0h1m2 0h1m2 0h3m1 0h2m-29 1h5m2 0h1m3 0h3m1 0h3m2 0h3m4 0h1m-26 1h2m2 0h1m3 0h1m3 0h2m1 0h1m1 0h1m2 0h2m-24 1h1m2 0h3m4 0h1m3 0h1m1 0h2m2 0h4m3 0h2m-29 1h1m1 0h2m1 0h2m2 0h2m2 0h2m1 0h1m1 0h1m3 0h2m2 0h3m-29 1h4m4 0h1m3 0h2m2 0h2m2 0h1m1 0h2m-24 1h1m3 0h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m1 0h2m-28 1h2m1 0h2m2 0h2m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m3 0h3m-29 1h1m1 0h1m1 0h1m1 0h1m3 0h2m2 0h5m1 0h2m3 0h1m1 0h2m-28 1h1m2 0h2m1 0h1m3 0h1m1 0h1m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m1 0h5m2 0h1m4 0h2m1 0h1m1 0h6m2 0h1m-20 1h1m7 0h1m3 0h1m3 0h1m3 0h1m-29 1h7m1 0h7m1 0h2m1 0h2m1 0h1m1 0h1m1 0h3m-29 1h1m5 0h1m2 0h2m2 0h1m2 0h1m3 0h1m3 0h1m2 0h1m-28 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m4 0h6m1 0h2m-29 1h1m1 0h3m1 0h1m5 0h1m2 0h1m1 0h1m2 0h2m2 0h1m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m3 0h2m3 0h2m3 0h1m-29 1h1m5 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h4m2 0h1m3 0h1m-28 1h7m4 0h2m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2"/></g></svg>
+      <p>Scan to join Bantu Connect<small>bantuconnect.net</small></p>
+    </div>
+  </div>
+  <div class="wpics lpg a" style="--d:2;--k:fade;--t:1.2s" data-loop="6000">
+      <figure class="lp on"><img src="assets/photos/maryan-shale-2.jpg" alt="Maryan Shale" loading="eager"><figcaption><b>Maryan Shale</b>Master’s degree · New York</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/dunia-darbane-1.jpg" alt="Dunia Darbane" loading="eager"><figcaption><b>Dunia Darbane</b>Associate degree, nursing · Kentucky</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/abdikadir-mohamed-3.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/nasro-weliyo-1.jpg" alt="Nasro Weliyo" loading="eager"><figcaption><b>Nasro Weliyo</b>Nursing (RN), Ohio State</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/fatuma-ali-1.jpg" alt="Fatuma Ali" loading="eager"><figcaption><b>Fatuma Ali</b>Master’s degree · Washington, D.C.</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/safia-issack-1.jpg" alt="Safia Issack" loading="eager"><figcaption><b>Safia Issack</b>Nursing (LPN &amp; RN), Columbus State</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/nimo-mohamed-2.jpg" alt="Nimo Mohamed" loading="eager"><figcaption><b>Nimo Mohamed</b>Master’s degree · Wisconsin</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/isha-aden-1.jpg" alt="Isha Aden" loading="eager"><figcaption><b>Isha Aden</b>Cosmetology, Empire Beauty School</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/salatho-hilowle-1.jpg" alt="Salatho Hilowle" loading="eager"><figcaption><b>Salatho Hilowle</b>Master’s degree · Canada</figcaption></figure>
+      <figure class="lp"><img src="assets/photos/yusuf-abdi-1.jpg" alt="Yusuf Abdi" loading="eager"><figcaption><b>Yusuf Abdi</b>Associate degree · Idaho</figcaption></figure>
+  </div>
+</section>
 
 <!-- 1 COVER -->
 <section class="slide dark between" data-title="Cover">
@@ -259,6 +344,38 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
   <p class="ssub a" style="--d:4">Performance by the Abdis · please stay seated</p>
 </section>
 
+<!-- DINNER LOOP -->
+<section class="slide dark dl" data-title="Dinner loop">
+  <div class="dpanels lpg" data-loop="9000" data-dots="1">
+    <div class="lp on">
+      <p class="supnext" style="font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#9DB2A7">Enjoy your dinner</p>
+      <h1>Bon appétit</h1>
+      <p class="dsub">Performance by the Abdis · please stay seated</p>
+    </div>
+    <div class="lp">
+      <p class="supnext" style="font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#9DB2A7">Creative Media · Tonight’s nominees</p>
+      <div class="dcats">
+        <div class="dcat"><h3>Content Creator of the Year</h3><ul><li>Magefow</li><li>The Abdi’s</li><li>Bantu Comedy</li><li>Fardosa Osman</li></ul></div>
+        <div class="dcat"><h3>Entertainer of the Year</h3><ul><li>Bantu Comedy</li><li>The Abdi’s</li><li>Aliyo</li></ul></div>
+      </div>
+    </div>
+    <div class="lp">
+      <p class="supnext" style="font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#9DB2A7">Thank you</p>
+      <h1 style="font-size:100px">To our sponsors</h1>
+      <div class="dlogos"><div>[Sponsor logo]</div><div>[Sponsor logo]</div><div>[Sponsor logo]</div><div>[Sponsor logo]</div></div>
+    </div>
+    <div class="lp">
+      <p class="supnext" style="font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#9DB2A7">Stay connected</p>
+      <h1 style="font-size:100px">Scan while you eat</h1>
+      <div class="dqrs">
+        <div class="dqr"><svg class="qrsvg" role="img" aria-label="QR code for https://www.bantuconnect.net" style="width:260px;height:260px" xmlns="http://www.w3.org/2000/svg" class="segno"><g transform="scale(10)"><path fill="#f6f1e7" d="M0 0h33v33h-33z"/><path class="qrline" stroke="#0a1e17" d="M2 2.5h7m1 0h2m1 0h1m1 0h3m3 0h1m2 0h7m-29 1h1m5 0h1m1 0h1m1 0h1m1 0h1m1 0h1m3 0h3m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m7 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m3 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m2 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h2m2 0h1m1 0h1m1 0h4m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m1 0h1m2 0h2m1 0h2m2 0h1m-20 1h2m1 0h1m1 0h2m1 0h1m2 0h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h5m-29 1h3m1 0h1m3 0h1m2 0h1m2 0h1m5 0h3m2 0h1m2 0h1m-26 1h7m4 0h2m1 0h1m2 0h1m2 0h3m1 0h2m-29 1h5m2 0h1m3 0h3m1 0h3m2 0h3m4 0h1m-26 1h2m2 0h1m3 0h1m3 0h2m1 0h1m1 0h1m2 0h2m-24 1h1m2 0h3m4 0h1m3 0h1m1 0h2m2 0h4m3 0h2m-29 1h1m1 0h2m1 0h2m2 0h2m2 0h2m1 0h1m1 0h1m3 0h2m2 0h3m-29 1h4m4 0h1m3 0h2m2 0h2m2 0h1m1 0h2m-24 1h1m3 0h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h3m2 0h1m1 0h2m-28 1h2m1 0h2m2 0h2m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m3 0h3m-29 1h1m1 0h1m1 0h1m1 0h1m3 0h2m2 0h5m1 0h2m3 0h1m1 0h2m-28 1h1m2 0h2m1 0h1m3 0h1m1 0h1m2 0h2m2 0h1m1 0h1m1 0h1m2 0h1m-28 1h1m1 0h5m2 0h1m4 0h2m1 0h1m1 0h6m2 0h1m-20 1h1m7 0h1m3 0h1m3 0h1m3 0h1m-29 1h7m1 0h7m1 0h2m1 0h2m1 0h1m1 0h1m1 0h3m-29 1h1m5 0h1m2 0h2m2 0h1m2 0h1m3 0h1m3 0h1m2 0h1m-28 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m4 0h6m1 0h2m-29 1h1m1 0h3m1 0h1m5 0h1m2 0h1m1 0h1m2 0h2m2 0h1m1 0h1m-27 1h1m1 0h3m1 0h1m1 0h1m2 0h1m1 0h2m3 0h2m3 0h2m3 0h1m-29 1h1m5 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h4m2 0h1m3 0h1m-28 1h7m4 0h2m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m2 0h2"/></g></svg><span>Join Bantu Connect</span><small>bantuconnect.net</small></div>
+        <div class="dqr"><div class="qrph" style="width:260px;height:260px;font-size:20px">[Feedback QR]</div><span>Share your feedback</span><small>Tell the committee how we did</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="ddots"><i class="on"></i><i></i><i></i><i></i></div>
+</section>
+
 <!-- SEG COMMSERV1 -->
 <section class="slide dark seg" data-title="Community Service">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
@@ -285,6 +402,22 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
   </div>
 </section>
 
+<!-- WINNER CONTENT CREATOR OF THE YEAR -->
+<section class="slide dark win" data-title="Winner: Content Creator" data-reveal>
+  <div class="wpre">
+    <p class="eyebrow a">Creative Media · Content Creator of the Year</p>
+    <h2 class="a" style="--d:1">And the winner is…</h2>
+    <div class="wnoms a" style="--d:2"><span>Magefow</span><span>The Abdi’s</span><span>Bantu Comedy</span><span>Fardosa Osman</span></div>
+    <p class="wcue a" style="--d:4">Click to reveal</p>
+  </div>
+  <div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
+  <div class="wpost">
+    <p class="wcat">Content Creator of the Year</p>
+    <p class="wname">[Winner name]</p>
+    <p class="wyr">Excellence Gala 2026</p>
+  </div>
+</section>
+
 <!-- SEG AWARD 2 -->
 <section class="slide dark seg" data-title="Next award: Entertainer">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
@@ -298,6 +431,22 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
   <div class="head"><p class="eyebrow a">Creative Media · Nominees</p><h2 class="a" style="--d:1">Entertainer of the Year</h2></div>
   <div class="a" style="--k:fade;--d:2;flex:1;display:flex;align-items:center;justify-content:center">
     <video class="reel" src="assets/video/entertainer.mp4" poster="assets/video/entertainer-poster.jpg" data-autoplay playsinline preload="auto" controls></video>
+  </div>
+</section>
+
+<!-- WINNER ENTERTAINER OF THE YEAR -->
+<section class="slide dark win" data-title="Winner: Entertainer" data-reveal>
+  <div class="wpre">
+    <p class="eyebrow a">Creative Media · Entertainer of the Year</p>
+    <h2 class="a" style="--d:1">And the winner is…</h2>
+    <div class="wnoms a" style="--d:2"><span>Bantu Comedy</span><span>The Abdi’s</span><span>Aliyo</span></div>
+    <p class="wcue a" style="--d:4">Click to reveal</p>
+  </div>
+  <div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
+  <div class="wpost">
+    <p class="wcat">Entertainer of the Year</p>
+    <p class="wname">[Winner name]</p>
+    <p class="wyr">Excellence Gala 2026</p>
   </div>
 </section>
 
@@ -721,7 +870,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
       requestAnimationFrame(step);
     });
   }
-  var vfullT=0;
+  var vfullT=0,loopT=[];
+  function startLoops(s){
+    loopT.forEach(clearInterval);loopT=[];
+    [].forEach.call(s.querySelectorAll('[data-loop]'),function(g){
+      var items=[].filter.call(g.children,function(c){return c.classList.contains('lp')});if(items.length<2)return;
+      var dots=g.hasAttribute('data-dots')?s.querySelectorAll('.ddots i'):[];var i=0;
+      function show(k){items.forEach(function(it,j){it.classList.toggle('on',j===k)});[].forEach.call(dots,function(d,j){d.classList.toggle('on',j===k)});}
+      show(0);loopT.push(setInterval(function(){i=(i+1)%items.length;show(i);},+g.getAttribute('data-loop')||6000));
+    });
+  }
   function go(n){
     n=Math.max(0,Math.min(slides.length-1,n));if(n===cur)return;
     if(cur>=0){
@@ -731,14 +889,14 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
       old.classList.remove('active');old.classList.add('leaving');
       setTimeout(function(){old.classList.remove('leaving');},600);
     }
-    cur=n;var s=slides[cur];void s.offsetWidth;s.classList.add('active');countUp(s);
+    cur=n;var s=slides[cur];s.classList.remove('revealed');void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);
     [].forEach.call(s.querySelectorAll('video[data-autoplay]'),function(v){try{v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(_){}
       clearTimeout(vfullT);vfullT=setTimeout(function(){if(slides[cur]!==s||v.paused||v.ended)return;s.classList.add('vfull');document.body.classList.add('vfull-on');},1200);
       if(!v._vf){v._vf=1;v.addEventListener('ended',function(){var sl=v.closest('.slide');sl.classList.remove('vfull');document.body.classList.remove('vfull-on');});}});
     bar.style.width=((cur+1)/slides.length*100)+'%';count.textContent=(cur+1)+' / '+slides.length;
     if(location.hash!=='#'+(cur+1))history.replaceState(null,'','#'+(cur+1));
   }
-  function next(){go(cur+1)}function prev(){go(cur-1)}
+  function next(){var s=slides[cur];if(s&&s.hasAttribute('data-reveal')&&!s.classList.contains('revealed')){s.classList.add('revealed');return;}go(cur+1)}function prev(){go(cur-1)}
   function inMedia(t){return t&&t.closest&&t.closest('video,a,button')}
   document.addEventListener('keydown',function(e){
     if(['ArrowRight','PageDown',' ','Enter'].indexOf(e.key)>-1){e.preventDefault();next();}
