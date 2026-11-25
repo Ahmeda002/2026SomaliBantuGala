@@ -1021,6 +1021,8 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
     if(k==='b'||k==='B'||k==='.'){stop();blk.classList.add('on');return;}
     if(k==='h'||k==='H'){stop();hold.classList.add('on');return;}
   },true);
+  /* laptops/desktops: preload every video in the background so playback never waits on Wi-Fi (phones skip this to save memory) */
+  setTimeout(function(){try{if(window.matchMedia('(hover:hover) and (pointer:fine)').matches&&Math.min(screen.width,screen.height)>=700){[].forEach.call(document.querySelectorAll('video[preload="none"],video[preload="metadata"]'),function(v){v.preload='auto';try{v.load();}catch(_){}});}}catch(_){}},3000);
   /* cover countdown to 7:00 PM Eastern, Nov 28 2026 */
   var wcd=document.getElementById('wcd');
   if(wcd){var cdTarget=Date.parse('2026-11-28T19:00:00-05:00'),wb=wcd.querySelector('b');
