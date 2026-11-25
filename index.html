@@ -109,6 +109,7 @@ svg .a{transform-box:fill-box;transform-origin:center}
 .journey .eyebrow{color:#8FB3E8}
 .journey h1{color:#F4F7FC}
 .vidph{border:2px dashed #3B5C93;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#8FB3E8;font-size:26px;aspect-ratio:16/9;width:880px}
+.reel{height:720px;max-width:100%;aspect-ratio:16/9;border-radius:10px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45);border:1px solid #2A5A49}
 .spot7{display:grid;grid-template-columns:repeat(7,1fr);gap:26px;flex:1;align-content:center}
 .scard{display:flex;flex-direction:column;gap:8px}
 .scard img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center 20%;border-radius:6px;background:#12332A;margin-bottom:8px}
@@ -271,6 +272,14 @@ svg .a{transform-box:fill-box;transform-origin:center}
   
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Creative Media</h1>
   <p class="ssub a" style="--d:4">Zaytun &amp; Megenay</p>
+</section>
+
+<!-- SEG MEDIA VIDEO -->
+<section class="slide dark" data-title="Content Creator of the Year">
+  <div class="head"><p class="eyebrow a">Creative Media · Nominees</p><h2 class="a" style="--d:1">Content Creator of the Year</h2></div>
+  <div class="a" style="--k:fade;--d:2;flex:1;display:flex;align-items:center;justify-content:center">
+    <video class="reel" src="assets/video/creative-media.mp4" poster="assets/video/creative-media-poster.jpg" data-autoplay playsinline preload="auto" controls></video>
+  </div>
 </section>
 
 <!-- SEG VISION -->
@@ -702,6 +711,7 @@ svg .a{transform-box:fill-box;transform-origin:center}
       setTimeout(function(){old.classList.remove('leaving');},600);
     }
     cur=n;var s=slides[cur];void s.offsetWidth;s.classList.add('active');countUp(s);
+    [].forEach.call(s.querySelectorAll('video[data-autoplay]'),function(v){try{v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(_){}});
     bar.style.width=((cur+1)/slides.length*100)+'%';count.textContent=(cur+1)+' / '+slides.length;
     if(location.hash!=='#'+(cur+1))history.replaceState(null,'','#'+(cur+1));
   }
