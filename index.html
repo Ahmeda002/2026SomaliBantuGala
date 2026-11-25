@@ -190,6 +190,13 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 .rcard .rpic img,.rcard .rpic .ini{width:220px;height:220px;border-radius:50%;object-fit:cover;border:4px solid #B08A38;background:#12332A;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:80px;color:#4F6E63;box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .rcard b{font-family:var(--head);font-weight:600;font-size:40px;line-height:1.1;color:#E9E2D6}
 .rcard.tba b{color:#4F6E63;font-style:italic;font-weight:500}
+.rall{flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px}
+.rlab{text-align:center;font-size:16px;letter-spacing:5px;text-transform:uppercase;color:#86A194;margin:0 0 18px}
+.recap .rgrid{flex:none;gap:28px;align-items:flex-start}
+.recap .rcard{width:250px;gap:8px}
+.recap .rcard .rpic img,.recap .rcard .rpic .ini{width:150px;height:150px;font-size:54px;border-width:3px;box-shadow:0 14px 34px rgba(0,0,0,.35)}
+.recap .rcard b{font-size:28px}
+.recap .rcard span{font-size:12px;white-space:normal;line-height:1.4}
 .rcard span{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#D9B866;white-space:nowrap}
 /* cover countdown */
 .wl .wcd{font-size:30px;color:#9DB2A7;letter-spacing:.5px}
@@ -1014,14 +1021,21 @@ body.vfull-on.idle #vfBtn{opacity:0}
 </section>
 
 <!-- CS RECAP -->
-<section class="slide dark" data-title="CS winners recap">
-  <div class="head"><p class="eyebrow a">Community Service &amp; Advocacy</p><h2 class="a" style="--d:1">Your 2026 winners</h2></div>
-  <div class="rgrid">
-    <div class="rcard a" style="--d:2" data-for="cs1"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Service Above Self</span></div>
-    <div class="rcard a" style="--d:3" data-for="cs2"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Outstanding Advocate</span></div>
-    <div class="rcard a" style="--d:4" data-for="cs3"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Organization of the Year</span></div>
-    <div class="rcard a" style="--d:5" data-for="cs4"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Woman of the Year</span></div>
-    <div class="rcard a" style="--d:6" data-for="cs5"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Man of the Year</span></div>
+<section class="slide dark recap" data-title="Winners recap (all awards)">
+  <div class="head"><p class="eyebrow a">2026 Somali Bantu Excellence Gala</p><h2 class="a" style="--d:1">Tonight’s winners</h2></div>
+  <div class="rall">
+    <div class="rrow"><p class="rlab a" style="--d:2">Creative Media</p><div class="rgrid">
+      <div class="rcard a" style="--d:2" data-for="cm1"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Content Creator</span></div>
+      <div class="rcard a" style="--d:3" data-for="cm2"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Entertainer</span></div>
+      <div class="rcard a" style="--d:4" data-for="cm3"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Podcast / Interviewer</span></div>
+    </div></div>
+    <div class="rrow"><p class="rlab a" style="--d:5">Community Service &amp; Advocacy</p><div class="rgrid">
+      <div class="rcard a" style="--d:5" data-for="cs1"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Service Above Self</span></div>
+      <div class="rcard a" style="--d:6" data-for="cs2"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Outstanding Advocate</span></div>
+      <div class="rcard a" style="--d:7" data-for="cs3"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Organization of the Year</span></div>
+      <div class="rcard a" style="--d:8" data-for="cs4"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Woman of the Year</span></div>
+      <div class="rcard a" style="--d:9" data-for="cs5"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Man of the Year</span></div>
+    </div></div>
   </div>
 </section>
 
