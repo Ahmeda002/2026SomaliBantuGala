@@ -173,6 +173,24 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 .win .wfin .ini{display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:70px;color:#9DB2A7}
 .win .wfin b{font-family:var(--head);font-weight:600;font-size:38px;line-height:1.1;color:#E9E2D6;text-align:center}
 .win .wfin span{font-size:20px;letter-spacing:1px;color:#9DB2A7}
+/* pick-the-winner */
+.win .wglow,.win .wspark{pointer-events:none}
+.win .wfin,.win .wnoms span{cursor:pointer;transition:transform .2s ease}
+.win .wfin:hover,.win .wnoms span:hover{transform:translateY(-4px)}
+.win .wfin:hover img,.win .wfin:hover .ini{border-color:#B08A38}
+.win.hint .wcue{color:#D9B866;animation:none;opacity:1}
+.win .wwin:empty{display:none}
+.win .wwin img,.win .wwin .ini{width:300px;height:300px;border-radius:50%;object-fit:cover;border:6px solid #D9B866;background:#12332A;box-shadow:0 0 0 12px rgba(217,184,102,.14),0 30px 80px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:110px;color:#E9E2D6}
+.win.revealed .wwin{animation:zoom 1s cubic-bezier(.2,.7,.2,1) .35s both}
+.win.hasphoto .wpost{gap:18px}
+.win.hasphoto .wpost .wname{font-size:120px}
+/* winners recap */
+.rgrid{display:flex;justify-content:center;align-items:center;gap:36px;flex:1}
+.rcard{width:300px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.rcard .rpic img,.rcard .rpic .ini{width:220px;height:220px;border-radius:50%;object-fit:cover;border:4px solid #B08A38;background:#12332A;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:80px;color:#4F6E63;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.rcard b{font-family:var(--head);font-weight:600;font-size:40px;line-height:1.1;color:#E9E2D6}
+.rcard.tba b{color:#4F6E63;font-style:italic;font-weight:500}
+.rcard span{font-size:15px;letter-spacing:2px;text-transform:uppercase;color:#D9B866;white-space:nowrap}
 /* cover countdown */
 .wl .wcd{font-size:30px;color:#9DB2A7;letter-spacing:.5px}
 .wl .wcd b{font-family:var(--head);font-weight:600;font-size:44px;color:#E9E2D6;margin-left:10px;font-variant-numeric:tabular-nums}
@@ -447,15 +465,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- WINNER CONTENT CREATOR OF THE YEAR -->
-<section class="slide dark win" data-title="Winner: Content Creator" data-reveal>
+<section class="slide dark win" data-title="Winner: Content Creator" data-reveal data-award="cm1">
   <div class="wpre">
     <p class="eyebrow a">Creative Media · Content Creator of the Year</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wnoms a" style="--d:2"><span>Magefow</span><span>The Abdi’s</span><span>Bantu Comedy</span><span>Fardosa Osman</span></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Content Creator of the Year</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -479,15 +498,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- WINNER ENTERTAINER OF THE YEAR -->
-<section class="slide dark win" data-title="Winner: Entertainer" data-reveal>
+<section class="slide dark win" data-title="Winner: Entertainer" data-reveal data-award="cm2">
   <div class="wpre">
     <p class="eyebrow a">Creative Media · Entertainer of the Year</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wnoms a" style="--d:2"><span>Bantu Comedy</span><span>The Abdi’s</span><span>Aliyo</span></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Entertainer of the Year</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -511,15 +531,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- WINNER PODCAST -->
-<section class="slide dark win" data-title="Winner: Podcast/Interviewer" data-reveal>
+<section class="slide dark win" data-title="Winner: Podcast/Interviewer" data-reveal data-award="cm3">
   <div class="wpre">
     <p class="eyebrow a">Creative Media · Podcast/Interviewer of the Year</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wnoms a" style="--d:2"><span>Him Uno</span><span>Captain Alma</span><span>SwahFlair</span><span>Vibes &amp; Voices</span></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Podcast/Interviewer of the Year</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -867,15 +888,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- CS WINNER 1 -->
-<section class="slide dark win" data-title="CS winner: Service Above Self Award" data-reveal>
+<section class="slide dark win" data-title="CS winner: Service Above Self Award" data-reveal data-award="cs1">
   <div class="wpre">
     <p class="eyebrow a">Community Service &amp; Advocacy · Service Above Self Award</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="assets/photos/finalist-nurta-mudey.jpg" alt="Nurta Mudey"><b>Nurta Mudey</b><span>Reer Idaho</span></div><div class="wfin"><img data-src="assets/photos/finalist-feysal-sheikh.jpg" alt="Feysal Sheikh"><b>Feysal Sheikh</b><span>Reer Kentucky</span></div></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Service Above Self Award</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -891,15 +913,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- CS WINNER 2 -->
-<section class="slide dark win" data-title="CS winner: Outstanding Advocate" data-reveal>
+<section class="slide dark win" data-title="CS winner: Outstanding Advocate" data-reveal data-award="cs2">
   <div class="wpre">
     <p class="eyebrow a">Community Service &amp; Advocacy · Outstanding Advocate</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="assets/photos/finalist-haji-abshiro.jpg" alt="Haji Abshiro"><b>Haji Abshiro</b><span>Reer Texas</span></div><div class="wfin"><img data-src="assets/photos/finalist-nurta-mudey.jpg" alt="Nurta Mudey"><b>Nurta Mudey</b><span>Reer Idaho</span></div><div class="wfin"><img data-src="assets/photos/finalist-zeytun-aden.jpg" alt="Zeytun Aden"><b>Zeytun Aden</b><span>Reer Kentucky</span></div><div class="wfin"><img data-src="assets/photos/finalist-abdi-abdi.jpg" alt="Abdi Abdi"><b>Abdi Abdi</b><span>Reer Texas</span></div></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Outstanding Advocate</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -915,15 +938,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- CS WINNER 3 -->
-<section class="slide dark win" data-title="CS winner: Organization of the Year" data-reveal>
+<section class="slide dark win" data-title="CS winner: Organization of the Year" data-reveal data-award="cs3">
   <div class="wpre">
     <p class="eyebrow a">Community Service &amp; Advocacy · Organization of the Year</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="assets/photos/finalist-somali-bantu-rising.jpg" alt="Somali Bantu Rising"><b>Somali Bantu Rising</b><span>Reer Washington</span></div><div class="wfin"><img data-src="assets/photos/finalist-waweenka-ent.jpg" alt="Waweenka Ent"><b>Waweenka Ent</b><span>Reer Tennessee</span></div></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Organization of the Year</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -939,15 +963,16 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- CS WINNER 4 -->
-<section class="slide dark win" data-title="CS winner: Woman of the Year" data-reveal>
+<section class="slide dark win" data-title="CS winner: Woman of the Year" data-reveal data-award="cs4">
   <div class="wpre">
     <p class="eyebrow a">Community Service &amp; Advocacy · Woman of the Year</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="assets/photos/finalist-amina-hassan.jpg" alt="Amina Hassan"><b>Amina Hassan</b><span>Reer Texas</span></div><div class="wfin"><img data-src="assets/photos/finalist-megeney-abdikadir.jpg" alt="Megeney Abdikadir"><b>Megeney Abdikadir</b><span>Reer Ohio</span></div><div class="wfin"><img data-src="assets/photos/finalist-maryan-shale.jpg" alt="Maryan Shale"><b>Maryan Shale</b><span>Reer New York</span></div><div class="wfin"><img data-src="assets/photos/finalist-nasro-weliyo.jpg" alt="Nasro Weliyo"><b>Nasro Weliyo</b><span>Reer Ohio</span></div></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Woman of the Year</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
@@ -963,18 +988,31 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 </section>
 
 <!-- CS WINNER 5 -->
-<section class="slide dark win" data-title="CS winner: Man of the Year" data-reveal>
+<section class="slide dark win" data-title="CS winner: Man of the Year" data-reveal data-award="cs5">
   <div class="wpre">
     <p class="eyebrow a">Community Service &amp; Advocacy · Man of the Year</p>
     <h2 class="a" style="--d:1">And the winner is…</h2>
     <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="assets/photos/finalist-dj-mkoma.jpg" alt="Dj Mkoma"><b>Dj Mkoma</b><span>Reer Tennessee</span></div><div class="wfin"><span class="ini">JJ</span><b>Jay Jey</b><span>Reer North Dakota</span></div><div class="wfin"><img data-src="assets/photos/finalist-abdi-abdi.jpg" alt="Abdi Abdi"><b>Abdi Abdi</b><span>Reer Texas</span></div><div class="wfin"><img data-src="assets/photos/finalist-yussuf-ib.jpg" alt="Yussuf iB"><b>Yussuf iB</b><span>Reer Tennessee</span></div></div>
-    <p class="wcue a" style="--d:4">Click to reveal</p>
+    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
   </div>
   <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
   <div class="wpost">
+    <div class="wwin"></div>
     <p class="wcat">Man of the Year</p>
     <p class="wname">[Winner name]</p>
     <p class="wyr">Excellence Gala 2026</p>
+  </div>
+</section>
+
+<!-- CS RECAP -->
+<section class="slide dark" data-title="CS winners recap">
+  <div class="head"><p class="eyebrow a">Community Service &amp; Advocacy</p><h2 class="a" style="--d:1">Your 2026 winners</h2></div>
+  <div class="rgrid">
+    <div class="rcard a" style="--d:2" data-for="cs1"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Service Above Self</span></div>
+    <div class="rcard a" style="--d:3" data-for="cs2"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Outstanding Advocate</span></div>
+    <div class="rcard a" style="--d:4" data-for="cs3"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Organization of the Year</span></div>
+    <div class="rcard a" style="--d:5" data-for="cs4"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Woman of the Year</span></div>
+    <div class="rcard a" style="--d:6" data-for="cs5"><div class="rpic"><span class="ini">?</span></div><b>To be announced</b><span>Man of the Year</span></div>
   </div>
 </section>
 
@@ -1119,7 +1157,7 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
       old.classList.remove('active');old.classList.add('leaving');
       setTimeout(function(){old.classList.remove('leaving');},600);
     }
-    cur=n;var s=slides[cur];s.classList.remove('revealed');void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
+    cur=n;var s=slides[cur];s.classList.remove('revealed');if(s.classList.contains('hint')){s.classList.remove('hint');var wc=s.querySelector('.wcue');if(wc)wc.textContent='Click the winner to reveal';}void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
     [].forEach.call(s.querySelectorAll('video[data-autoplay]'),function(v){try{v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(_){}
       clearTimeout(vfullT);vfullT=setTimeout(function(){if(slides[cur]!==s||v.paused||v.ended)return;s.classList.add('vfull');document.body.classList.add('vfull-on');},1200);
       if(!v._vf){v._vf=1;v.addEventListener('ended',function(){var sl=v.closest('.slide');sl.classList.remove('vfull');document.body.classList.remove('vfull-on');});}});
@@ -1137,7 +1175,24 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
     }
     tick();
   }
-  function next(){var s=slides[cur];if(s&&s.hasAttribute('data-reveal')&&!s.classList.contains('revealed')){if(!s.classList.contains('counting'))countdown(s);return;}go(cur+1)}function prev(){go(cur-1)}
+  var WIN={};try{WIN=JSON.parse(localStorage.getItem('galaWinners')||'{}')||{};}catch(_){WIN={};}
+  function saveWin(){try{localStorage.setItem('galaWinners',JSON.stringify(WIN));}catch(_){}}
+  function pickers(s){return s.querySelectorAll('.wfin,.wnoms span');}
+  function renderRecap(){[].forEach.call(document.querySelectorAll('[data-for]'),function(c){var w=WIN[c.getAttribute('data-for')],p=c.querySelector('.rpic'),b=c.querySelector('b');
+    if(w){p.innerHTML='';if(w.img){var im=document.createElement('img');im.src=w.img;im.alt='';p.appendChild(im);}else{var sp=document.createElement('span');sp.className='ini';sp.textContent=w.ini||w.name.charAt(0);p.appendChild(sp);}b.textContent=w.name;c.classList.remove('tba');}
+    else{p.innerHTML='<span class="ini">?</span>';b.textContent='To be announced';c.classList.add('tba');}});}
+  function pick(s,i){if(s.classList.contains('counting')||s.classList.contains('revealed'))return;var it=pickers(s)[i];if(!it)return;
+    var nb=it.querySelector('b'),name=(nb?nb.textContent:it.textContent).trim(),im=it.querySelector('img'),src=im?(im.getAttribute('src')||im.getAttribute('data-src')):null,ini=it.querySelector('.ini'),w=s.querySelector('.wwin');
+    if(w){w.innerHTML='';if(src){var e=document.createElement('img');e.src=src;e.alt='';w.appendChild(e);}else if(ini){var sp=document.createElement('span');sp.className='ini';sp.textContent=ini.textContent;w.appendChild(sp);}}
+    s.classList.toggle('hasphoto',!!(src||ini));s.querySelector('.wname').textContent=name;
+    var key=s.getAttribute('data-award');if(key){WIN[key]={name:name,img:src,ini:ini?ini.textContent:null};saveWin();renderRecap();}
+    s.classList.remove('hint');countdown(s);}
+  [].forEach.call(document.querySelectorAll('.win[data-reveal]'),function(s){[].forEach.call(pickers(s),function(it,i){it.addEventListener('click',function(e){e.stopPropagation();pick(s,i);});});});
+  renderRecap();
+  function next(){var s=slides[cur];if(s&&s.hasAttribute('data-reveal')&&!s.classList.contains('revealed')){if(s.classList.contains('counting'))return;
+      if(pickers(s).length){if(!s.classList.contains('hint')){s.classList.add('hint');var c=s.querySelector('.wcue');if(c)c.textContent='Click the winner or press 1–'+pickers(s).length+'  ·  → again to skip';return;}}
+      else{countdown(s);return;}}
+    go(cur+1)}function prev(){go(cur-1)}
   function inMedia(t){return t&&t.closest&&t.closest('video,a,button')}
   /* presenter controls */
   var ov=document.getElementById('ov'),ovg=ov.querySelector('.ovg'),blk=document.getElementById('black'),hold=document.getElementById('hold'),jmp=document.getElementById('jump'),jbuf='',jT=0;
@@ -1154,10 +1209,12 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
     if(blk.classList.contains('on')){stop();if(k!=='Shift')blk.classList.remove('on');return;}
     if(ov.classList.contains('on')){if(k==='Escape'||k==='o'||k==='O'){stop();closeOv();}else if(k!=='Enter'&&k!==' '&&k!=='Tab'){stop();}return;}
     if(hold.classList.contains('on')){stop();if(k==='h'||k==='H'||k==='Escape')hold.classList.remove('on');return;}
+    if(/^[1-9]$/.test(k)&&!jbuf){var ws=slides[cur];if(ws&&ws.hasAttribute('data-reveal')&&!ws.classList.contains('revealed')&&!ws.classList.contains('counting')&&pickers(ws).length>=+k){stop();pick(ws,+k-1);return;}}
     if(/^[0-9]$/.test(k)){stop();setJump((jbuf+k).replace(/^0+/,'').slice(0,3));return;}
     if(jbuf&&k==='Backspace'){stop();setJump(jbuf.slice(0,-1));return;}
     if(jbuf&&k==='Escape'){stop();setJump('');return;}
     if(jbuf&&k==='Enter'){stop();var n=parseInt(jbuf,10);setJump('');if(n>=1&&n<=slides.length)go(n-1);return;}
+    if(k==='R'&&e.shiftKey){stop();WIN={};saveWin();renderRecap();return;}
     if(k==='o'||k==='O'){stop();openOv();return;}
     if(k==='b'||k==='B'||k==='.'){stop();blk.classList.add('on');return;}
     if(k==='h'||k==='H'){stop();hold.classList.add('on');return;}
