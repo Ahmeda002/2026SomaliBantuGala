@@ -127,6 +127,8 @@ body.vfull-on #hud,body.vfull-on #count,body.vfull-on #help,body.vfull-on #theme
 .lpg{position:relative}
 .lpg>.lp{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;pointer-events:none}
 .lpg>.lp.on{opacity:1;pointer-events:auto}
+.wl.solo{justify-content:center}.wl.solo .wtxt{flex:none;align-items:center;text-align:center;max-width:1500px}.wl.solo h1{font-size:150px}.wl.solo .wtick{width:100%;align-self:stretch}.wl.solo .wtick .lp{justify-content:center}.wl.solo .wqr p{text-align:left}
+.row>.mcpic{flex:none}.mcpic{width:560px;height:560px;border-radius:50%;overflow:hidden;border:6px solid #D9B866;box-shadow:0 0 0 18px rgba(217,184,102,.12),0 30px 80px rgba(0,0,0,.5);background:#12332A}.mcpic img{width:100%;height:100%;object-fit:cover}
 .wl{flex-direction:row;align-items:center;gap:96px;padding:110px 128px}
 .wl .wtxt{flex:1;display:flex;flex-direction:column;gap:22px;align-self:stretch;justify-content:center}
 .wl h1{font-size:118px;line-height:1.02}
@@ -314,7 +316,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
 -->
 
 <!-- 0 WELCOME LOOP -->
-<section class="slide dark wl" data-title="Cover">
+<section class="slide dark wl solo" data-title="Cover">
   <div class="wtxt">
     <p class="eyebrow a">Hosted by Mustaqbal Inc.</p>
     <p class="a" style="--d:1;font-family:var(--head);font-size:40px;font-style:italic;color:#D9B866">The Inaugural</p>
@@ -331,31 +333,17 @@ body.vfull-on.idle #vfBtn{opacity:0}
       <p>Scan to join<br>Bantu Connect<small>bantuconnect.net</small></p>
     </div>
   </div>
-  <div class="wpics lpg a" style="--d:2;--k:fade;--t:1.2s" data-loop="6000">
-      <figure class="lp on"><img data-src="assets/photos/maryan-shale-2.jpg" alt="Maryan Shale" loading="eager"><figcaption><b>Maryan Shale</b>Master’s degree · New York</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/dunia-darbane-1.jpg" alt="Dunia Darbane" loading="eager"><figcaption><b>Dunia Darbane</b>Associate degree, nursing · Kentucky</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-3.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/nasro-hussein-1.jpg" alt="Nasro Hussein" loading="eager"><figcaption><b>Nasro Hussein</b>Emergency medical services, University of Utah</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/fatuma-ali-1.jpg" alt="Fatuma Ali" loading="eager"><figcaption><b>Fatuma Ali</b>Master’s degree · Washington, D.C.</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/nasro-weliyo-1.jpg" alt="Nasro Weliyo" loading="eager"><figcaption><b>Nasro Weliyo</b>Nursing (RN), Ohio State</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/safia-issack-1.jpg" alt="Safia Issack" loading="eager"><figcaption><b>Safia Issack</b>Nursing (LPN &amp; RN), Columbus State</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/nimo-mohamed-2.jpg" alt="Nimo Mohamed" loading="eager"><figcaption><b>Nimo Mohamed</b>Master’s degree · Wisconsin</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/amina-abdikadir-1.jpg" alt="Amina Abdikadir" loading="eager"><figcaption><b>Amina Abdikadir</b>Class of 2027 · Future nurse · Pennsylvania</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/isha-aden-1.jpg" alt="Isha Aden" loading="eager"><figcaption><b>Isha Aden</b>Cosmetology, Empire Beauty School</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/maluwa-hassan-1.jpg" alt="Maluwa Hassan" loading="eager"><figcaption><b>Maluwa Hassan</b>Dental hygiene, South College</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/salatho-hilowle-1.jpg" alt="Salatho Hilowle" loading="eager"><figcaption><b>Salatho Hilowle</b>Master’s degree · Canada</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/fama-noor-1.jpg" alt="Fama Noor" loading="eager"><figcaption><b>Fama Noor</b>Professional certificate</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/yusuf-abdi-1.jpg" alt="Yusuf Abdi" loading="eager"><figcaption><b>Yusuf Abdi</b>Associate degree · Idaho</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-1.jpg" alt="Abdikadir Mohamed" loading="eager" style="object-position:68% 30%"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/maryan-shale-1.jpg" alt="Maryan Shale" loading="eager"><figcaption><b>Maryan Shale</b>Master’s degree · New York</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/isha-abdikadir-1.jpg" alt="Isha Abdikadir" loading="eager"><figcaption><b>Isha Abdikadir</b>Social work, Columbus State</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/nimo-mohamed-1.jpg" alt="Nimo Mohamed" loading="eager"><figcaption><b>Nimo Mohamed</b>Master’s degree · Wisconsin</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/nina-mohamed-1.jpg" alt="Nina Mohamed" loading="eager"><figcaption><b>Nina Mohamed</b>Trade program graduate</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/nasro-weliyo-2.jpg" alt="Nasro Weliyo" loading="eager"><figcaption><b>Nasro Weliyo</b>Nursing (RN), Ohio State</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/maluwa-hassan-2.jpg" alt="Maluwa Hassan" loading="eager"><figcaption><b>Maluwa Hassan</b>Dental hygiene, South College</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-2.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/fama-noor-2.jpg" alt="Fama Noor" loading="eager"><figcaption><b>Fama Noor</b>Professional certificate</figcaption></figure>
-      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-4.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
+</section>
+
+<section class="slide dark mc" data-title="Your MC">
+  <div class="row" style="flex:1;align-items:center;gap:110px">
+    <div class="mcpic a" style="--d:1;--k:zoom;--t:1s"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F797b848f-d9a3-43ff-b276-9ba1e4135fdc%2Favatar.jpg%3Fv%3D1794333189189&amp;w=384&amp;q=75" alt="The Abdi’s"></div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <p class="eyebrow a">Tonight’s MC</p>
+      <h1 class="a" style="--d:1;font-size:150px;line-height:1">The Abdi’s</h1>
+      <p class="a" style="--d:3;font-family:var(--head);font-style:italic;font-size:46px;color:#D9B866">Comedians &amp; content creators · Texas</p>
+      <p class="lg a" style="--d:4;color:#CFC6B8;max-width:900px">Your hosts for the night, guiding us from award to award. Also nominated tonight for Content Creator and Entertainer of the Year.</p>
+    </div>
   </div>
 </section>
 
@@ -1364,6 +1352,41 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <div class="rule a" style="--k:growx;--d:1"></div>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Thank you</h1>
   <div class="qrbox a" style="--d:4;margin-top:20px"><div class="qrph">[Donation QR code]</div><p style="text-align:left">Support the scholarship fund<small>[Website · social handles]</small></p></div>
+</section>
+
+<section class="slide dark wl" data-title="Graduates slideshow">
+  <div class="wtxt">
+    <p class="eyebrow a">Thank you for celebrating with us</p>
+    <h1 class="a" style="--d:1">Celebrating<br>our graduates</h1>
+    <p class="a" style="--d:2;font-family:var(--head);font-size:44px;font-style:italic;color:#D9B866">Somali Bantu excellence, across the country</p>
+    <p class="a" style="--d:3;font-size:30px;color:#9DB2A7">Excellence Gala 2026 · Hosted by Mustaqbal Inc.</p>
+  </div>
+  <div class="wpics lpg a" style="--d:2;--k:fade;--t:1.2s" data-loop="6000">
+      <figure class="lp on"><img data-src="assets/photos/maryan-shale-2.jpg" alt="Maryan Shale" loading="eager"><figcaption><b>Maryan Shale</b>Master’s degree · New York</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/dunia-darbane-1.jpg" alt="Dunia Darbane" loading="eager"><figcaption><b>Dunia Darbane</b>Associate degree, nursing · Kentucky</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-3.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/nasro-hussein-1.jpg" alt="Nasro Hussein" loading="eager"><figcaption><b>Nasro Hussein</b>Emergency medical services, University of Utah</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/fatuma-ali-1.jpg" alt="Fatuma Ali" loading="eager"><figcaption><b>Fatuma Ali</b>Master’s degree · Washington, D.C.</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/nasro-weliyo-1.jpg" alt="Nasro Weliyo" loading="eager"><figcaption><b>Nasro Weliyo</b>Nursing (RN), Ohio State</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/safia-issack-1.jpg" alt="Safia Issack" loading="eager"><figcaption><b>Safia Issack</b>Nursing (LPN &amp; RN), Columbus State</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/nimo-mohamed-2.jpg" alt="Nimo Mohamed" loading="eager"><figcaption><b>Nimo Mohamed</b>Master’s degree · Wisconsin</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/amina-abdikadir-1.jpg" alt="Amina Abdikadir" loading="eager"><figcaption><b>Amina Abdikadir</b>Class of 2027 · Future nurse · Pennsylvania</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/isha-aden-1.jpg" alt="Isha Aden" loading="eager"><figcaption><b>Isha Aden</b>Cosmetology, Empire Beauty School</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/maluwa-hassan-1.jpg" alt="Maluwa Hassan" loading="eager"><figcaption><b>Maluwa Hassan</b>Dental hygiene, South College</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/salatho-hilowle-1.jpg" alt="Salatho Hilowle" loading="eager"><figcaption><b>Salatho Hilowle</b>Master’s degree · Canada</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/fama-noor-1.jpg" alt="Fama Noor" loading="eager"><figcaption><b>Fama Noor</b>Professional certificate</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/yusuf-abdi-1.jpg" alt="Yusuf Abdi" loading="eager"><figcaption><b>Yusuf Abdi</b>Associate degree · Idaho</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-1.jpg" alt="Abdikadir Mohamed" loading="eager" style="object-position:68% 30%"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/maryan-shale-1.jpg" alt="Maryan Shale" loading="eager"><figcaption><b>Maryan Shale</b>Master’s degree · New York</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/isha-abdikadir-1.jpg" alt="Isha Abdikadir" loading="eager"><figcaption><b>Isha Abdikadir</b>Social work, Columbus State</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/nimo-mohamed-1.jpg" alt="Nimo Mohamed" loading="eager"><figcaption><b>Nimo Mohamed</b>Master’s degree · Wisconsin</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/nina-mohamed-1.jpg" alt="Nina Mohamed" loading="eager"><figcaption><b>Nina Mohamed</b>Trade program graduate</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/nasro-weliyo-2.jpg" alt="Nasro Weliyo" loading="eager"><figcaption><b>Nasro Weliyo</b>Nursing (RN), Ohio State</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/maluwa-hassan-2.jpg" alt="Maluwa Hassan" loading="eager"><figcaption><b>Maluwa Hassan</b>Dental hygiene, South College</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-2.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/fama-noor-2.jpg" alt="Fama Noor" loading="eager"><figcaption><b>Fama Noor</b>Professional certificate</figcaption></figure>
+      <figure class="lp"><img data-src="assets/photos/abdikadir-mohamed-4.jpg" alt="Abdikadir Mohamed" loading="eager"><figcaption><b>Abdikadir Mohamed</b>Bachelor’s degree · Tennessee</figcaption></figure>
+  </div>
 </section>
 
   <div id="hold" aria-hidden="true">
