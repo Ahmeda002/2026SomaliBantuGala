@@ -392,6 +392,18 @@ body.mix .slide.dark:not(.seg):not(.win):not(.wl:not(.solo)):not(.mc):not(.dl):n
 body.mix .slide.dark:not(.seg):not(.win):not(.wl:not(.solo)):not(.mc):not(.dl):not(.recap):not(:has(video)).wl .wpics figcaption{color:#F1DCDF!important}body.mix .slide.dark:not(.seg):not(.win):not(.wl:not(.solo)):not(.mc):not(.dl):not(.recap):not(:has(video)).wl .wpics figcaption b{color:#fff!important}
 body.mix .slide.dark:not(.seg):not(.win):not(.wl:not(.solo)):not(.mc):not(.dl):not(.recap):not(:has(video)) .wglow{background:radial-gradient(circle,rgba(176,138,56,.22),rgba(176,138,56,0) 62%)}
 .reel.reelv{height:860px;aspect-ratio:9/16;max-width:none}
+.bgrid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:28px;margin-top:14px}
+.bcard{display:flex;gap:24px;align-items:flex-start;padding:26px 28px;align-items:center;border-radius:14px;background:#521424;border:1px solid #6B1E31;border-top:3px solid #D9B866}
+.bpic{flex:none;width:128px;height:128px;border-radius:50%;overflow:hidden;border:3px solid #D9B866;background:#6B1E31}
+.bpic img{width:100%;height:100%;object-fit:cover}
+.btx h3{font-size:36px;line-height:1.1;color:#F6F1E7}
+.btx .bmeta{font-family:var(--caps);font-weight:700;font-size:15px;letter-spacing:.12em;text-transform:uppercase;color:#D9B866;margin:8px 0 10px;line-height:1.4}
+.btx .bfact{font-size:23px;line-height:1.4;color:#D9B8BE}
+body.ivory .slide.dark .bcard,body.mix .slide.dark .bcard{background:#EFE4D3;border-color:#E2CFB4;border-top-color:#B08A38;box-shadow:0 14px 34px rgba(92,18,34,.10)}
+body.ivory .slide.dark .btx h3,body.mix .slide.dark .btx h3{color:#5C1222}
+body.ivory .slide.dark .btx .bmeta,body.mix .slide.dark .btx .bmeta{color:#9A7424}
+body.ivory .slide.dark .btx .bfact,body.mix .slide.dark .btx .bfact{color:#7A4650}
+body.ivory .slide.dark .bpic,body.mix .slide.dark .bpic{border-color:#B08A38;background:#E2CFB4}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -627,6 +639,30 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Business &amp; Entrepreneurship</h1>
   <p class="ssub a" style="--d:4">Celebrating the builders, owners and job creators moving our community forward.</p>
   <p class="ssub a" style="--d:5;font-size:30px">Male Entrepreneur · Female Entrepreneur · Community Impact Business</p>
+</section>
+
+<section class="slide dark bspot" data-title="Business spotlight 1">
+  <div class="head"><p class="eyebrow a">Business &amp; Entrepreneurship · Spotlight 1 of 2</p><h2 class="a" style="--d:1">Celebrating our business nominees</h2></div>
+  <div class="bgrid a" style="--d:2">
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fea0eb092-214b-4308-8686-ef4245552b4f%2Favatar.jpg%3Fv%3D1792816943853&amp;w=384&amp;q=75" alt="Salim Issa"></div><div class="btx"><h3>Salim Issa</h3><p class="bmeta">Zona Remodeling · Kentucky</p><p class="bfact">Home remodeling and renovation since 2019. Quality you can see, craftsmanship you can trust.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt="Swah Flair Abdullahi"></div><div class="btx"><h3>Swah Flair Abdullahi</h3><p class="bmeta">Swah Flair · South Salt Lake, Utah</p><p class="bfact">A Bantu fashion brand since 2024, inspired by East African heritage. Known for uplifting Bantu youth.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F3ab3d387-8242-40b1-8ab7-9c79918c6294%2Favatar.jpg%3Fv%3D1793407894433&amp;w=384&amp;q=75" alt="Murjan Abdi"></div><div class="btx"><h3>Murjan Abdi</h3><p class="bmeta">SnapGo Logistics · Syracuse, New York</p><p class="bfact">CEO of a transportation and logistics company he founded in 2024, backed by a degree in business.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F608dbecc-45ff-45cc-bd5d-999420e0e72b%2Favatar.jpg%3Fv%3D1793028331713&amp;w=384&amp;q=75" alt="Captain Alma"></div><div class="btx"><h3>Captain Alma</h3><p class="bmeta">“The Voice” · Nashville, Tennessee</p><p class="bfact">A rising voice in arts and media, building a following on TikTok.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fdad4ca81-6246-4487-a923-c24a97d185f9%2Favatar.jpg%3Fv%3D1793400287521&amp;w=384&amp;q=75" alt="Somali Bantu Festivals"></div><div class="btx"><h3>Somali Bantu Festivals</h3><p class="bmeta">Texas</p><p class="bfact">Bringing families together to celebrate Somali Bantu culture through community festivals.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F92681864-5ab0-476b-8c1c-37edeacef309%2Favatar.jpg%3Fv%3D1793858024282&amp;w=384&amp;q=75" alt="H&amp;B Collections"></div><div class="btx"><h3>H&amp;B Collections</h3><p class="bmeta">Modest wear · Texas</p><p class="bfact">Modest wear for women, men and kids. Its founder runs two businesses and partners with brands like Amazon and Walmart.</p></div></div>
+  </div>
+</section>
+
+<section class="slide dark bspot" data-title="Business spotlight 2">
+  <div class="head"><p class="eyebrow a">Business &amp; Entrepreneurship · Spotlight 2 of 2</p><h2 class="a" style="--d:1">Fashion, beauty &amp; style</h2></div>
+  <div class="bgrid a" style="--d:2">
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F80050ce3-1b6e-4575-a183-5d799b416b28%2Favatar.jpg%3Fv%3D1791943183581&amp;w=384&amp;q=75" alt="Sabrina’s Fashion"></div><div class="btx"><h3>Sabrina’s Fashion</h3><p class="bmeta">Sabrina’s Fashion LLC · Louisville, Kentucky</p><p class="bfact">Modest fashion since 2020: abayas, hijabs, fragrance and accessories. Where modesty meets elegance.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F8d2af478-d0fc-4926-ae46-1e3d7889e808%2Favatar.jpg%3Fv%3D1794837306607&amp;w=384&amp;q=75" alt="NA Fashion"></div><div class="btx"><h3>NA Fashion</h3><p class="bmeta">NA Fashion Boutique · Kent, Washington</p><p class="bfact">Opened in 2005, believed to be the first Somali Bantu–owned boutique in the U.S. Custom bridal Dirac, Guntiino and shash.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe6635b19-a3f5-4396-9e46-ac764bd92b3e%2Favatar.jpg%3Fv%3D1794099836766&amp;w=384&amp;q=75" alt="R.A Fashion"></div><div class="btx"><h3>R.A Fashion</h3><p class="bmeta">Henna · clothing · hair · Columbus, Ohio</p><p class="bfact">Self-employed since 2014. Hosts back-to-school braiding events for children in the community.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F63c3e8a6-a767-4998-9d0b-fa6d2adadf52%2Favatar.jpg%3Fv%3D1793461117873&amp;w=384&amp;q=75" alt="Hawwa Ibrahim"></div><div class="btx"><h3>Hawwa Ibrahim</h3><p class="bmeta">Ha Aluwa Boutique · Omaha, Nebraska</p><p class="bfact">Abayas, baati, men’s prayer outfits, perfumes and henna since 2019, shipped near and far.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fadc29383-de2a-4530-b5d0-afbd59feedd8%2Favatar.jpg%3Fv%3D1793920727044&amp;w=384&amp;q=75" alt="Noorto Salim"></div><div class="btx"><h3>Noorto Salim</h3><p class="bmeta">Beautè Atelier · Columbus, Ohio</p><p class="bfact">Henna and clothing, with henna appointments booked right on Bantu Connect.</p></div></div>
+    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fac603a28-e6b4-447b-9e87-3a82d49b2caa%2Favatar.jpg%3Fv%3D1794182327087&amp;w=384&amp;q=75" alt="Dressedbymina"></div><div class="btx"><h3>Dressedbymina</h3><p class="bmeta">Fashion · San Diego, California</p><p class="bfact">A businesswoman representing our community’s entrepreneurs on the West Coast.</p></div></div>
+  </div>
 </section>
 
 <section class="slide dark seg" data-title="Business award: Male Entrepreneur of the Year">
