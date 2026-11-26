@@ -1597,25 +1597,31 @@ body.vfull-on.idle #vfBtn{opacity:0}
 })();
 </script>
 <script>
-/* Theme switch: green (default) or black. Button, T key, or ?theme=black in the link. */
+/* Theme switch: green (default), burgundy (gala poster colors) or black. Button, T key, or ?theme=burgundy / ?theme=black in the link. */
 (function(){
-  var G=["#0A1E17","#04100C","#12332A","#1E4639","#2A5A49","#4F6E63","#9DB2A7","#86A194","#12402F","#CFE0D7"];
-  var B=["#0D0B0A","#050404","#1A1614","#2E2722","#3A322B","#6B625A","#9C9284","#8C8276","#6E1F2A","#E8CFC9"];
+  var P={
+    green:   ["#0A1E17","#04100C","#12332A","#1E4639","#2A5A49","#4F6E63","#9DB2A7","#86A194","#12402F","#CFE0D7","rgba(10,30,23,","rgba(4,16,12,","#0a1e17"],
+    burgundy:["#3D0B17","#1F050B","#521424","#6B1E31","#82293E","#9A5A68","#D9B8BE","#C29BA3","#641A2B","#F1DCDF","rgba(48,8,18,","rgba(26,4,10,","#3d0b17"],
+    black:   ["#0D0B0A","#050404","#1A1614","#2E2722","#3A322B","#6B625A","#9C9284","#8C8276","#6E1F2A","#E8CFC9","rgba(13,11,10,","rgba(5,4,4,","#0d0b0a"]
+  };
+  var ORDER=['green','burgundy','black'],NAME={green:'Green',burgundy:'Burgundy',black:'Black'};
   var btn=document.getElementById('theme'),cur='green';
   function swap(t,from,to){for(var i=0;i<from.length;i++)t=t.split(from[i]).join(to[i]);return t;}
   function apply(next){
-    if(next===cur)return;
-    var from=next==='black'?G:B,to=next==='black'?B:G;
+    if(next===cur||!P[next])return;
+    var from=P[cur],to=P[next];
     [].forEach.call(document.querySelectorAll('style'),function(el){el.textContent=swap(el.textContent,from,to);});
     [].forEach.call(document.querySelectorAll('[style],[fill],[stroke]'),function(el){
-      ['style','fill','stroke'].forEach(function(a){var v=el.getAttribute(a);if(v&&v.indexOf('#')>-1){var n=swap(v,from,to);if(n!==v)el.setAttribute(a,n);}});
+      ['style','fill','stroke'].forEach(function(a){var v=el.getAttribute(a);if(v&&(v.indexOf('#')>-1||v.indexOf('rgba(')>-1)){var n=swap(v,from,to);if(n!==v)el.setAttribute(a,n);}});
     });
-    cur=next;btn.textContent='Theme: '+(cur==='black'?'Black':'Green');
-    try{var u=new URL(location.href);if(cur==='black')u.searchParams.set('theme','black');else u.searchParams.delete('theme');history.replaceState(null,'',u.toString());}catch(_){}
+    cur=next;btn.textContent='Theme: '+NAME[cur];
+    var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',to[0]);
+    try{var u=new URL(location.href);if(cur!=='green')u.searchParams.set('theme',cur);else u.searchParams.delete('theme');history.replaceState(null,'',u.toString());}catch(_){}
   }
-  btn.addEventListener('click',function(e){e.stopPropagation();apply(cur==='green'?'black':'green');btn.blur();});
-  document.addEventListener('keydown',function(e){if(e.key==='t'||e.key==='T'){apply(cur==='green'?'black':'green');}});
-  try{if(new URLSearchParams(location.search).get('theme')==='black')apply('black');}catch(_){}
+  function nextTheme(){return ORDER[(ORDER.indexOf(cur)+1)%ORDER.length];}
+  btn.addEventListener('click',function(e){e.stopPropagation();apply(nextTheme());btn.blur();});
+  document.addEventListener('keydown',function(e){if(e.key==='t'||e.key==='T'){apply(nextTheme());}});
+  try{var q=new URLSearchParams(location.search).get('theme');if(q)apply(q);}catch(_){}
 })();
 </script>
 </body>
