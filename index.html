@@ -364,6 +364,7 @@ body.ivory .slide.dark .usmap .bs,body.ivory .slide.dark .usmap .bl{fill:#7A4650
 body.ivory .slide.dark .cgrid div,body.ivory .slide.dark .dlogos div{border-color:#D8C3A5}
 body.ivory .slide.dark.wl .wpics figcaption{color:#F1DCDF!important}body.ivory .slide.dark.wl .wpics figcaption b{color:#fff!important}
 body.ivory .slide.dark .wglow{background:radial-gradient(circle,rgba(176,138,56,.22),rgba(176,138,56,0) 62%)}
+.reel.reelv{height:860px;aspect-ratio:9/16;max-width:none}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -536,6 +537,19 @@ body.vfull-on.idle #vfBtn{opacity:0}
     <div class="tlc a" style="--d:4"><span class="yr">2025</span><span class="dot"></span><span class="loc">Milwaukee</span><h3>Milwaukee Quran Competition</h3><p>Led by Sheikh Abdishakur Ali, with annual sign-up and a vision of uniting Somali Bantu communities across the country.</p></div>
   </div>
   <p class="a" style="--d:6;font-family:var(--head);font-style:italic;font-size:38px;color:#D9B866">The format evolved. The purpose, Quran learning and community connection, continued.</p>
+</section>
+
+<section class="slide dark" data-title="Faith: Ramadan Halaqa video">
+  <div class="row" style="flex:1;align-items:center;gap:110px">
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <p class="eyebrow a">Faith · Ramadan Halaqa</p>
+      <h2 class="a" style="--d:1;font-size:84px">Moments from the Halaqa</h2>
+      <p class="lg a" style="--d:2;color:#D9B8BE">Young voices reciting, scholars teaching and families gathered in Columbus, Ohio, carrying our Quranic tradition forward.</p>
+    </div>
+    <div class="a" style="--k:fade;--d:2;flex:none;display:flex;align-items:center;justify-content:center">
+      <video class="reel reelv" src="assets/video/halaqa.mp4" poster="assets/video/halaqa-poster.jpg" data-autoplay data-nofull playsinline preload="none" controls></video>
+    </div>
+  </div>
 </section>
 
 <section class="slide dark" data-title="Faith: Our vision">
@@ -1534,7 +1548,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
     }
     cur=n;markFar();var s=slides[cur];document.body.classList.toggle('vid-on',!!s.querySelector('video[data-autoplay]'));s.classList.remove('revealed');if(s.__reset)s.__reset();if(s.classList.contains('hint')){s.classList.remove('hint');var wc=s.querySelector('.wcue');if(wc)wc.textContent='Click the winner to reveal';}void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
     [].forEach.call(s.querySelectorAll('video[data-autoplay]'),function(v){try{v.currentTime=0;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(_){}
-      clearTimeout(vfullT);vfullT=setTimeout(function(){if(slides[cur]!==s||v.paused||v.ended)return;s.classList.add('vfull');document.body.classList.add('vfull-on');},1200);
+      clearTimeout(vfullT);vfullT=setTimeout(function(){if(slides[cur]!==s||v.paused||v.ended||v.hasAttribute('data-nofull'))return;s.classList.add('vfull');document.body.classList.add('vfull-on');},1200);
       if(!v._vf){v._vf=1;v.addEventListener('ended',function(){var sl=v.closest('.slide');sl.classList.remove('vfull');document.body.classList.remove('vfull-on');});}});
     bar.style.width=((cur+1)/slides.length*100)+'%';count.textContent=(cur+1)+' / '+slides.length;
     if(location.hash!=='#'+(cur+1))history.replaceState(null,'','#'+(cur+1));
