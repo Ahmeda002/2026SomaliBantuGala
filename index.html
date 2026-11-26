@@ -416,6 +416,23 @@ body.ivory .slide.dark .fnames span{color:#5C1222;border-color:#B08A38;backgroun
 .bspot1 .btx h3{font-size:27px}
 .bspot1 .btx .bmeta{font-size:13px;margin:6px 0 7px}
 .bspot1 .btx .bfact{font-size:18px;line-height:1.35}
+.bsl{flex:1;margin-top:10px}
+.bsl>.lp{display:flex;align-items:center;gap:96px;padding-bottom:40px}
+.bbig{flex:none;width:540px;height:540px;border-radius:50%;overflow:hidden;border:6px solid #D9B866;background:#6B1E31;box-shadow:0 0 0 18px rgba(217,184,102,.12),0 30px 80px rgba(0,0,0,.45);transform:scale(.92);transition:transform 1.2s ease}
+.bsl>.lp.on .bbig{transform:none}
+.bbig img{width:100%;height:100%;object-fit:cover}
+.btxt{display:flex;flex-direction:column;gap:18px;max-width:960px}
+.btxt .bnum{font-family:var(--caps);font-weight:700;font-size:22px;letter-spacing:.24em;color:#D9B866}
+.btxt h3{font-size:92px;line-height:1.02;color:#F6F1E7}
+.btxt .bmeta{font-family:var(--caps);font-weight:700;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:#D9B866;line-height:1.4}
+.btxt .bfact{font-size:36px;line-height:1.45;color:#D9B8BE}
+.bspot2 .ddots{position:absolute;left:128px;bottom:96px;display:flex;gap:14px}
+.bspot2 .ddots i{width:12px;height:12px;border-radius:50%;background:#82293E;transition:background .6s}
+.bspot2 .ddots i.on{background:#D9B866}
+body.ivory .slide.dark .bbig,body.mix .slide.dark .bbig{border-color:#B08A38;background:#E2CFB4;box-shadow:0 0 0 18px rgba(176,138,56,.14),0 30px 70px rgba(92,18,34,.18)}
+body.ivory .slide.dark .btxt h3,body.mix .slide.dark .btxt h3{color:#5C1222}
+body.ivory .slide.dark .btxt .bnum,body.ivory .slide.dark .btxt .bmeta,body.mix .slide.dark .btxt .bnum,body.mix .slide.dark .btxt .bmeta{color:#9A7424}
+body.ivory .slide.dark .btxt .bfact,body.mix .slide.dark .btxt .bfact{color:#7A4650}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -562,7 +579,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 
 <section class="slide dark seg" data-title="Faith award: Iman Integrity Award">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Faith &amp; Spiritual Excellence · Committee award</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Iman Integrity Award</h1>
   <p class="ssub a" style="--d:4">Honors an individual who exemplifies strong iman (faith), humility, and moral integrity.</p>
 </section>
@@ -594,33 +610,32 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- BIZ1 -->
 <section class="slide dark seg" data-title="Business &amp; Entrepreneurship Awards">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next · 3 awards</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Business &amp; Entrepreneurship</h1>
   <p class="ssub a" style="--d:4">Celebrating the builders, owners and job creators moving our community forward.</p>
-  <p class="ssub a" style="--d:5;font-size:30px">Male Entrepreneur · Female Entrepreneur · Community Impact Business</p>
+  <div class="fcom a" style="--d:5"><p class="fcomh">Presented by our committee</p><div class="fnames"><span>Biba Ali</span><span>Swah Flair</span></div></div>
 </section>
 
-<section class="slide dark bspot bspot1" data-title="Business spotlight">
+<section class="slide dark bspot bspot2" data-title="Business spotlight">
   <div class="head"><h2 class="a">Business spotlight</h2></div>
-  <div class="bgrid a" style="--d:1">
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fea0eb092-214b-4308-8686-ef4245552b4f%2Favatar.jpg%3Fv%3D1792816943853&amp;w=384&amp;q=75" alt="Salim Issa"></div><div class="btx"><h3>Salim Issa</h3><p class="bmeta">Zona Remodeling · Kentucky</p><p class="bfact">Home remodeling and renovation since 2019.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt="Swah Flair Abdullahi"></div><div class="btx"><h3>Swah Flair Abdullahi</h3><p class="bmeta">Swah Flair · Utah</p><p class="bfact">Bantu fashion brand since 2024, uplifting Bantu youth.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F3ab3d387-8242-40b1-8ab7-9c79918c6294%2Favatar.jpg%3Fv%3D1793407894433&amp;w=384&amp;q=75" alt="Murjan Abdi"></div><div class="btx"><h3>Murjan Abdi</h3><p class="bmeta">SnapGo Logistics · New York</p><p class="bfact">Founded his transportation and logistics company in 2024.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F608dbecc-45ff-45cc-bd5d-999420e0e72b%2Favatar.jpg%3Fv%3D1793028331713&amp;w=384&amp;q=75" alt="Captain Alma"></div><div class="btx"><h3>Captain Alma</h3><p class="bmeta">“The Voice” · Tennessee</p><p class="bfact">A rising voice in arts and media.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fdad4ca81-6246-4487-a923-c24a97d185f9%2Favatar.jpg%3Fv%3D1793400287521&amp;w=384&amp;q=75" alt="Somali Bantu Festivals"></div><div class="btx"><h3>Somali Bantu Festivals</h3><p class="bmeta">Texas</p><p class="bfact">Celebrating Somali Bantu culture through festivals.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F92681864-5ab0-476b-8c1c-37edeacef309%2Favatar.jpg%3Fv%3D1793858024282&amp;w=384&amp;q=75" alt="H&amp;B Collections"></div><div class="btx"><h3>H&amp;B Collections</h3><p class="bmeta">Modest wear · Texas</p><p class="bfact">Modest wear for women, men and kids.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F80050ce3-1b6e-4575-a183-5d799b416b28%2Favatar.jpg%3Fv%3D1791943183581&amp;w=384&amp;q=75" alt="Sabrina’s Fashion"></div><div class="btx"><h3>Sabrina’s Fashion</h3><p class="bmeta">Louisville, Kentucky</p><p class="bfact">Modest fashion since 2020. Where modesty meets elegance.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F8d2af478-d0fc-4926-ae46-1e3d7889e808%2Favatar.jpg%3Fv%3D1794837306607&amp;w=384&amp;q=75" alt="NA Fashion"></div><div class="btx"><h3>NA Fashion</h3><p class="bmeta">Kent, Washington</p><p class="bfact">Since 2005, believed to be the first Somali Bantu–owned boutique in the U.S.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe6635b19-a3f5-4396-9e46-ac764bd92b3e%2Favatar.jpg%3Fv%3D1794099836766&amp;w=384&amp;q=75" alt="R.A Fashion"></div><div class="btx"><h3>R.A Fashion</h3><p class="bmeta">Columbus, Ohio</p><p class="bfact">Henna, clothing and hair. Self-employed since 2014.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F63c3e8a6-a767-4998-9d0b-fa6d2adadf52%2Favatar.jpg%3Fv%3D1793461117873&amp;w=384&amp;q=75" alt="Hawwa Ibrahim"></div><div class="btx"><h3>Hawwa Ibrahim</h3><p class="bmeta">Ha Aluwa Boutique · Nebraska</p><p class="bfact">Abayas, baati, perfumes and henna since 2019.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fadc29383-de2a-4530-b5d0-afbd59feedd8%2Favatar.jpg%3Fv%3D1793920727044&amp;w=384&amp;q=75" alt="Noorto Salim"></div><div class="btx"><h3>Noorto Salim</h3><p class="bmeta">Beautè Atelier · Ohio</p><p class="bfact">Henna and clothing, bookable on Bantu Connect.</p></div></div>
-    <div class="bcard"><div class="bpic"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fac603a28-e6b4-447b-9e87-3a82d49b2caa%2Favatar.jpg%3Fv%3D1794182327087&amp;w=384&amp;q=75" alt="Dressedbymina"></div><div class="btx"><h3>Dressedbymina</h3><p class="bmeta">San Diego, California</p><p class="bfact">A fashion entrepreneur on the West Coast.</p></div></div>
+  <div class="bsl lpg a" style="--d:1" data-loop="5000" data-dots>
+    <div class="lp on"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fea0eb092-214b-4308-8686-ef4245552b4f%2Favatar.jpg%3Fv%3D1792816943853&amp;w=384&amp;q=75" alt="Salim Issa"></div><div class="btxt"><p class="bnum">01 / 12</p><h3>Salim Issa</h3><p class="bmeta">Zona Remodeling · Kentucky</p><p class="bfact">Home remodeling and renovation since 2019. Quality you can see, craftsmanship you can trust.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt="Swah Flair Abdullahi"></div><div class="btxt"><p class="bnum">02 / 12</p><h3>Swah Flair Abdullahi</h3><p class="bmeta">Swah Flair · South Salt Lake, Utah</p><p class="bfact">A Bantu fashion brand since 2024, inspired by East African heritage. Known for uplifting Bantu youth.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F3ab3d387-8242-40b1-8ab7-9c79918c6294%2Favatar.jpg%3Fv%3D1793407894433&amp;w=384&amp;q=75" alt="Murjan Abdi"></div><div class="btxt"><p class="bnum">03 / 12</p><h3>Murjan Abdi</h3><p class="bmeta">SnapGo Logistics · Syracuse, New York</p><p class="bfact">CEO of the transportation and logistics company he founded in 2024, backed by a degree in business.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F608dbecc-45ff-45cc-bd5d-999420e0e72b%2Favatar.jpg%3Fv%3D1793028331713&amp;w=384&amp;q=75" alt="Captain Alma"></div><div class="btxt"><p class="bnum">04 / 12</p><h3>Captain Alma</h3><p class="bmeta">“The Voice” · Nashville, Tennessee</p><p class="bfact">A rising voice in arts and media, building a following on TikTok.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fdad4ca81-6246-4487-a923-c24a97d185f9%2Favatar.jpg%3Fv%3D1793400287521&amp;w=384&amp;q=75" alt="Somali Bantu Festivals"></div><div class="btxt"><p class="bnum">05 / 12</p><h3>Somali Bantu Festivals</h3><p class="bmeta">Texas</p><p class="bfact">Bringing families together to celebrate Somali Bantu culture through community festivals.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F92681864-5ab0-476b-8c1c-37edeacef309%2Favatar.jpg%3Fv%3D1793858024282&amp;w=384&amp;q=75" alt="H&amp;B Collections"></div><div class="btxt"><p class="bnum">06 / 12</p><h3>H&amp;B Collections</h3><p class="bmeta">Modest wear · Texas</p><p class="bfact">Modest wear for women, men and kids. Its founder runs two businesses and partners with brands like Amazon and Walmart.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F80050ce3-1b6e-4575-a183-5d799b416b28%2Favatar.jpg%3Fv%3D1791943183581&amp;w=384&amp;q=75" alt="Sabrina’s Fashion"></div><div class="btxt"><p class="bnum">07 / 12</p><h3>Sabrina’s Fashion</h3><p class="bmeta">Sabrina’s Fashion LLC · Louisville, Kentucky</p><p class="bfact">Modest fashion since 2020: abayas, hijabs, fragrance and accessories. Where modesty meets elegance.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F8d2af478-d0fc-4926-ae46-1e3d7889e808%2Favatar.jpg%3Fv%3D1794837306607&amp;w=384&amp;q=75" alt="NA Fashion"></div><div class="btxt"><p class="bnum">08 / 12</p><h3>NA Fashion</h3><p class="bmeta">NA Fashion Boutique · Kent, Washington</p><p class="bfact">Opened in 2005, believed to be the first Somali Bantu–owned boutique in the U.S. Custom bridal Dirac, Guntiino and shash.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe6635b19-a3f5-4396-9e46-ac764bd92b3e%2Favatar.jpg%3Fv%3D1794099836766&amp;w=384&amp;q=75" alt="R.A Fashion"></div><div class="btxt"><p class="bnum">09 / 12</p><h3>R.A Fashion</h3><p class="bmeta">Henna · Clothing · Hair · Columbus, Ohio</p><p class="bfact">Self-employed since 2014. Hosts back-to-school braiding events for children in the community.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F63c3e8a6-a767-4998-9d0b-fa6d2adadf52%2Favatar.jpg%3Fv%3D1793461117873&amp;w=384&amp;q=75" alt="Hawwa Ibrahim"></div><div class="btxt"><p class="bnum">10 / 12</p><h3>Hawwa Ibrahim</h3><p class="bmeta">Ha Aluwa Boutique · Omaha, Nebraska</p><p class="bfact">Abayas, baati, men’s prayer outfits, perfumes and henna since 2019, shipped near and far.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fadc29383-de2a-4530-b5d0-afbd59feedd8%2Favatar.jpg%3Fv%3D1793920727044&amp;w=384&amp;q=75" alt="Noorto Salim"></div><div class="btxt"><p class="bnum">11 / 12</p><h3>Noorto Salim</h3><p class="bmeta">Beautè Atelier · Columbus, Ohio</p><p class="bfact">Henna and clothing, with henna appointments booked right on Bantu Connect.</p></div></div>
+    <div class="lp"><div class="bbig"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fac603a28-e6b4-447b-9e87-3a82d49b2caa%2Favatar.jpg%3Fv%3D1794182327087&amp;w=384&amp;q=75" alt="Dressedbymina"></div><div class="btxt"><p class="bnum">12 / 12</p><h3>Dressedbymina</h3><p class="bmeta">Fashion · San Diego, California</p><p class="bfact">A businesswoman representing our community’s entrepreneurs on the West Coast.</p></div></div>
   </div>
+  <div class="ddots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 </section>
 
 <section class="slide dark seg" data-title="Business award: Male Entrepreneur of the Year">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Business &amp; Entrepreneurship · Award 1 of 3</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Male Entrepreneur of the Year</h1>
   <p class="ssub a" style="--d:4">An outstanding male business owner showing leadership, professionalism, and commitment to growth and service.</p>
 </section>
@@ -644,7 +659,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- BIZ2 -->
 <section class="slide dark seg" data-title="Business award: Female Entrepreneur of the Year">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 2 of 3</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Female Entrepreneur of the Year</h1>
   <p class="ssub a" style="--d:4">A woman whose business has grown the community as well as itself.</p>
 </section>
@@ -668,7 +682,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- BIZ3 -->
 <section class="slide dark seg" data-title="Business award: Community Impact Business Award">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 3 of 3</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Community Impact Business Award</h1>
   <p class="ssub a" style="--d:4">Businesses making a direct impact on the community.</p>
 </section>
@@ -747,10 +760,8 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG MEDIA -->
 <section class="slide dark seg" data-title="Creative Media">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
-  
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Creative Media</h1>
-  <p class="ssub a" style="--d:4">Zaytun &amp; Megenay</p>
+  <div class="fcom a" style="--d:5"><p class="fcomh">Presented by</p><div class="fnames"><span>Zaytun</span><span>Megenay</span></div></div>
 </section>
 
 <!-- SEG MEDIA VIDEO -->
@@ -781,7 +792,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG AWARD 2 -->
 <section class="slide dark seg" data-title="Next award: Entertainer">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 2 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Entertainer of the Year</h1>
   <p class="ssub a" style="--d:4">Creative Media · Nominees</p>
 </section>
@@ -814,7 +824,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG AWARD 3 -->
 <section class="slide dark seg" data-title="Next award: Podcast">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 3 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Podcast/Interviewer<br>of the Year</h1>
   <p class="ssub a" style="--d:4">Creative Media · Nominees</p>
 </section>
@@ -847,7 +856,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- CM4 -->
 <section class="slide dark seg" data-title="Creative Media award: Visual Arts">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 4 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Visual Arts</h1>
   <p class="ssub a" style="--d:4">Recognizes creatives who document the community through photography and video, preserving culture, events, and important moments.</p>
 </section>
@@ -871,7 +879,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- CM5 -->
 <section class="slide dark seg" data-title="Creative Media award: Creative Leadership">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 5 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Creative Leadership</h1>
   <p class="ssub a" style="--d:4">Honors an individual who leads initiatives, programs, or spaces that help creatives grow professionally and personally.</p>
 </section>
@@ -895,16 +902,14 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG VISION -->
 <section class="slide dark seg" data-title="Our Vision">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Our Vision</h1>
-  <p class="ssub a" style="--d:4">Mat Sidi, Omar &amp; Musa</p>
+  <div class="fcom a" style="--d:5"><p class="fcomh">Presented by</p><div class="fnames"><span>Mat Sidi</span><span>Omar</span><span>Musa</span></div></div>
 </section>
 
 <!-- SEG BANTU CONNECT -->
 <section class="slide dark" data-title="Bantu Connect">
   <div class="row" style="flex:1;align-items:center;gap:120px">
     <div style="display:flex;flex-direction:column;gap:26px;flex:1">
-      <p class="supnext a" style="font-size:24px;font-weight:600;letter-spacing:5px;text-transform:uppercase;color:#D9B8BE">Up next · Mohamed</p>
       <h1 class="a" style="--d:1;font-size:130px;line-height:1">Bantu Connect</h1>
       <p class="lg a" style="--d:2;color:#D9B8BE;max-width:900px">An online home for the Somali Bantu community and its stories.</p>
       <p class="a" style="--d:3;font-family:var(--head);font-size:56px;color:#D9B866">bantuconnect.net</p>
@@ -919,17 +924,15 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG PERF9 -->
 <section class="slide dark seg" data-title="Performance">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Performance</h1>
-  <p class="ssub a" style="--d:4"></p>
 </section>
 
 <!-- SEG REUNION -->
 <section class="slide dark seg" data-title="Family Reunion">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Family Reunion</h1>
-  <p class="ssub a" style="--d:4">Wild ’n Out · Maryan Shale</p>
+  <p class="ssub a" style="--d:4">Wild ’n Out</p>
+  <div class="fcom a" style="--d:5"><p class="fcomh">Presented by</p><div class="fnames"><span>Maryan Shale</span></div></div>
 </section>
 
 <!-- SEG JOURNEY -->
@@ -959,7 +962,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG SCHOLAR -->
 <section class="slide dark seg" data-title="Academic Committee">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Academic Committee</h1>
 </section>
 
@@ -1216,7 +1218,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG HEALTH -->
 <section class="slide dark seg" data-title="Health Committee">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Health Committee</h1>
   <p class="ssub a" style="--d:4">Followed by Bashir’s speech</p>
 </section>
@@ -1224,15 +1225,12 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG COMMSERV2 -->
 <section class="slide dark seg" data-title="Community Service">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
-  
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Community Service</h1>
 </section>
 
 <!-- CS AWARD 1 -->
 <section class="slide dark seg" data-title="CS award 1: Service Above Self Award">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">First award · 1 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Service Above Self<br>Award</h1>
   <p class="ssub a" style="--d:4">Honors a selfless individual who consistently places the needs of others before their own, especially during times of hardship.</p>
 </section>
@@ -1257,7 +1255,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- CS AWARD 2 -->
 <section class="slide dark seg" data-title="CS award 2: Outstanding Advocate">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 2 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Outstanding Advocate</h1>
   <p class="ssub a" style="--d:4">Honors an individual who courageously advocates for the rights and well-being of Somali Bantu people.</p>
 </section>
@@ -1282,7 +1279,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- CS AWARD 3 -->
 <section class="slide dark seg" data-title="CS award 3: Organization of the Year">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 3 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Organization of the Year</h1>
   <p class="ssub a" style="--d:4">Recognizes an organization, team, business, or collective whose unified efforts have made a significant positive impact on the Somali Bantu community.</p>
 </section>
@@ -1307,7 +1303,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- CS AWARD 4 -->
 <section class="slide dark seg" data-title="CS award 4: Woman of the Year">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 4 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Woman of the Year</h1>
   <p class="ssub a" style="--d:4">The highest individual honor, for leadership and impact that strengthen the Somali Bantu community while promoting unity, respect, and cultural pride.</p>
 </section>
@@ -1332,7 +1327,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- CS AWARD 5 -->
 <section class="slide dark seg" data-title="CS award 5: Man of the Year">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Next award · 5 of 5</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Man of the Year</h1>
   <p class="ssub a" style="--d:4">The highest individual honor, for leadership and impact that strengthen the Somali Bantu community while promoting unity, respect, and cultural pride.</p>
 </section>
@@ -1410,9 +1404,8 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- SEG CLOSING -->
 <section class="slide dark seg" data-title="Closing">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
-  <p class="supnext a" style="--d:0">Up next</p>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Closing</h1>
-  <p class="ssub a" style="--d:4">The Abdis &amp; the full committee</p>
+  <div class="fcom a" style="--d:5"><p class="fcomh">Presented by</p><div class="fnames"><span>The Abdis</span><span>The full committee</span></div></div>
 </section>
 
 <!-- 5 HONOREES -->
