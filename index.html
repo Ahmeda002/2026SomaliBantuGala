@@ -2028,6 +2028,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
       c.__reset=function(){T.forEach(clearTimeout);T=[];st=0;c.classList.remove('go','done','hint','on');hs.forEach(function(h){h.classList.remove('w')});cue.textContent=cue.getAttribute('data-t');build();};
       c.__step=function(){if(st===2)return false;if(st===1)return true;if(!c.classList.contains('hint')){c.classList.add('hint');cue.textContent='Click the winner or press 1–'+hs.length+'  ·  → again to skip';return true;}return false;};
       build();});})();
+  window.addEventListener('keydown',function(e){var c=slides[cur];if(!c||!c.classList.contains('shelf')||e.metaKey||e.ctrlKey||e.altKey||!/^[1-9]$/.test(e.key))return;var sp=c.querySelectorAll('.spine');if(+e.key>sp.length)return;e.preventDefault();e.stopImmediatePropagation();sp[+e.key-1].click();},true);
   renderRecap();
   function next(){var s=slides[cur];if(s&&s.__step&&s.__step())return;if(s&&s.hasAttribute('data-reveal')&&!s.classList.contains('revealed')){if(s.classList.contains('counting'))return;
       if(pickers(s).length){if(!s.classList.contains('hint')){s.classList.add('hint');var c=s.querySelector('.wcue');if(c)c.textContent='Click the winner or press 1–'+pickers(s).length+'  ·  → again to skip';return;}}
