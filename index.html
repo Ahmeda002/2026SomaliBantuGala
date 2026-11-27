@@ -1254,7 +1254,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Somali Bantu<br>Educator Award</h1>
   <p class="ssub a" style="--d:4">Honors individuals who go above and beyond to make a meaningful impact on education, student development, and academic success in our community.</p>
 </section>
-<section class="slide dark shelf" data-title="Academic winner: Somali Bantu Educator Award" data-award="ac4" data-multi="1" data-cat="Somali Bantu Educator Award">
+<section class="slide dark shelf" data-title="Academic winner: Somali Bantu Educator Award" data-award="ac4" data-multi="2" data-cat="Somali Bantu Educator Award">
   <div class="head"><p class="eyebrow a">Academic &amp; Education · Somali Bantu Educator Award</p><h2 class="a" style="--d:1">And the nominees are…</h2></div>
   <div class="shwrap">
     <div class="shrow a" style="--d:2">
@@ -1263,7 +1263,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
       <button class="spine" style="--c:#3D0B17;--h:624px" data-name="NA Fashion" data-st="Reer Washington"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F8d2af478-d0fc-4926-ae46-1e3d7889e808%2Favatar.jpg%3Fv%3D1794837306607&amp;w=384&amp;q=75" alt=""><span class="sn">NA Fashion</span><span class="ss">Reer Washington</span></button>
     </div>
     <div class="shplank a" style="--d:2"></div>
-    <p class="shcue a" style="--d:4" data-t="Click the winner’s book to open it">Click the winner’s book to open it</p>
+    <p class="shcue a" style="--d:4" data-t="Click the 2 winners’ books to open">Click the 2 winners’ books to open</p>
   </div>
   <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
@@ -1272,7 +1272,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Trade School<br>Recognition</h1>
   <p class="ssub a" style="--d:4">Recognizes those building careers through skilled trades, vocational education, technical training, apprenticeships, or military service.</p>
 </section>
-<section class="slide dark shelf" data-title="Academic winner: Trade School Recognition" data-award="ac5" data-multi="2" data-cat="Trade School Recognition">
+<section class="slide dark shelf" data-title="Academic winner: Trade School Recognition" data-award="ac5" data-multi="2" data-cat="Trade School Recognition" data-auto>
   <div class="head"><p class="eyebrow a">Academic &amp; Education · Trade School Recognition</p><h2 class="a" style="--d:1">And the nominees are…</h2></div>
   <div class="shwrap">
     <div class="shrow a" style="--d:2">
@@ -1280,7 +1280,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
       <button class="spine" style="--c:#8A2A3C;--h:572px" data-name="Swah Flair Abdullahi" data-st="Reer Utah"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt=""><span class="sn">Swah Flair Abdullahi</span><span class="ss">Reer Utah</span></button>
     </div>
     <div class="shplank a" style="--d:2"></div>
-    <p class="shcue a" style="--d:4" data-t="Click the 2 winners’ books to open">Click the 2 winners’ books to open</p>
+    <p class="shcue a" style="--d:4" data-t="Press → to open their books">Press → to open their books</p>
   </div>
   <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
@@ -1719,7 +1719,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
     s.__reset();});
   /* bookshelf reveal: click a spine (or two) and the book opens to the winner's page */
   [].forEach.call(document.querySelectorAll('.shelf'),function(s){
-    var sp=[].slice.call(s.querySelectorAll('.spine')),cm=s.hasAttribute('data-cm'),need=cm?1:Math.min(+s.getAttribute('data-multi')||1,sp.length),cue=s.querySelector('.shcue'),bk=s.querySelector('.bkopen'),hinted=false,tm=null;
+    var sp=[].slice.call(s.querySelectorAll('.spine')),cm=s.hasAttribute('data-cm'),auto=s.hasAttribute('data-auto'),need=cm?1:Math.min(+s.getAttribute('data-multi')||1,sp.length),cue=s.querySelector('.shcue'),bk=s.querySelector('.bkopen'),hinted=false,tm=null;
     function src(b){var m=b&&b.querySelector&&b.querySelector('img');return m?(m.getAttribute('src')||m.getAttribute('data-src')):null;}
     function txt(el,sel,v){var x=el.querySelector(sel);if(x)x.textContent=v;}
     function fill(sel){var cat=s.getAttribute('data-cat'),L=bk.querySelector('.pl .pg-c'),R=bk.querySelector('.pr .pg-c');
@@ -1730,12 +1730,12 @@ body.vfull-on.idle #vfBtn{opacity:0}
     function open(sel){if(s.classList.contains('open'))return;var wb0=s.querySelector('.spine[data-win]');if(wb0)sel=[wb0];fill(sel);s.classList.add('open');
       var key=s.getAttribute('data-award');if(key&&(!cm||wb0)&&sel.length){var nm=sel.map(function(b){return b.getAttribute('data-name')}).join(' & ');WIN[key]={name:nm,img:sel.length===1?src(sel[0]):null,ini:null};saveWin();renderRecap();}
       try{sFanfare();}catch(_){}}
-    sp.forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();if(s.classList.contains('open'))return;if(cm){b.classList.add('sel');tm=setTimeout(function(){open([])},450);return;}
+    sp.forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();if(s.classList.contains('open'))return;if(auto){sp.forEach(function(x){x.classList.add('sel')});cue.textContent='';tm=setTimeout(function(){open(sp)},650);return;}if(cm){b.classList.add('sel');tm=setTimeout(function(){open([])},450);return;}
       b.classList.toggle('sel');var sel=sp.filter(function(x){return x.classList.contains('sel')});
       if(sel.length<need){cue.textContent=sel.length?('Pick '+(need-sel.length)+' more'):cue.getAttribute('data-t');return;}
       cue.textContent='';tm=setTimeout(function(){open(sel)},550);});});
     s.__reset=function(){clearTimeout(tm);s.classList.remove('open');sp.forEach(function(x){x.classList.remove('sel')});hinted=false;if(cue)cue.textContent=cue.getAttribute('data-t');};
-    s.__step=function(){if(s.classList.contains('open'))return false;if(cm){sp[0]&&sp[0].classList.add('sel');tm=setTimeout(function(){open([])},450);return true;}
+    s.__step=function(){if(s.classList.contains('open'))return false;if(auto){sp.forEach(function(x){x.classList.add('sel')});cue.textContent='';tm=setTimeout(function(){open(sp)},650);return true;}if(cm){sp[0]&&sp[0].classList.add('sel');tm=setTimeout(function(){open([])},450);return true;}
       if(!hinted){hinted=true;cue.textContent='Click a book to open it  ·  → again to skip';return true;}return false;};
     s.__reset();});
   renderRecap();
