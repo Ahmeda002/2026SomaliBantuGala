@@ -752,6 +752,19 @@ body.ivory .slide.dark.csy .cswl{color:#E9D7B0}
 .recap.rone .rcard .rpic img,.recap.rone .rcard .rpic .ini{width:112px;height:112px;font-size:42px}
 .recap.rone .rcard b{font-size:24px}
 .recap.rone .rcard span{font-size:11px}
+.hw .hwcols{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+.hw .hwcol{display:flex;flex-direction:column;gap:22px}
+.hw .hwcol h3{font-size:34px;margin:0}
+.hw .hwstat{display:flex;align-items:center;gap:22px;padding-bottom:20px;border-bottom:1px solid #6B1E31}
+.hw .hwstat .num{font-size:84px;line-height:1;margin:0}
+.hw .hwstat p:not(.num){font-size:22px;line-height:1.35;color:#D9B8BE;margin:0}
+.hw .hwbars{display:flex;flex-direction:column;gap:14px}
+.hw .hwbars .brow{grid-template-columns:300px 1fr;gap:18px}
+.hw .hwbars .brow .st{font-size:22px}
+.hw .hwbars .brow .track{height:32px}
+.hw .hwbars .brow .val{font-size:22px}
+body.mix .hw .hwstat p:not(.num),body.ivory .hw .hwstat p:not(.num){color:#7A4650}
+body.mix .hw .hwstat,body.ivory .hw .hwstat{border-bottom-color:#E2CFB4}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -1332,28 +1345,36 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <p class="foot a" style="--d:10">From the 2026 Somali Bantu Education Survey. Shared without names; some answers lightly edited for length.</p>
 </section>
 
-<!-- 4k HELPED -->
-<section class="slide dark" data-title="Who helped">
-  <div class="head"><p class="eyebrow a">Academic Committee</p><h2 class="a" style="--d:1">Who helped them get here</h2></div>
-  <div class="row" style="gap:96px;flex:1;align-items:center">
-    <div style="flex:0 0 440px;display:flex;flex-direction:column">
-      <div class="stat a" style="--d:2"><p class="num" data-count="48" data-suffix="%">48%</p><p>named their family first: parents, siblings, spouses, grandparents</p></div>
-      <div class="stat a" style="--d:3;border-bottom:1px solid #6B1E31"><p class="num" data-count="45">45</p><p>graduates and students who said family got them here</p></div>
-    </div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:26px">
-      <h3 class="a" style="--d:3;font-size:34px">What or who helped them reach their goals</h3>
-      <div class="bars xwide">
-        <div class="brow" title="Family: 45"><span class="st">Family</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:4;width:80.0%"></div><span class="val a" style="--k:fade;--d:6">45</span></div></div>
-        <div class="brow" title="Community & friends: 16"><span class="st">Community &amp; friends</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:5;width:28.4%"></div><span class="val a" style="--k:fade;--d:7">16</span></div></div>
-        <div class="brow" title="Programs & tutoring: 15"><span class="st">Programs &amp; tutoring</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:6;width:26.7%"></div><span class="val a" style="--k:fade;--d:8">15</span></div></div>
-        <div class="brow" title="Teachers & advisors: 13"><span class="st">Teachers &amp; advisors</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:7;width:23.1%"></div><span class="val a" style="--k:fade;--d:9">13</span></div></div>
-        <div class="brow" title="Their own drive: 12"><span class="st">Their own drive</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:8;width:21.3%"></div><span class="val a" style="--k:fade;--d:10">12</span></div></div>
-        <div class="brow" title="Financial aid: 11"><span class="st">Financial aid</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:9;width:19.6%"></div><span class="val a" style="--k:fade;--d:11">11</span></div></div>
+<!-- 4k HELPED + NEEDS -->
+<section class="slide dark hw" data-title="Who helped &amp; what would help">
+  <div class="head"><p class="eyebrow a">Academic Committee</p><h2 class="a" style="--d:1">What got them here, and what takes them further</h2></div>
+  <div class="hwcols">
+    <div class="hwcol">
+      <h3 class="a" style="--d:2">Who helped them get here</h3>
+      <div class="hwstat a" style="--d:2"><p class="num" data-count="48" data-suffix="%">48%</p><p>named family first: parents, siblings, spouses, grandparents</p></div>
+      <div class="bars hwbars">
+        <div class="brow"><span class="st">Family</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:3;width:80%"></div><span class="val a" style="--k:fade;--d:5">45</span></div></div>
+        <div class="brow"><span class="st">Community &amp; friends</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:3.5;width:28.4%"></div><span class="val a" style="--k:fade;--d:5.5">16</span></div></div>
+        <div class="brow"><span class="st">Programs &amp; tutoring</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:4;width:26.7%"></div><span class="val a" style="--k:fade;--d:6">15</span></div></div>
+        <div class="brow"><span class="st">Teachers &amp; advisors</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:4.5;width:23.1%"></div><span class="val a" style="--k:fade;--d:6.5">13</span></div></div>
+        <div class="brow"><span class="st">Their own drive</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:5;width:21.3%"></div><span class="val a" style="--k:fade;--d:7">12</span></div></div>
+        <div class="brow"><span class="st">Financial aid</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:5.5;width:19.6%"></div><span class="val a" style="--k:fade;--d:7.5">11</span></div></div>
       </div>
-      <p class="a" style="--d:12;font-family:var(--head);font-style:italic;font-size:36px;color:#D9B866;padding-left:404px">To every family in this room: thank you.</p>
+    </div>
+    <div class="hwcol">
+      <h3 class="a" style="--d:6">What would help them go further</h3>
+      <div class="hwstat a" style="--d:6"><p class="num" data-count="88" data-suffix="%">88%</p><p>of those not in school want to go back; scholarships top the list</p></div>
+      <div class="bars hwbars">
+        <div class="brow"><span class="st">Scholarships / financial help</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:7;width:80%"></div><span class="val a" style="--k:fade;--d:9">44</span></div></div>
+        <div class="brow"><span class="st">FAFSA / financial aid help</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:7.5;width:56.4%"></div><span class="val a" style="--k:fade;--d:9.5">31</span></div></div>
+        <div class="brow"><span class="st">Career guidance</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:8;width:34.5%"></div><span class="val a" style="--k:fade;--d:10">19</span></div></div>
+        <div class="brow"><span class="st">Job opportunities</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:8.5;width:30.9%"></div><span class="val a" style="--k:fade;--d:10.5">17</span></div></div>
+        <div class="brow"><span class="st">Professional networking</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:9;width:27.3%"></div><span class="val a" style="--k:fade;--d:11">15</span></div></div>
+        <div class="brow"><span class="st">Internships</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:9.5;width:23.6%"></div><span class="val a" style="--k:fade;--d:11.5">13</span></div></div>
+      </div>
     </div>
   </div>
-  <p class="foot a" style="--d:14">Source: 2026 Somali Bantu Education Survey. 94 people answered; some named more than one.</p>
+  <p class="foot a" style="--d:12">Source: 2026 Somali Bantu Education Survey. 94 answered who helped and 67 answered what would help; both could name more than one.</p>
 </section>
 
 <!-- 4l SPOTLIGHT -->
@@ -1386,33 +1407,6 @@ body.vfull-on.idle #vfBtn{opacity:0}
     <figure class="scard a" style="--d:8"><img data-src="assets/photos/isha-aden-1.jpg" alt="Isha Aden" loading="eager"><h3>Isha Aden</h3><p>Cosmetology, Empire Beauty School</p><p class="sst">Colorado</p></figure>
   </div>
   <p class="foot a" style="--d:11">Graduates and students building careers in health, service and the trades. Shared with permission through the survey photo release.</p>
-</section>
-
-<!-- 4i NEEDS -->
-<section class="slide dark" data-title="What would help">
-  <div class="head"><p class="eyebrow a">Academic Committee</p><h2 class="a" style="--d:1">What would help them go further</h2></div>
-  <div class="row" style="gap:96px;flex:1;align-items:center">
-    <div style="flex:0 0 440px;display:flex;flex-direction:column">
-      <div class="stat a" style="--d:2"><p class="num" data-count="44">44</p><p>asked for scholarships or financial help, more than anything else</p></div>
-      <div class="stat a" style="--d:3;border-bottom:1px solid #6B1E31"><p class="num" data-count="88" data-suffix="%">88%</p><p>of those not in school want to go back (yes or maybe)</p></div>
-      <div class="qrbox a" style="--d:6;margin-top:22px"><div class="qrph" style="width:130px;height:130px;font-size:16px">[Donation QR code]</div><p>Scan to support the scholarship fund<small>Donation link needed from the committee</small></p></div>
-    </div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:26px">
-      <h3 class="a" style="--d:3;font-size:34px">What would help them reach their next goal</h3>
-      <div class="bars xwide">
-        <div class="brow" title="Scholarships / financial help: 44"><span class="st">Scholarships / financial help</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:4;width:80.0%"></div><span class="val a" style="--k:fade;--d:6">44</span></div></div>
-        <div class="brow" title="FAFSA / financial aid help: 31"><span class="st">FAFSA / financial aid help</span><div class="track"><div class="bar a" style="--k:growx;--t:.9s;--d:5;width:56.4%"></div><span class="val a" style="--k:fade;--d:7">31</span></div></div>
-        <div class="brow" title="Career guidance: 19"><span class="st">Career guidance</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:6;width:34.5%"></div><span class="val a" style="--k:fade;--d:8">19</span></div></div>
-        <div class="brow" title="Job opportunities: 17"><span class="st">Job opportunities</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:7;width:30.9%"></div><span class="val a" style="--k:fade;--d:9">17</span></div></div>
-        <div class="brow" title="Professional networking: 15"><span class="st">Professional networking</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:8;width:27.3%"></div><span class="val a" style="--k:fade;--d:10">15</span></div></div>
-        <div class="brow" title="Internships: 13"><span class="st">Internships</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:9;width:23.6%"></div><span class="val a" style="--k:fade;--d:11">13</span></div></div>
-        <div class="brow" title="Help applying to college: 12"><span class="st">Help applying to college</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:10;width:21.8%"></div><span class="val a" style="--k:fade;--d:12">12</span></div></div>
-        <div class="brow" title="Mentorship: 11"><span class="st">Mentorship</span><div class="track"><div class="bar mute a" style="--k:growx;--t:.9s;--d:11;width:20.0%"></div><span class="val a" style="--k:fade;--d:13">11</span></div></div>
-      </div>
-      <div class="legend a" style="--d:12;padding-left:404px"><span><i style="background:#B08A38"></i>Financial help</span><span><i style="background:#9A5A68"></i>Other support</span></div>
-    </div>
-  </div>
-  <p class="foot a" style="--d:14">Source: 2026 Somali Bantu Education Survey. 67 people answered what would help; they could pick more than one. 67 of 76 not currently enrolled said yes or maybe to returning.</p>
 </section>
 
 <section class="slide dark tstat" data-title="Mentorship">
