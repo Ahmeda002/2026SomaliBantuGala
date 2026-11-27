@@ -510,6 +510,7 @@ body.ivory .slide.dark .vnote,body.mix .slide.dark .vnote{color:#7A4650}
 .pg-c.pduo .pph{margin-top:24px;width:260px;height:260px}
 .pg-c.pduo .pname{font-size:44px}
 body.ivory .slide.dark .shcue,body.mix .slide.dark .shcue{color:#7A4650}
+.spine img.hid{display:none}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -1198,11 +1199,11 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Post-Baccalaureate<br>Award</h1>
   <p class="ssub a" style="--d:4">Celebrates Somali Bantu individuals pursuing advanced education and demonstrating a commitment to academic and professional growth.</p>
 </section>
-<section class="slide dark shelf" data-title="Academic winner: Post-Baccalaureate Award" data-award="ac1" data-multi="2" data-cat="Post-Baccalaureate Award" data-cm>
+<section class="slide dark shelf" data-title="Academic winner: Post-Baccalaureate Award" data-award="ac1" data-multi="1" data-cat="Post-Baccalaureate Award" data-cm>
   <div class="head"><p class="eyebrow a">Academic &amp; Education · Post-Baccalaureate Award</p><h2 class="a" style="--d:1">Chosen by the committee</h2></div>
   <div class="shwrap">
     <div class="shrow a" style="--d:2">
-      <button class="spine cmb" style="--c:#5C1222;--h:520px" data-name="[Recipient name]" data-st="[School · Field of study]"><span class="screst">★</span><span class="sn">Post-Baccalaureate Award</span><span class="ss">Chosen by the committee</span></button>
+      <button class="spine cmb" style="--c:#5C1222;--h:520px" data-win data-name="Megeney Abdi" data-st="Reer Ohio"><img class="hid" data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F769047a3-4d9a-4995-b6a0-5bc984b6bd7e%2Favatar.jpg%3Fv%3D1793410245787&amp;w=828&amp;q=80" alt=""><span class="screst">★</span><span class="sn">Post-Baccalaureate Award</span><span class="ss">Chosen by the committee</span></button>
     </div>
     <div class="shplank a" style="--d:2"></div>
     <p class="shcue a" style="--d:4" data-t="Click the book or press → to open it">Click the book or press → to open it</p>
@@ -1722,12 +1723,12 @@ body.vfull-on.idle #vfBtn{opacity:0}
     function src(b){var m=b&&b.querySelector&&b.querySelector('img');return m?(m.getAttribute('src')||m.getAttribute('data-src')):null;}
     function txt(el,sel,v){var x=el.querySelector(sel);if(x)x.textContent=v;}
     function fill(sel){var cat=s.getAttribute('data-cat'),L=bk.querySelector('.pl .pg-c'),R=bk.querySelector('.pr .pg-c');
-      if(cm&&(+s.getAttribute('data-multi')||1)>1)sel=[{ph:1},{ph:1}];
+      var wb=s.querySelector('.spine[data-win]');if(wb)sel=[wb];else if(cm&&(+s.getAttribute('data-multi')||1)>1)sel=[{ph:1},{ph:1}];
       if(sel.length>=2){[L,R].forEach(function(p,i){var b=sel[i],u=src(b);p.className='pg-c pduo';p.innerHTML='<p class="pcat"></p>'+(u?'<img alt="">':'<div class="pph">★</div>')+'<p class="pwin sm">Winner</p><h3 class="pname"></h3><p class="pst"></p>';txt(p,'.pcat',cat);if(u)p.querySelector('img').src=u;txt(p,'.pname',b.ph?'[Recipient name]':b.getAttribute('data-name'));txt(p,'.pst',b.ph?'[School · Field of study]':b.getAttribute('data-st'));});}
       else{var b=sel[0],u=src(b);L.className='pg-c pphoto';L.innerHTML=u?'<img alt="">':'<div class="pph">★</div>';if(u)L.querySelector('img').src=u;
-        R.className='pg-c ptext';R.innerHTML='<p class="pcat"></p><p class="pwin">Winner</p><h3 class="pname"></h3><p class="pst"></p><p class="pyr">Excellence Gala 2026</p>';txt(R,'.pcat',cat);txt(R,'.pname',b&&!cm?b.getAttribute('data-name'):'[Recipient name]');txt(R,'.pst',b&&!cm?b.getAttribute('data-st'):'[School · Field of study]');}}
-    function open(sel){if(s.classList.contains('open'))return;fill(sel);s.classList.add('open');
-      var key=s.getAttribute('data-award');if(key&&!cm&&sel.length){var nm=sel.map(function(b){return b.getAttribute('data-name')}).join(' & ');WIN[key]={name:nm,img:sel.length===1?src(sel[0]):null,ini:null};saveWin();renderRecap();}
+        R.className='pg-c ptext';R.innerHTML='<p class="pcat"></p><p class="pwin">Winner</p><h3 class="pname"></h3><p class="pst"></p><p class="pyr">Excellence Gala 2026</p>';txt(R,'.pcat',cat);txt(R,'.pname',b&&(!cm||wb)?b.getAttribute('data-name'):'[Recipient name]');txt(R,'.pst',b&&(!cm||wb)?b.getAttribute('data-st'):'[School · Field of study]');}}
+    function open(sel){if(s.classList.contains('open'))return;var wb0=s.querySelector('.spine[data-win]');if(wb0)sel=[wb0];fill(sel);s.classList.add('open');
+      var key=s.getAttribute('data-award');if(key&&(!cm||wb0)&&sel.length){var nm=sel.map(function(b){return b.getAttribute('data-name')}).join(' & ');WIN[key]={name:nm,img:sel.length===1?src(sel[0]):null,ini:null};saveWin();renderRecap();}
       try{sFanfare();}catch(_){}}
     sp.forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();if(s.classList.contains('open'))return;if(cm){b.classList.add('sel');tm=setTimeout(function(){open([])},450);return;}
       b.classList.toggle('sel');var sel=sp.filter(function(x){return x.classList.contains('sel')});
