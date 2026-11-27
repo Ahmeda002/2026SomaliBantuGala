@@ -468,6 +468,48 @@ body.ivory .slide.dark .cmini b,body.mix .slide.dark .cmini b{color:#9A7424}
 .vnote{font-size:24px;color:#D9B8BE;text-align:center;max-width:760px}
 body.ivory .slide.dark .venn text,body.mix .slide.dark .venn text{fill:#5C1222}body.ivory .slide.dark .venn .vh,body.mix .slide.dark .venn .vh{fill:#9A7424}
 body.ivory .slide.dark .vnote,body.mix .slide.dark .vnote{color:#7A4650}
+.shwrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:30px;transition:opacity .5s ease,transform .6s ease}
+.shrow{display:flex;align-items:flex-end;gap:16px;padding:0 60px;transform-origin:center bottom}
+.spine{position:relative;width:108px;height:var(--h);border:0;padding:20px 0 26px;margin:0;cursor:pointer;font:inherit;color:#F2DC98;display:flex;flex-direction:column;align-items:center;gap:14px;border-radius:7px 7px 3px 3px;background:linear-gradient(90deg,rgba(0,0,0,.38) 0%,rgba(255,255,255,.10) 16%,rgba(255,255,255,0) 38%,rgba(0,0,0,.08) 70%,rgba(0,0,0,.34) 100%),var(--c);box-shadow:0 18px 28px rgba(0,0,0,.35),inset 0 0 0 1px rgba(217,184,102,.25);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.spine::before,.spine::after{content:"";position:absolute;left:9px;right:9px;height:7px;border-top:2px solid rgba(217,184,102,.85);border-bottom:2px solid rgba(217,184,102,.85)}
+.spine::before{top:104px}.spine::after{bottom:12px}
+.spine.lt{color:#3D0B17}.spine.lt::before,.spine.lt::after{border-color:rgba(61,11,23,.6)}
+.spine img{flex:none;width:66px;height:66px;border-radius:50%;object-fit:cover;border:2px solid #D9B866;background:#3D0B17}
+.spine .screst{flex:none;width:66px;height:66px;display:flex;align-items:center;justify-content:center;font-size:34px;color:#D9B866;border:2px solid #D9B866;border-radius:50%}
+.spine .sn{flex:1;min-height:0;margin-top:22px;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--caps);font-weight:700;font-size:23px;line-height:1.12;letter-spacing:.04em;text-transform:uppercase;white-space:normal;overflow:hidden;text-align:center}
+.spine .ss{flex:none;writing-mode:vertical-rl;transform:rotate(180deg);font-size:14px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;white-space:nowrap}
+.spine.cmb{width:150px}.spine.cmb .sn{font-size:24px;line-height:1.25}
+.spine:hover{transform:translateY(-14px)}
+.spine.sel{transform:translateY(-38px);box-shadow:0 0 0 4px #D9B866,0 0 50px rgba(217,184,102,.45),0 26px 40px rgba(0,0,0,.45)}
+.shplank{width:min(1560px,96%);height:28px;border-radius:4px;background:linear-gradient(180deg,#C9A24E 0%,#9A7424 55%,#6E5218 100%);box-shadow:0 22px 34px rgba(0,0,0,.35)}
+.shcue{margin-top:30px;font-family:var(--caps);font-weight:700;font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:#D9B8BE;min-height:24px}
+.shelf.open .shwrap{opacity:0;transform:translateY(60px) scale(.94);pointer-events:none}
+.shelf.open .head{opacity:.0;transition:opacity .4s}
+.bkopen{position:absolute;left:50%;top:50%;width:1320px;height:760px;transform:translate(-50%,-48%);display:flex;perspective:2600px;opacity:0;pointer-events:none}
+.bkopen .bkcv{position:absolute;left:-22px;top:-18px;right:-22px;bottom:-18px;border-radius:16px;background:linear-gradient(90deg,#3D0B17,#5C1222 48%,#3D0B17 50%,#5C1222 52%,#3D0B17);box-shadow:0 40px 90px rgba(0,0,0,.5),inset 0 0 0 2px rgba(217,184,102,.45);transform:scaleX(.08);z-index:0}
+.bkopen .bpg{position:relative;z-index:1;width:50%;height:100%;overflow:hidden}
+.bkopen .pl{transform-origin:right center;transform:rotateY(88deg);border-radius:10px 2px 2px 10px;background:linear-gradient(90deg,#EADFCB 0%,#F6F1E7 12%,#F6F1E7 84%,#DCCDB2 100%)}
+.bkopen .pr{transform-origin:left center;transform:rotateY(-88deg);border-radius:2px 10px 10px 2px;background:linear-gradient(90deg,#DCCDB2 0%,#F6F1E7 16%,#F6F1E7 88%,#EADFCB 100%)}
+.shelf.open .bkopen{opacity:1;pointer-events:auto;transition:opacity .25s ease .2s}
+.shelf.open .bkopen .bkcv{animation:cvOpen .8s cubic-bezier(.2,.7,.2,1) .25s both}
+.shelf.open .bkopen .bpg{animation:pgOpen 1.2s cubic-bezier(.2,.75,.2,1) .55s both}
+@keyframes cvOpen{from{transform:scaleX(.08)}to{transform:none}}
+@keyframes pgOpen{to{transform:none}}
+.bkopen .pg-c{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px;opacity:0}
+.shelf.open .bkopen .pg-c{animation:fade .7s ease 1.45s both}
+.pg-c.pphoto img{width:100%;height:100%;object-fit:cover;object-position:center 22%;border-radius:6px;box-shadow:0 10px 30px rgba(61,11,23,.25)}
+.pg-c .pph{width:300px;height:300px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:120px;color:#B08A38;border:3px solid #B08A38;background:#EFE4D3}
+.pg-c .pcat{font-family:var(--caps);font-weight:700;font-size:18px;letter-spacing:.2em;text-transform:uppercase;color:#9A7424}
+.pg-c .pwin{font-family:'Pinyon Script',var(--head);font-size:96px;line-height:1;color:#9A7424;margin:18px 0 6px}
+.pg-c .pwin.sm{font-size:64px;margin:6px 0 0}
+.pg-c .pname{font-family:var(--caps);font-weight:700;font-size:62px;line-height:1.08;text-transform:uppercase;color:#5C1222;max-width:540px}
+.pg-c .pst{margin-top:14px;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:#7A4650}
+.pg-c .pyr{margin-top:34px;padding-top:24px;border-top:1px solid #D9C7A8;font-family:var(--head);font-style:italic;font-size:34px;color:#7A4650}
+.pg-c.pduo{justify-content:center;gap:6px}
+.pg-c.pduo img{width:300px;height:300px;border-radius:50%;object-fit:cover;border:4px solid #B08A38;margin-top:24px;box-shadow:0 10px 30px rgba(61,11,23,.25)}
+.pg-c.pduo .pph{margin-top:24px;width:260px;height:260px}
+.pg-c.pduo .pname{font-size:44px}
+body.ivory .slide.dark .shcue,body.mix .slide.dark .shcue{color:#7A4650}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -1075,14 +1117,14 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- 4l SPOTLIGHT -->
 <section class="slide dark" data-title="Graduate spotlight">
   <div class="head"><p class="eyebrow a">Academic Committee</p><h2 class="a" style="--d:1">Graduate Spotlight</h2></div>
-  <div class="spot7 book"><div class="bspine" aria-hidden="true"><span>Class of 2026</span></div>
-    <figure class="scard bk" style="--dx:723px;--o:3"><img data-src="assets/photos/maryan-shale-2.jpg" alt="Maryan Shale" loading="eager"><h3>Maryan Shale</h3><p>Master’s Degree</p><p class="sst">New York</p></figure>
-    <figure class="scard bk" style="--dx:482px;--o:2"><img data-src="assets/photos/fatuma-ali-1.jpg" alt="Fatuma Ali" loading="eager"><h3>Fatuma Ali</h3><p>Master’s Degree</p><p class="sst">Washington, D.C.</p></figure>
-    <figure class="scard bk" style="--dx:241px;--o:1"><img data-src="assets/photos/nimo-mohamed-2.jpg" alt="Nimo Mohamed" loading="eager"><h3>Nimo Mohamed</h3><p>Master’s Degree</p><p class="sst">Wisconsin</p></figure>
-    <figure class="scard bk" style="--dx:0px;--o:0"><img data-src="assets/photos/salatho-hilowle-1.jpg" alt="Salatho Hilowle" loading="eager"><h3>Salatho Hilowle</h3><p>Master’s Degree</p><p class="sst">Canada</p></figure>
-    <figure class="scard bk" style="--dx:-241px;--o:1"><img data-src="assets/photos/abdikadir-mohamed-3.jpg" alt="Abdikadir Mohamed" loading="eager"><h3>Abdikadir Mohamed</h3><p>Bachelor’s Degree</p><p class="sst">Tennessee</p></figure>
-    <figure class="scard bk" style="--dx:-482px;--o:2"><img data-src="assets/photos/dunia-darbane-1.jpg" alt="Dunia Darbane" loading="eager"><h3>Dunia Darbane</h3><p>Associate Degree, Nursing</p><p class="sst">Kentucky</p></figure>
-    <figure class="scard bk" style="--dx:-723px;--o:3"><img data-src="assets/photos/yusuf-abdi-1.jpg" alt="Yusuf Abdi" loading="eager"><h3>Yusuf Abdi</h3><p>Associate Degree</p><p class="sst">Idaho</p></figure>
+  <div class="spot7">
+    <figure class="scard a" style="--d:2"><img data-src="assets/photos/maryan-shale-2.jpg" alt="Maryan Shale" loading="eager"><h3>Maryan Shale</h3><p>Master’s Degree</p><p class="sst">New York</p></figure>
+    <figure class="scard a" style="--d:3"><img data-src="assets/photos/fatuma-ali-1.jpg" alt="Fatuma Ali" loading="eager"><h3>Fatuma Ali</h3><p>Master’s Degree</p><p class="sst">Washington, D.C.</p></figure>
+    <figure class="scard a" style="--d:4"><img data-src="assets/photos/nimo-mohamed-2.jpg" alt="Nimo Mohamed" loading="eager"><h3>Nimo Mohamed</h3><p>Master’s Degree</p><p class="sst">Wisconsin</p></figure>
+    <figure class="scard a" style="--d:5"><img data-src="assets/photos/salatho-hilowle-1.jpg" alt="Salatho Hilowle" loading="eager"><h3>Salatho Hilowle</h3><p>Master’s Degree</p><p class="sst">Canada</p></figure>
+    <figure class="scard a" style="--d:6"><img data-src="assets/photos/abdikadir-mohamed-3.jpg" alt="Abdikadir Mohamed" loading="eager"><h3>Abdikadir Mohamed</h3><p>Bachelor’s Degree</p><p class="sst">Tennessee</p></figure>
+    <figure class="scard a" style="--d:7"><img data-src="assets/photos/dunia-darbane-1.jpg" alt="Dunia Darbane" loading="eager"><h3>Dunia Darbane</h3><p>Associate Degree, Nursing</p><p class="sst">Kentucky</p></figure>
+    <figure class="scard a" style="--d:8"><img data-src="assets/photos/yusuf-abdi-1.jpg" alt="Yusuf Abdi" loading="eager"><h3>Yusuf Abdi</h3><p>Associate Degree</p><p class="sst">Idaho</p></figure>
   </div>
   <p class="foot a" style="--d:11">Shared with permission through the 2026 Somali Bantu Education Survey photo release.</p>
 </section>
@@ -1090,14 +1132,14 @@ body.vfull-on.idle #vfBtn{opacity:0}
 <!-- 4l2 SPOTLIGHT -->
 <section class="slide dark" data-title="On their way">
   <div class="head"><p class="eyebrow a">Academic Committee</p><h2 class="a" style="--d:1">On Their Way</h2></div>
-  <div class="spot7 book"><div class="bspine" aria-hidden="true"><span>On Their Way</span></div>
-    <figure class="scard bk" style="--dx:723px;--o:3"><img data-src="assets/photos/maluwa-hassan-1.jpg" alt="Maluwa Hassan" loading="eager"><h3>Maluwa Hassan</h3><p>Dental Hygiene, South College</p><p class="sst">Tennessee</p></figure>
-    <figure class="scard bk" style="--dx:482px;--o:2"><img data-src="assets/photos/nasro-weliyo-1.jpg" alt="Nasro Weliyo" loading="eager"><h3>Nasro Weliyo</h3><p>Nursing (RN), Ohio State</p><p class="sst">Ohio</p></figure>
-    <figure class="scard bk" style="--dx:241px;--o:1"><img data-src="assets/photos/safia-issack-1.jpg" alt="Safia Issack" loading="eager"><h3>Safia Issack</h3><p>Nursing (LPN &amp; RN), Columbus State</p><p class="sst">Ohio</p></figure>
-    <figure class="scard bk" style="--dx:0px;--o:0"><img data-src="assets/photos/isha-abdikadir-1.jpg" alt="Isha Abdikadir" loading="eager"><h3>Isha Abdikadir</h3><p>Social Work, Columbus State</p><p class="sst">Ohio</p></figure>
-    <figure class="scard bk" style="--dx:-241px;--o:1"><img data-src="assets/photos/fama-noor-1.jpg" alt="Fama Noor" loading="eager"><h3>Fama Noor</h3><p>Professional Certificate</p><p class="sst">Utah</p></figure>
-    <figure class="scard bk" style="--dx:-482px;--o:2"><img data-src="assets/photos/nina-mohamed-1.jpg" alt="Nina Mohamed" loading="eager"><h3>Nina Mohamed</h3><p>Trade Program Graduate</p><p class="sst">Ohio</p></figure>
-    <figure class="scard bk" style="--dx:-723px;--o:3"><img data-src="assets/photos/isha-aden-1.jpg" alt="Isha Aden" loading="eager"><h3>Isha Aden</h3><p>Cosmetology, Empire Beauty School</p><p class="sst">Colorado</p></figure>
+  <div class="spot7">
+    <figure class="scard a" style="--d:2"><img data-src="assets/photos/maluwa-hassan-1.jpg" alt="Maluwa Hassan" loading="eager"><h3>Maluwa Hassan</h3><p>Dental Hygiene, South College</p><p class="sst">Tennessee</p></figure>
+    <figure class="scard a" style="--d:3"><img data-src="assets/photos/nasro-weliyo-1.jpg" alt="Nasro Weliyo" loading="eager"><h3>Nasro Weliyo</h3><p>Nursing (RN), Ohio State</p><p class="sst">Ohio</p></figure>
+    <figure class="scard a" style="--d:4"><img data-src="assets/photos/safia-issack-1.jpg" alt="Safia Issack" loading="eager"><h3>Safia Issack</h3><p>Nursing (LPN &amp; RN), Columbus State</p><p class="sst">Ohio</p></figure>
+    <figure class="scard a" style="--d:5"><img data-src="assets/photos/isha-abdikadir-1.jpg" alt="Isha Abdikadir" loading="eager"><h3>Isha Abdikadir</h3><p>Social Work, Columbus State</p><p class="sst">Ohio</p></figure>
+    <figure class="scard a" style="--d:6"><img data-src="assets/photos/fama-noor-1.jpg" alt="Fama Noor" loading="eager"><h3>Fama Noor</h3><p>Professional Certificate</p><p class="sst">Utah</p></figure>
+    <figure class="scard a" style="--d:7"><img data-src="assets/photos/nina-mohamed-1.jpg" alt="Nina Mohamed" loading="eager"><h3>Nina Mohamed</h3><p>Trade Program Graduate</p><p class="sst">Ohio</p></figure>
+    <figure class="scard a" style="--d:8"><img data-src="assets/photos/isha-aden-1.jpg" alt="Isha Aden" loading="eager"><h3>Isha Aden</h3><p>Cosmetology, Empire Beauty School</p><p class="sst">Colorado</p></figure>
   </div>
   <p class="foot a" style="--d:11">Graduates and students building careers in health, service and the trades. Shared with permission through the survey photo release.</p>
 </section>
@@ -1156,98 +1198,90 @@ body.vfull-on.idle #vfBtn{opacity:0}
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Post-Baccalaureate<br>Award</h1>
   <p class="ssub a" style="--d:4">Celebrates Somali Bantu individuals pursuing advanced education and demonstrating a commitment to academic and professional growth.</p>
 </section>
-<section class="slide dark win" data-title="Academic winner: Post-Baccalaureate Award" data-reveal data-award="ac1">
-  <div class="wpre">
-    <p class="eyebrow a">Academic &amp; Education · Post-Baccalaureate Award</p>
-    <h2 class="a" style="--d:1">Chosen by the committee</h2>
-    <p class="wcue a" style="--d:4">Press → to reveal the recipients</p>
+<section class="slide dark shelf" data-title="Academic winner: Post-Baccalaureate Award" data-award="ac1" data-multi="2" data-cat="Post-Baccalaureate Award" data-cm>
+  <div class="head"><p class="eyebrow a">Academic &amp; Education · Post-Baccalaureate Award</p><h2 class="a" style="--d:1">Chosen by the committee</h2></div>
+  <div class="shwrap">
+    <div class="shrow a" style="--d:2">
+      <button class="spine cmb" style="--c:#5C1222;--h:520px" data-name="[Recipient name]" data-st="[School · Field of study]"><span class="screst">★</span><span class="sn">Post-Baccalaureate Award</span><span class="ss">Chosen by the committee</span></button>
+    </div>
+    <div class="shplank a" style="--d:2"></div>
+    <p class="shcue a" style="--d:4" data-t="Click the book or press → to open it">Click the book or press → to open it</p>
   </div>
-  <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
-  <div class="wpost">
-    <div class="wwin"></div>
-    <p class="wcat">Post-Baccalaureate Award</p>
-    <p class="wname">[Recipient] &amp; [Recipient]</p>
-    <p class="wyr">Excellence Gala 2026</p>
-  </div>
+  <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
 <section class="slide dark seg" data-title="Academic award 2: Returning Student Recognition Award">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Returning Student<br>Recognition Award</h1>
   <p class="ssub a" style="--d:4">Recognizes adults who have returned to education after overcoming personal, family, or financial challenges, celebrating perseverance and the courage to keep going.</p>
 </section>
-<section class="slide dark win" data-title="Academic winner: Returning Student Recognition Award" data-reveal data-award="ac2" data-multi="2" data-wis="The winners are…">
-  <div class="wpre">
-    <p class="eyebrow a">Academic &amp; Education · Returning Student Recognition Award</p>
-    <h2 class="a" style="--d:1">And the nominees are…</h2>
-    <div class="wfins sm a" style="--d:2"><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F39604d13-50e6-45cb-a86d-8d2d1aa6acaf%2Favatar.jpg%3Fv%3D1793421000032&amp;w=384&amp;q=75" alt="Fardosa Osman"><b>Fardosa Osman</b><span>Reer Utah</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F3c4e6d4f-8019-4b38-892d-24af9ae555cd%2Favatar.jpg%3Fv%3D1791894560130&amp;w=384&amp;q=75" alt="Binti A"><b>Binti A</b><span>Reer Ohio</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe2d006d1-6973-4568-b381-477b180b372a%2Favatar.jpg%3Fv%3D1794071201403&amp;w=384&amp;q=75" alt="Maluwa Hassan"><b>Maluwa Hassan</b><span>Reer Tennessee</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fb0c8b05a-9b35-4d45-8a27-12daf3e042e3%2Favatar.jpg%3Fv%3D1794186585330&amp;w=384&amp;q=75" alt="Nasro Weliyo"><b>Nasro Weliyo</b><span>Reer Ohio</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fc969850b-f6be-4499-a87e-2174cafbd277%2Favatar.jpg%3Fv%3D1793404759495&amp;w=384&amp;q=75" alt="Dunii Sheikh"><b>Dunii Sheikh</b><span>Reer Kentucky</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F73686a25-98e0-41a8-887e-b421e4f6e355%2Favatar.jpg%3Fv%3D1794863346077&amp;w=384&amp;q=75" alt="Farhii Muhidin"><b>Farhii Muhidin</b><span>Reer Maine</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt="Swah Flair Abdullahi"><b>Swah Flair Abdullahi</b><span>Reer Utah</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F928add3a-cb2b-4d1d-b1b8-12621a96459a%2Favatar.jpg%3Fv%3D1793393565831&amp;w=384&amp;q=75" alt="Isha Abdikadir"><b>Isha Abdikadir</b><span>Reer Ohio</span></div></div>
-    <p class="wcue a" style="--d:4">Click the 2 winners to reveal</p>
+<section class="slide dark shelf" data-title="Academic winner: Returning Student Recognition Award" data-award="ac2" data-multi="2" data-cat="Returning Student Recognition Award">
+  <div class="head"><p class="eyebrow a">Academic &amp; Education · Returning Student Recognition Award</p><h2 class="a" style="--d:1">And the nominees are…</h2></div>
+  <div class="shwrap">
+    <div class="shrow a" style="--d:2">
+      <button class="spine" style="--c:#5C1222;--h:600px" data-name="Fardosa Osman" data-st="Reer Utah"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F39604d13-50e6-45cb-a86d-8d2d1aa6acaf%2Favatar.jpg%3Fv%3D1793421000032&amp;w=384&amp;q=75" alt=""><span class="sn">Fardosa Osman</span><span class="ss">Reer Utah</span></button>
+      <button class="spine" style="--c:#8A2A3C;--h:572px" data-name="Binti A" data-st="Reer Ohio"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F3c4e6d4f-8019-4b38-892d-24af9ae555cd%2Favatar.jpg%3Fv%3D1791894560130&amp;w=384&amp;q=75" alt=""><span class="sn">Binti A</span><span class="ss">Reer Ohio</span></button>
+      <button class="spine" style="--c:#3D0B17;--h:624px" data-name="Maluwa Hassan" data-st="Reer Tennessee"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe2d006d1-6973-4568-b381-477b180b372a%2Favatar.jpg%3Fv%3D1794071201403&amp;w=384&amp;q=75" alt=""><span class="sn">Maluwa Hassan</span><span class="ss">Reer Tennessee</span></button>
+      <button class="spine lt" style="--c:#B08A38;--h:584px" data-name="Nasro Weliyo" data-st="Reer Ohio"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fb0c8b05a-9b35-4d45-8a27-12daf3e042e3%2Favatar.jpg%3Fv%3D1794186585330&amp;w=384&amp;q=75" alt=""><span class="sn">Nasro Weliyo</span><span class="ss">Reer Ohio</span></button>
+      <button class="spine" style="--c:#6B1E31;--h:612px" data-name="Dunii Sheikh" data-st="Reer Kentucky"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fc969850b-f6be-4499-a87e-2174cafbd277%2Favatar.jpg%3Fv%3D1793404759495&amp;w=384&amp;q=75" alt=""><span class="sn">Dunii Sheikh</span><span class="ss">Reer Kentucky</span></button>
+      <button class="spine" style="--c:#4A1420;--h:560px" data-name="Farhii Muhidin" data-st="Reer Maine"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F73686a25-98e0-41a8-887e-b421e4f6e355%2Favatar.jpg%3Fv%3D1794863346077&amp;w=384&amp;q=75" alt=""><span class="sn">Farhii Muhidin</span><span class="ss">Reer Maine</span></button>
+      <button class="spine" style="--c:#7A1A2C;--h:596px" data-name="Swah Flair Abdullahi" data-st="Reer Utah"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt=""><span class="sn">Swah Flair Abdullahi</span><span class="ss">Reer Utah</span></button>
+      <button class="spine lt" style="--c:#9A6B24;--h:578px" data-name="Isha Abdikadir" data-st="Reer Ohio"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F928add3a-cb2b-4d1d-b1b8-12621a96459a%2Favatar.jpg%3Fv%3D1793393565831&amp;w=384&amp;q=75" alt=""><span class="sn">Isha Abdikadir</span><span class="ss">Reer Ohio</span></button>
+    </div>
+    <div class="shplank a" style="--d:2"></div>
+    <p class="shcue a" style="--d:4" data-t="Click the 2 winners’ books to open">Click the 2 winners’ books to open</p>
   </div>
-  <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
-  <div class="wpost">
-    <div class="wwin"></div>
-    <p class="wcat">Returning Student Recognition Award</p>
-    <p class="wname">[Winner name]</p>
-    <p class="wyr">Excellence Gala 2026</p>
-  </div>
+  <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
 <section class="slide dark seg" data-title="Academic award 3: Somali Bantu Academic Scholarship">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Somali Bantu<br>Academic Scholarship</h1>
   <p class="ssub a" style="--d:4">Recognizes high school graduates entering college and current undergraduates who show academic excellence, leadership, and a commitment to the future of our community.</p>
 </section>
-<section class="slide dark win" data-title="Academic winner: Somali Bantu Academic Scholarship" data-reveal data-award="ac3">
-  <div class="wpre">
-    <p class="eyebrow a">Academic &amp; Education · Somali Bantu Academic Scholarship</p>
-    <h2 class="a" style="--d:1">Chosen by the committee</h2>
-    <p class="wcue a" style="--d:4">Press → to reveal the recipients</p>
+<section class="slide dark shelf" data-title="Academic winner: Somali Bantu Academic Scholarship" data-award="ac3" data-multi="2" data-cat="Somali Bantu Academic Scholarship" data-cm>
+  <div class="head"><p class="eyebrow a">Academic &amp; Education · Somali Bantu Academic Scholarship</p><h2 class="a" style="--d:1">Chosen by the committee</h2></div>
+  <div class="shwrap">
+    <div class="shrow a" style="--d:2">
+      <button class="spine cmb" style="--c:#5C1222;--h:520px" data-name="[Recipient name]" data-st="[School · Field of study]"><span class="screst">★</span><span class="sn">Somali Bantu Academic Scholarship</span><span class="ss">Chosen by the committee</span></button>
+    </div>
+    <div class="shplank a" style="--d:2"></div>
+    <p class="shcue a" style="--d:4" data-t="Click the book or press → to open it">Click the book or press → to open it</p>
   </div>
-  <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
-  <div class="wpost">
-    <div class="wwin"></div>
-    <p class="wcat">Somali Bantu Academic Scholarship</p>
-    <p class="wname">[Recipient] &amp; [Recipient]</p>
-    <p class="wyr">Excellence Gala 2026</p>
-  </div>
+  <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
 <section class="slide dark seg" data-title="Academic award 4: Somali Bantu Educator Award">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Somali Bantu<br>Educator Award</h1>
   <p class="ssub a" style="--d:4">Honors individuals who go above and beyond to make a meaningful impact on education, student development, and academic success in our community.</p>
 </section>
-<section class="slide dark win" data-title="Academic winner: Somali Bantu Educator Award" data-reveal data-award="ac4">
-  <div class="wpre">
-    <p class="eyebrow a">Academic &amp; Education · Somali Bantu Educator Award</p>
-    <h2 class="a" style="--d:1">And the nominees are…</h2>
-    <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F9837e985-351c-4258-8cae-2f70ab475edb%2Favatar.jpg%3Fv%3D1793404792082&amp;w=384&amp;q=75" alt="Zeytun Aden"><b>Zeytun Aden</b><span>Reer Kentucky</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4eda826e-9dfd-4968-a30d-ec1b316199fe%2Favatar.jpg%3Fv%3D1791834658806&amp;w=384&amp;q=75" alt="AATHANOW"><b>AATHANOW</b><span>Reer New York</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F8d2af478-d0fc-4926-ae46-1e3d7889e808%2Favatar.jpg%3Fv%3D1794837306607&amp;w=384&amp;q=75" alt="NA Fashion"><b>NA Fashion</b><span>Reer Washington</span></div></div>
-    <p class="wcue a" style="--d:4">Click the winner to reveal</p>
+<section class="slide dark shelf" data-title="Academic winner: Somali Bantu Educator Award" data-award="ac4" data-multi="1" data-cat="Somali Bantu Educator Award">
+  <div class="head"><p class="eyebrow a">Academic &amp; Education · Somali Bantu Educator Award</p><h2 class="a" style="--d:1">And the nominees are…</h2></div>
+  <div class="shwrap">
+    <div class="shrow a" style="--d:2">
+      <button class="spine" style="--c:#5C1222;--h:600px" data-name="Zeytun Aden" data-st="Reer Kentucky"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F9837e985-351c-4258-8cae-2f70ab475edb%2Favatar.jpg%3Fv%3D1793404792082&amp;w=384&amp;q=75" alt=""><span class="sn">Zeytun Aden</span><span class="ss">Reer Kentucky</span></button>
+      <button class="spine" style="--c:#8A2A3C;--h:572px" data-name="AATHANOW" data-st="Reer New York"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4eda826e-9dfd-4968-a30d-ec1b316199fe%2Favatar.jpg%3Fv%3D1791834658806&amp;w=384&amp;q=75" alt=""><span class="sn">AATHANOW</span><span class="ss">Reer New York</span></button>
+      <button class="spine" style="--c:#3D0B17;--h:624px" data-name="NA Fashion" data-st="Reer Washington"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F8d2af478-d0fc-4926-ae46-1e3d7889e808%2Favatar.jpg%3Fv%3D1794837306607&amp;w=384&amp;q=75" alt=""><span class="sn">NA Fashion</span><span class="ss">Reer Washington</span></button>
+    </div>
+    <div class="shplank a" style="--d:2"></div>
+    <p class="shcue a" style="--d:4" data-t="Click the winner’s book to open it">Click the winner’s book to open it</p>
   </div>
-  <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
-  <div class="wpost">
-    <div class="wwin"></div>
-    <p class="wcat">Somali Bantu Educator Award</p>
-    <p class="wname">[Winner name]</p>
-    <p class="wyr">Excellence Gala 2026</p>
-  </div>
+  <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
 <section class="slide dark seg" data-title="Academic award 5: Trade School Recognition">
   <div class="sline a" style="--k:growy;--t:1s;--d:0"></div>
   <h1 class="a" style="--d:2;--k:zoom;--t:1s">Trade School<br>Recognition</h1>
   <p class="ssub a" style="--d:4">Recognizes those building careers through skilled trades, vocational education, technical training, apprenticeships, or military service.</p>
 </section>
-<section class="slide dark win" data-title="Academic winner: Trade School Recognition" data-reveal data-award="ac5" data-multi="2" data-wis="The winners are…">
-  <div class="wpre">
-    <p class="eyebrow a">Academic &amp; Education · Trade School Recognition</p>
-    <h2 class="a" style="--d:1">And the nominees are…</h2>
-    <div class="wfins a" style="--d:2"><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe70ab076-0780-43a5-bd7a-bbb5b9b45d61%2Favatar.jpg%3Fv%3D1791839984159&amp;w=384&amp;q=75" alt="Mahamud Kassim"><b>Mahamud Kassim</b><span>Reer Kentucky</span></div><div class="wfin"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt="Swah Flair Abdullahi"><b>Swah Flair Abdullahi</b><span>Reer Utah</span></div></div>
-    <p class="wcue a" style="--d:4">Click the 2 winners to reveal</p>
+<section class="slide dark shelf" data-title="Academic winner: Trade School Recognition" data-award="ac5" data-multi="2" data-cat="Trade School Recognition">
+  <div class="head"><p class="eyebrow a">Academic &amp; Education · Trade School Recognition</p><h2 class="a" style="--d:1">And the nominees are…</h2></div>
+  <div class="shwrap">
+    <div class="shrow a" style="--d:2">
+      <button class="spine" style="--c:#5C1222;--h:600px" data-name="Mahamud Kassim" data-st="Reer Kentucky"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2Fe70ab076-0780-43a5-bd7a-bbb5b9b45d61%2Favatar.jpg%3Fv%3D1791839984159&amp;w=384&amp;q=75" alt=""><span class="sn">Mahamud Kassim</span><span class="ss">Reer Kentucky</span></button>
+      <button class="spine" style="--c:#8A2A3C;--h:572px" data-name="Swah Flair Abdullahi" data-st="Reer Utah"><img data-src="https://bantuconnect.net/_next/image?url=https%3A%2F%2Faesrgqpltbqvrjsonkwx.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Favatars%2F4a320eef-f8a2-460f-bfae-8461545b9e6d%2Favatar.jpg%3Fv%3D1794248393102&amp;w=384&amp;q=75" alt=""><span class="sn">Swah Flair Abdullahi</span><span class="ss">Reer Utah</span></button>
+    </div>
+    <div class="shplank a" style="--d:2"></div>
+    <p class="shcue a" style="--d:4" data-t="Click the 2 winners’ books to open">Click the 2 winners’ books to open</p>
   </div>
-  <div class="wcount"><span></span></div><div class="wglow"></div><i class="wspark" style="--r:0deg;--x:620px"></i><i class="wspark" style="--r:30deg;--x:520px"></i><i class="wspark" style="--r:62deg;--x:600px"></i><i class="wspark" style="--r:95deg;--x:480px"></i><i class="wspark" style="--r:128deg;--x:640px"></i><i class="wspark" style="--r:160deg;--x:540px"></i><i class="wspark" style="--r:195deg;--x:610px"></i><i class="wspark" style="--r:228deg;--x:500px"></i><i class="wspark" style="--r:262deg;--x:590px"></i><i class="wspark" style="--r:295deg;--x:520px"></i><i class="wspark" style="--r:330deg;--x:630px"></i><i class="wspark" style="--r:348deg;--x:470px"></i>
-  <div class="wpost">
-    <div class="wwin"></div>
-    <p class="wcat">Trade School Recognition</p>
-    <p class="wname">[Winner name]</p>
-    <p class="wyr">Excellence Gala 2026</p>
-  </div>
+  <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
 
 <!-- SEG HEALTH -->
@@ -1681,6 +1715,27 @@ body.vfull-on.idle #vfBtn{opacity:0}
       if(k<cl.length){cl[k].classList.add('on');k++;s.setAttribute('data-step',k);msg();if(SND){tone(659.25,0,.35,'sine',.16);tone(987.77,.08,.4,'sine',.1);}return true;}
       var key=s.getAttribute('data-award');if(key){WIN[key]={name:s.getAttribute('data-winner'),img:null,ini:s.getAttribute('data-ini')};saveWin();renderRecap();}
       s.setAttribute('data-step','open');countdown(s);return true;};
+    s.__reset();});
+  /* bookshelf reveal: click a spine (or two) and the book opens to the winner's page */
+  [].forEach.call(document.querySelectorAll('.shelf'),function(s){
+    var sp=[].slice.call(s.querySelectorAll('.spine')),cm=s.hasAttribute('data-cm'),need=cm?1:Math.min(+s.getAttribute('data-multi')||1,sp.length),cue=s.querySelector('.shcue'),bk=s.querySelector('.bkopen'),hinted=false,tm=null;
+    function src(b){var m=b&&b.querySelector&&b.querySelector('img');return m?(m.getAttribute('src')||m.getAttribute('data-src')):null;}
+    function txt(el,sel,v){var x=el.querySelector(sel);if(x)x.textContent=v;}
+    function fill(sel){var cat=s.getAttribute('data-cat'),L=bk.querySelector('.pl .pg-c'),R=bk.querySelector('.pr .pg-c');
+      if(cm&&(+s.getAttribute('data-multi')||1)>1)sel=[{ph:1},{ph:1}];
+      if(sel.length>=2){[L,R].forEach(function(p,i){var b=sel[i],u=src(b);p.className='pg-c pduo';p.innerHTML='<p class="pcat"></p>'+(u?'<img alt="">':'<div class="pph">★</div>')+'<p class="pwin sm">Winner</p><h3 class="pname"></h3><p class="pst"></p>';txt(p,'.pcat',cat);if(u)p.querySelector('img').src=u;txt(p,'.pname',b.ph?'[Recipient name]':b.getAttribute('data-name'));txt(p,'.pst',b.ph?'[School · Field of study]':b.getAttribute('data-st'));});}
+      else{var b=sel[0],u=src(b);L.className='pg-c pphoto';L.innerHTML=u?'<img alt="">':'<div class="pph">★</div>';if(u)L.querySelector('img').src=u;
+        R.className='pg-c ptext';R.innerHTML='<p class="pcat"></p><p class="pwin">Winner</p><h3 class="pname"></h3><p class="pst"></p><p class="pyr">Excellence Gala 2026</p>';txt(R,'.pcat',cat);txt(R,'.pname',b&&!cm?b.getAttribute('data-name'):'[Recipient name]');txt(R,'.pst',b&&!cm?b.getAttribute('data-st'):'[School · Field of study]');}}
+    function open(sel){if(s.classList.contains('open'))return;fill(sel);s.classList.add('open');
+      var key=s.getAttribute('data-award');if(key&&!cm&&sel.length){var nm=sel.map(function(b){return b.getAttribute('data-name')}).join(' & ');WIN[key]={name:nm,img:sel.length===1?src(sel[0]):null,ini:null};saveWin();renderRecap();}
+      try{sFanfare();}catch(_){}}
+    sp.forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();if(s.classList.contains('open'))return;if(cm){b.classList.add('sel');tm=setTimeout(function(){open([])},450);return;}
+      b.classList.toggle('sel');var sel=sp.filter(function(x){return x.classList.contains('sel')});
+      if(sel.length<need){cue.textContent=sel.length?('Pick '+(need-sel.length)+' more'):cue.getAttribute('data-t');return;}
+      cue.textContent='';tm=setTimeout(function(){open(sel)},550);});});
+    s.__reset=function(){clearTimeout(tm);s.classList.remove('open');sp.forEach(function(x){x.classList.remove('sel')});hinted=false;if(cue)cue.textContent=cue.getAttribute('data-t');};
+    s.__step=function(){if(s.classList.contains('open'))return false;if(cm){sp[0]&&sp[0].classList.add('sel');tm=setTimeout(function(){open([])},450);return true;}
+      if(!hinted){hinted=true;cue.textContent='Click a book to open it  ·  → again to skip';return true;}return false;};
     s.__reset();});
   renderRecap();
   function next(){var s=slides[cur];if(s&&s.__step&&s.__step())return;if(s&&s.hasAttribute('data-reveal')&&!s.classList.contains('revealed')){if(s.classList.contains('counting'))return;
