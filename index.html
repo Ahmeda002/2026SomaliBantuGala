@@ -794,6 +794,11 @@ body.mix .shelf .shhd .hldesc,body.ivory .shelf .shhd .hldesc{color:#7A4650}
 .cv3 .ck em{font-style:normal;font-size:56px;line-height:88px;color:#D9B866}
 body.mix .cv3 .cku i,body.ivory .cv3 .cku i{background:#FFFDF8;border-color:#D9C29A;color:#4A1420;box-shadow:0 8px 20px rgba(92,18,34,.10)}
 body.mix .cv3 .wcd .cdl,body.ivory .cv3 .wcd .cdl,body.mix .cv3 .cku s,body.ivory .cv3 .cku s,body.mix .cv3 .ck em,body.ivory .cv3 .ck em{color:#9A7424}
+.pg-c.ptrio{justify-content:center;align-items:stretch;gap:30px;padding:48px 60px}
+.ptrio .ptr{display:flex;align-items:center;gap:26px;text-align:left}
+.ptrio .pph{width:118px;height:118px;font-size:50px;flex:none}
+.ptrio .pname{font-size:36px;max-width:none}
+.ptrio .pst{margin-top:6px;font-size:16px}
 @media (prefers-reduced-motion:reduce){.a{animation:none!important;opacity:1!important}.slide{transition:none}}
 .slide.far{display:none}
 @media (hover:none) and (pointer:coarse){.wl .wpics .lp.on img{animation:none}}
@@ -1434,7 +1439,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
   </div>
   <div class="bkopen"><div class="bkcv"></div><div class="bpg pl"><div class="pg-c"></div></div><div class="bpg pr"><div class="pg-c"></div></div></div>
 </section>
-<section class="slide dark shelf" data-title="Academic winner: Somali Bantu Academic Scholarship" data-award="ac3" data-multi="2" data-cat="Somali Bantu Academic Scholarship" data-cm>
+<section class="slide dark shelf" data-title="Academic winner: Somali Bantu Academic Scholarship" data-award="ac3" data-multi="3" data-cat="Somali Bantu Academic Scholarship" data-cm data-recips="">
   <div class="head shhd"><p class="eyebrow a">Academic &amp; Education · Chosen by the committee</p><h2 class="a" style="--d:1">Somali Bantu Academic Scholarship</h2><p class="hldesc a" style="--d:1.5">Recognizes high school graduates entering college and current undergraduates who show academic excellence, leadership, and a commitment to the future of our community.</p></div>
   <div class="shwrap">
     <div class="shrow a" style="--d:2">
@@ -1800,12 +1805,12 @@ body.vfull-on.idle #vfBtn{opacity:0}
     function src(b){var m=b&&b.querySelector&&b.querySelector('img');return m?(m.getAttribute('src')||m.getAttribute('data-src')):null;}
     function txt(el,sel,v){var x=el.querySelector(sel);if(x)x.textContent=v;}
     function fill(sel){var cat=s.getAttribute('data-cat'),L=bk.querySelector('.pl .pg-c'),R=bk.querySelector('.pr .pg-c');
-      var wb=s.querySelector('.spine[data-win]');if(wb)sel=[wb];else if(cm&&(+s.getAttribute('data-multi')||1)>1)sel=[{ph:1},{ph:1}];
+      var wb=s.querySelector('.spine[data-win]');var nq=+s.getAttribute('data-multi')||1;if(!wb&&cm&&nq>=3){var rc=s.getAttribute('data-recips'),T3=(rc?rc.split(';'):[]).map(function(x){var q=x.split('|');return {n:q[0].trim(),st:(q[1]||'').trim()};});while(T3.length<nq)T3.push({n:'[Recipient name]',st:'[School · Field of study]'});L.className='pg-c ptext';L.innerHTML='<p class="pcat"></p><p class="pwin">Winners</p><p class="pyr">Excellence Gala 2026</p>';txt(L,'.pcat',cat);R.className='pg-c ptrio';R.innerHTML=T3.map(function(){return '<div class="ptr"><div class="pph">★</div><div><h3 class="pname"></h3><p class="pst"></p></div></div>';}).join('');[].forEach.call(R.querySelectorAll('.ptr'),function(el,i){txt(el,'.pname',T3[i].n);txt(el,'.pst',T3[i].st);});return;}if(wb)sel=[wb];else if(cm&&nq>1)sel=[{ph:1},{ph:1}];
       if(sel.length>=2){[L,R].forEach(function(p,i){var b=sel[i],u=src(b);p.className='pg-c pduo';p.innerHTML='<p class="pcat"></p>'+(u?'<img alt="">':'<div class="pph">★</div>')+'<p class="pwin sm">Winner</p><h3 class="pname"></h3><p class="pst"></p>';txt(p,'.pcat',cat);if(u)p.querySelector('img').src=u;txt(p,'.pname',b.ph?'[Recipient name]':b.getAttribute('data-name'));txt(p,'.pst',b.ph?'[School · Field of study]':b.getAttribute('data-st'));});}
       else{var b=sel[0],u=src(b);L.className='pg-c pphoto';L.innerHTML=u?'<img alt="">':'<div class="pph">★</div>';if(u)L.querySelector('img').src=u;
         R.className='pg-c ptext';R.innerHTML='<p class="pcat"></p><p class="pwin">Winner</p><h3 class="pname"></h3><p class="pst"></p><p class="pyr">Excellence Gala 2026</p>';txt(R,'.pcat',cat);txt(R,'.pname',b&&(!cm||wb)?b.getAttribute('data-name'):'[Recipient name]');txt(R,'.pst',b&&(!cm||wb)?b.getAttribute('data-st'):'[School · Field of study]');}}
     function open(sel){if(s.classList.contains('open'))return;var wb0=s.querySelector('.spine[data-win]');if(wb0)sel=[wb0];fill(sel);s.classList.add('open');
-      var key=s.getAttribute('data-award');if(key&&(!cm||wb0)&&sel.length){var nm=sel.map(function(b){return b.getAttribute('data-name')}).join(' & ');WIN[key]={name:nm,img:sel.length===1?src(sel[0]):null,ini:null};saveWin();renderRecap();}
+      var key=s.getAttribute('data-award');if(key&&(!cm||wb0)&&sel.length){var nm=sel.map(function(b){return b.getAttribute('data-name')}).join(' & ');WIN[key]={name:nm,img:sel.length===1?src(sel[0]):null,ini:null};saveWin();renderRecap();}else if(key&&cm&&s.getAttribute('data-recips')){var nn=s.getAttribute('data-recips').split(';').map(function(x){return x.split('|')[0].trim();});WIN[key]={name:nn.length>1?nn.slice(0,-1).join(', ')+' & '+nn[nn.length-1]:nn[0],img:null,ini:null};saveWin();renderRecap();}
       try{sFanfare();}catch(_){}}
     sp.forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();if(s.classList.contains('open'))return;if(auto){sp.forEach(function(x){x.classList.add('sel')});cue.textContent='';tm=setTimeout(function(){open(sp)},650);return;}if(cm){b.classList.add('sel');tm=setTimeout(function(){open([])},450);return;}
       b.classList.toggle('sel');var sel=sp.filter(function(x){return x.classList.contains('sel')});
