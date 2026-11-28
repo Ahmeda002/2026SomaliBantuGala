@@ -816,7 +816,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
 .mcom .scard h3{font-size:24px;line-height:1.15;text-align:center}
 /* drive video */
 .slide.vfull .dvid{position:fixed;left:0;top:0;width:1920px;height:1080px;aspect-ratio:auto;border-radius:0;border:0;box-shadow:none;z-index:20;animation:vgrow .7s cubic-bezier(.2,.7,.2,1)}
-.dvid{height:860px;aspect-ratio:9/16;border:1px solid #82293E;border-radius:10px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45);display:block}
+.dvid{height:860px;aspect-ratio:9/16;object-fit:contain;border:1px solid #82293E;border-radius:10px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45);display:block}
 </style>
 </head>
 <body>
@@ -1265,7 +1265,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
       <p class="a" style="--d:5;font-size:26px;color:#D9B8BE">Now we will hear from the man behind it all, Mohamud Abdi.</p>
     </div>
     <div class="a" style="--k:fade;--d:2;flex:none;display:flex;align-items:center;justify-content:center">
-      <iframe class="dvid" data-dsrc="https://drive.google.com/file/d/1bQ2xzL3O1efYqvOdUB-z0NYTpZMgUIfq/preview" title="Bantu Connect message from Mohamud Abdi" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <video class="dvid" src="assets/video/bantu-connect-message.mp4" title="Bantu Connect message from Mohamud Abdi" playsinline preload="metadata" controls></video>
     </div>
   </div>
 </section>
@@ -1796,7 +1796,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
       old.classList.remove('active');old.classList.add('leaving');
       setTimeout(function(){old.classList.remove('leaving');},600);
     }
-    cur=n;markFar();var s=slides[cur];document.body.classList.toggle('vid-on',!!s.querySelector('video[data-autoplay],iframe.dvid'));s.classList.remove('revealed');if(s.__reset)s.__reset();if(s.hasAttribute('data-multi')){[].forEach.call(s.querySelectorAll('.wfin.sel'),function(x){x.classList.remove('sel')});s.classList.remove('multi');}if(s.classList.contains('hint')){s.classList.remove('hint');var wc=s.querySelector('.wcue');if(wc)wc.textContent='Click the winner to reveal';}void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
+    cur=n;markFar();var s=slides[cur];document.body.classList.toggle('vid-on',!!s.querySelector('video[data-autoplay],.dvid'));s.classList.remove('revealed');if(s.__reset)s.__reset();if(s.hasAttribute('data-multi')){[].forEach.call(s.querySelectorAll('.wfin.sel'),function(x){x.classList.remove('sel')});s.classList.remove('multi');}if(s.classList.contains('hint')){s.classList.remove('hint');var wc=s.querySelector('.wcue');if(wc)wc.textContent='Click the winner to reveal';}void s.offsetWidth;s.classList.add('active');countUp(s);startLoops(s);warm(cur);
     [].forEach.call(s.querySelectorAll('video[data-autoplay]'),function(v){try{v.currentTime=0;}catch(_){}clearTimeout(vplayT);vplayT=setTimeout(function(){if(slides[cur]!==s||!v.paused)return;try{var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(_){}},3500);
       clearTimeout(vfullT);vfullT=setTimeout(function(){if(slides[cur]!==s||v.paused||v.ended||v.hasAttribute('data-nofull'))return;s.classList.add('vfull');document.body.classList.add('vfull-on');},4700);
       if(!v._vf){v._vf=1;v.addEventListener('ended',function(){var sl=v.closest('.slide');sl.classList.remove('vfull');document.body.classList.remove('vfull-on');});}});
@@ -1806,7 +1806,7 @@ body.vfull-on.idle #vfBtn{opacity:0}
   var cdT=0,vplayT=0;
   var vfB=document.getElementById('vfBtn'),idleT=0;
   function vfLabel(){if(vfB)vfB.textContent=document.body.classList.contains('vfull-on')?'✕ Exit full screen':'⛶ Full screen';}
-  function toggleVf(){var s=slides[cur];if(!s||!s.querySelector('video[data-autoplay],iframe.dvid'))return;clearTimeout(vfullT);
+  function toggleVf(){var s=slides[cur];if(!s||!s.querySelector('video[data-autoplay],.dvid'))return;clearTimeout(vfullT);
     if(s.classList.contains('vfull')){s.classList.remove('vfull');document.body.classList.remove('vfull-on');}else{s.classList.add('vfull');document.body.classList.add('vfull-on');}}
   if(vfB){vfB.addEventListener('click',function(e){e.stopPropagation();toggleVf();vfB.blur();});
     try{new MutationObserver(vfLabel).observe(document.body,{attributes:true,attributeFilter:['class']});}catch(_){}vfLabel();}
@@ -2111,13 +2111,9 @@ body.vfull-on.idle #vfBtn{opacity:0}
 })();
 </script>
 <script>
-(function(){var sl=document.querySelector('.dvslide');if(!sl)return;var f=sl.querySelector('iframe.dvid'),u=f.getAttribute('data-dsrc'),on=false;
-function sync(){var a=sl.classList.contains('active'),p=sl.previousElementSibling,near=a||(p&&p.classList&&p.classList.contains('active'));
- if(near&&!f.getAttribute('src'))f.setAttribute('src',u);
- if(on&&!a){f.setAttribute('src','about:blank');setTimeout(function(){if(!sl.classList.contains('active'))f.removeAttribute('src');sync();},50);}
- on=a;}
-var mo=new MutationObserver(sync);mo.observe(sl,{attributes:true,attributeFilter:['class']});var p=sl.previousElementSibling;if(p)mo.observe(p,{attributes:true,attributeFilter:['class']});sync();
-window.addEventListener('blur',function(){setTimeout(function(){if(document.activeElement===f){f.blur();window.focus();}},1200);});
+(function(){var sl=document.querySelector('.dvslide');if(!sl)return;var v=sl.querySelector('video.dvid');if(!v)return;
+v.addEventListener('ended',function(){sl.classList.remove('vfull');document.body.classList.remove('vfull-on');});
+v.addEventListener('play',function(){setTimeout(function(){if(document.activeElement===v)v.blur();},300);});
 })();
 </script>
 </body>
